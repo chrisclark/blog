@@ -1,7 +1,7 @@
 Title: Form Over Function & The New iPhone
 Date: 2013-09-12 05:57
 Author: Chris Clark (noreply@blogger.com)
-Slug: form-over-function-the-new-iphone
+Slug: form-over-function
 
 I probably found this more profound than it really is, but Matt Buchanan
 [said it

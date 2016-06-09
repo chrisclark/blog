@@ -1,7 +1,7 @@
 Title: Extensible, Single-Line Fizzbuzz in a Tweet
-Date: 2012-12-01 19:55
+Date: 2012-11-01 19:55
 Author: Chris Clark (noreply@blogger.com)
-Slug: extensible-single-line-fizzbuzz-in-a-tweet
+Slug: extensible-single-line-fizzbuzz-in-tweet
 
 Yep, it's a
 [fizzbuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html)

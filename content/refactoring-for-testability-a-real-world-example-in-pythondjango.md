@@ -1,7 +1,7 @@
 Title: Refactoring for Testability: A Real World Example in Python/Django
 Date: 2014-04-21 22:25
 Author: Chris Clark (noreply@blogger.com)
-Slug: refactoring-for-testability-a-real-world-example-in-pythondjango
+Slug: refactoring-for-testability-quick
 
 At [ePantry](https://www.epanty.com/), we strive to have enough automated
 test coverage that we can deploy with confidence, without being dogmatic
