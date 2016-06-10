@@ -2,6 +2,7 @@ Title: Getting Started with Pandas - Predicting SAT Scores for New York City Sch
 Date: 2013-01-23 01:20
 Author: Chris Clark
 Slug: getting-started-with-pandas-predicting
+Category: Code & Tutorials
 
 ##An Introduction to Pandas
 

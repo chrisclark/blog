@@ -48,6 +48,7 @@ def dev():
 
     server = Server()
     server.watch('content/', compile)
+    server.watch('pelicanconf.py', rebuild)
     server.serve(root='output')
 
 

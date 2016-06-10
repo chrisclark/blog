@@ -1,7 +1,8 @@
 Title: Engineering Practices in Data Science
 Date: 2012-10-04 17:28
-Author: Chris Clark()
+Author: Chris Clark
 Slug: engineering-practices-in-data-science
+Category: Data Science
 
 [Josh
 Wills](http://twitter.com/jasonbaldridge/statuses/198115689175859201)

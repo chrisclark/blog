@@ -1,7 +1,8 @@
 Title: Getting Started With Python for Data Science
 Date: 2012-07-20 22:17
-Author: Chris Clark()
+Author: Chris Clark
 Slug: getting-started-with-python-for-data
+Category: Code & Tutorials
 
 As the product manager at [Kaggle](http://www.kaggle.com/)
 I'm fortunate enough to hang around with some of the world's top machine

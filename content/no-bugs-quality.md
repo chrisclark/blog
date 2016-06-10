@@ -2,6 +2,7 @@ Title: No Bugs != Quality
 Date: 2012-01-29 19:48
 Author: Chris Clark
 Slug: no-bugs-quality
+Category: Engineering Management
 
 A low bug count is not a good indicator of quality software. Lack of
 typos and grammatical errors is not indicative of a quality book.  

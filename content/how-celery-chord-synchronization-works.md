@@ -1,8 +1,8 @@
 Title: How Celery Chord Synchronization Works
 Date: 2015-03-26 10:20
-Modified: 2016-06-09 09:39
 Authors: Chris Clark
 Slug: how-celery-chord-synchronization-works
+Category: Code & Tutorials
 
 # How Celery Chord Synchronization Works
 

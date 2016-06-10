@@ -2,6 +2,7 @@ Title: Juggernaut in Windows
 Date: 2012-03-09 19:49
 Author: Chris Clark
 Slug: juggernaut-in-windows
+Category: Code & Tutorials
 
 I've fallen in love with
 [Juggernaut](https://github.com/maccman/juggernaut).  

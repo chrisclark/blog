@@ -1,7 +1,8 @@
 Title: Declarative Approach to Nesting Backbone Models
 Date: 2013-08-01 23:57
-Author: Chris Clark()
+Author: Chris Clark
 Slug: declarative-approach-to-nesting
+Category: Code & Tutorials
 
 Backbone doesn't have great (any?) support for nested models. Here's my
 approach. I think it's kind of fun (we get to write recursive

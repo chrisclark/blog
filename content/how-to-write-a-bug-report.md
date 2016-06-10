@@ -1,7 +1,8 @@
 Title: How to Write a Bug Report
 Date: 2013-07-11 00:32
-Author: Chris Clark()
+Author: Chris Clark
 Slug: how-to-write-bug-report
+Category: Engineering Management
 
 Writing good bug reports is the difference between actually seeing your
 bug get fixed and sending protracted emails over the course of a week

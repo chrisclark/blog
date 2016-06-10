@@ -2,6 +2,7 @@ Title: The No-Frills Guide to PGP on OS X
 Date: 2013-11-01 00:09
 Author: Chris Clark
 Slug: the-no-frills-guide-to-pgp-on-mac-os-x
+Category: Code & Tutorials
 
 Want to get started using PGP on your Mac, but confused by the morass of
 [professor-doctor](http://contemporary-home-computing.org/prof-dr-style/)
@@ -12,7 +13,7 @@ and receive and decrypt emails, and how to sign and verify messages
 using GPG. By the time you're done, you might actually find the GPG
 manual pages for [simple
 tasks](http://gnupg.org/gph/en/manual/x135.html) illuminating instead of
-totally incoherent.  
+totally incoherent.
   
 Really explaining how public key encryption works or why you'd want to
 use it is not the goal of this post by a long shot - this is just a

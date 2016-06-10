@@ -3,6 +3,7 @@ Date: 2016-06-09 05:15
 Author: Chris Clark
 Slug: simple-similar-products-recommendation-engine-in-python
 Status: draft
+Category: Data Science
 
 Let's pretend we need to build a recommendation engine for an eCommerce web site.
 

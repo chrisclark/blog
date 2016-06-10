@@ -2,17 +2,20 @@ Title: Building Software and Building Bridges
 Date: 2012-02-21 14:57
 Author: Chris Clark
 Slug: building-software-and-building-bridges
+Category: Engineering Management
 
 We have a problem. People can't get from one area of town to a
 neighboring area because there is a river in between and no road. So
 let's build a bridge. 
  
-Step 1: Requirements 
+### Step 1: Requirements
+
 We'll get detailed requirements from civil engineers and government
 officials, including environmental constraints, safety guidelines,
 traffic considerations, and all sorts of other arcana. 
  
-Step 2: Design 
+### Step 2: Design
+
 We'll have architects, designers, and engineers create a plan that meets
 all of the criteria. We'll do a tremendous amount of pre-planning. We'll
 take public opinion surveys. We'll invest a huge amount of time and
@@ -23,14 +26,15 @@ we'll need. And how many nails. And which suppliers the nails will be
 coming from. And backup nail suppliers in case something happens to the
 primary supplier. 
  
-Step 3: Implementation 
+### Step 3: Implementation
+
 Contractors go to work. Using the detailed design a team of
 professionals can reasonably be expected to deliver this massive project
 on time, and on budget. And we have our bridge! 
- 
+
 Hmmm... 
  
-**Requirements--&gt; Design--&gt; Implementation** 
+**Requirements--&gt; Design--&gt; Implementation**
  
 Does that sound familiar? Oh yeah! It's [waterfall
 development](http://en.wikipedia.org/wiki/Waterfall_model)! And it
@@ -49,7 +53,7 @@ also often react by investing more up front. We get long, detailed
 requirements documents that no one reads. Using construction techniques
 to solve software problems doesn't work because it's a flawed analogy. 
  
-*Let's try that bridge again, but with software.* 
+### Let's try that bridge again, but with software
  
 We're going to start by focusing on the problem to solve: get people
 from A to B. With software, the solution isn't necessarily as obvious as
@@ -83,28 +87,28 @@ The result is we have a unique statistical challenge when estimating
 software. Michael Church on Hacker News [explains it
 beautifully](http://news.ycombinator.com/item?id=3522910): 
 
-> *Let's say that you have 20 tasks. Each involves rolling a 10-sided
+> Let's say that you have 20 tasks. Each involves rolling a 10-sided
 > die. If it's a 1 through 8, wait that number of minutes. If it's a 9,
-> wait 15 minutes. If it's a 10, wait an hour. *
+> wait 15 minutes. If it's a 10, wait an hour.
 
-> *How long is this string of tasks going to take? Summing the median
+> How long is this string of tasks going to take? Summing the median
 > time expectancy, we get a sum 110 minutes, because the median time for
 > a task is 5.5 minutes. The actual expected time to completion is 222
 > minutes, with 5+ hours not being unreasonable if one rolls a lot of
-> 9's and 10's.*
+> 9's and 10's.
 
-> *This is an obvious example where summing the median expected time for
+> This is an obvious example where summing the median expected time for
 > the tasks is ridiculous, but it's exactly what people do when they
 > compute time estimates, even though the reality on the field is that
 > the time-cost distribution has a lot more weight on the right. (That
 > is, it's more common for a "6-month" project to take 8 months than 4.
-> In statistics-wonk terms, the distribution is "log-normal".) *
+> In statistics-wonk terms, the distribution is "log-normal".)
 
-> *Software estimates are generally computed (implicitly) by summing the
+> Software estimates are generally computed (implicitly) by summing the
 > good-case (25th to 50th percentile) times-to-completion, assuming
 > perfect parallelism with no communication overhead, and with a
 > tendency for unexpected tasks, undocumented responsibilities, and bugs
-> to be overlooked outright. *
+> to be overlooked outright.
 
 Software teams will not be able to tell you the number of nails needed.
 Or the pounds of concrete. Software estimates are unintuitive and must
@@ -120,10 +124,10 @@ not unusual to read something like this about building software (from
 [Little
 Bets](http://www.amazon.com/Little-Bets-Breakthrough-Emerge-Discoveries/dp/1439170428)): 
 
-> *Learn by doing. Fail quickly to learn fast. Develop experiments and
+> Learn by doing. Fail quickly to learn fast. Develop experiments and
 > prototypes to gather insights, identify problems, and build up
 > creative ideas, like Beethoven did to in order to discover new musical
-> styles and forms.*
+> styles and forms.
 
 It's not surprising that the waterfall approach to software has failed.
 Waterfall was taken from the world of construction, but construction is

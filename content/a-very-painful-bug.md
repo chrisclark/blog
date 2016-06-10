@@ -1,6 +1,6 @@
 Title: A Very Painful Bug
 Date: 2012-04-01 18:24
-Author: Chris Clark()
+Author: Chris Clark
 Slug: a-very-painful-bug
 
 I'll lead off this post by listing all of the various things I thought

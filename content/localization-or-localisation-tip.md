@@ -2,6 +2,7 @@ Title: Localization (or: Localisation) Tip
 Date: 2012-01-03 21:22
 Author: Chris Clark
 Slug: localization-or-localisation-tip
+Category: Engineering Management
 
 I just learned something from our documentation team: Try to avoid using
 gerunds in UI text because they are difficult to localize & translate.

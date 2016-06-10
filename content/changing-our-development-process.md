@@ -2,6 +2,7 @@ Title: Changing Our Development Process
 Date: 2013-07-11 00:22
 Author: Chris Clark
 Slug: changing-our-development-process
+Category: Engineering Management
 
 This is a post about change management at a start-up.  
   

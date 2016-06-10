@@ -1,7 +1,8 @@
 Title: Communicating Performance Thresholds
 Date: 2012-03-01 22:52
-Author: Chris Clark()
+Author: Chris Clark
 Slug: communicating-performance-thresholds
+Category: Engineering Management
 
 I think visually, so here's a way I like to communicate performance
 thresholds. There are a bunch of dimensions that might make an
