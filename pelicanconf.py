@@ -43,3 +43,4 @@ NEST_INDEX_HEADER_TITLE = u'Untrod Software'
 NEST_INDEX_HEADER_SUBTITLE = u'Comments on software, technology, and teams, from Chris Clark.'
 NEST_INDEX_CONTENT_TITLE = u'Posts'
 NEST_COPYRIGHT = "Copyright 2016, Chris Clark"
+NEST_FOOTER_HTML = 'Powered by <a href="http://getpelican.com">Pelican</a> & <a href="https://github.com/molivier/nest">Nest</a>'

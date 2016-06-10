@@ -7,7 +7,7 @@ Slug: how-celery-chord-synchronization-works
 # How Celery Chord Synchronization Works
 
 Celery is a powerful tool for managing asynchronous tasks in
-Python. The basic model is your synchronous Python code pushes a task
+Python. The basic model is synchronous Python code pushes a task
 (in the form of a serialized message) into a message queue (the Celery
 "broker", which can be a variety of technologies - Redis, RabbitMQ,
 Memcached, or even a database), and worker processes pull tasks off

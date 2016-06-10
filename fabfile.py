@@ -16,8 +16,6 @@ DEPLOY_PATH = env.deploy_path
 production = 'root@localhost:22'
 dest_path = '/var/www'
 
-# Port for `serve`
-PORT = 8000
 
 def clean():
     """Remove generated files"""
@@ -25,16 +23,21 @@ def clean():
         shutil.rmtree(DEPLOY_PATH)
         os.makedirs(DEPLOY_PATH)
 
+
 def build():
     """Build local version of site"""
     local('pelican -s pelicanconf.py')
+
 
 def rebuild():
     """`clean` then `build`"""
     clean()
     build()
 
+
 def dev():
+    """Build, and run a auto-reloading server w/ file watching."""
+    rebuild()
     p = Pelican(read_settings('pelicanconf.py'))
 
     def compile():
@@ -47,8 +50,10 @@ def dev():
     server.watch('content/', compile)
     server.serve(root='output')
 
-def push():
+
+def publish():
     local('make s3_upload')
+
 
 def preview():
     """Build production version of site"""
