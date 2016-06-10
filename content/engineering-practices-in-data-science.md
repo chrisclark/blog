@@ -1,6 +1,6 @@
 Title: Engineering Practices in Data Science
 Date: 2012-10-04 17:28
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: engineering-practices-in-data-science
 
 [Josh
@@ -71,7 +71,7 @@ less we'll see...
 ### ...good engineering going out the window quickly with elaborate ensembling.
   
 This effect is probably more specific to Kaggle than the others but it's
-fun and instructive, so I'll write about it anyway.  
+fun and instructive, so I'll write about it anyway.
   
 In the final hours of a competition we sometimes see unholy ensembles of
 different languages and techniques being mashed together for a final

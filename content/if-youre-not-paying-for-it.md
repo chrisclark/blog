@@ -1,6 +1,6 @@
 Title: If you're not paying for it...
 Date: 2012-01-02 15:18
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: if-youre-not-paying-for-it
 
 If you're not paying for it, you're not the customer. You're the product

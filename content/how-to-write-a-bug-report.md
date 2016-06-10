@@ -1,6 +1,6 @@
 Title: How to Write a Bug Report
 Date: 2013-07-11 00:32
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: how-to-write-bug-report
 
 Writing good bug reports is the difference between actually seeing your

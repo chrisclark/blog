@@ -1,6 +1,6 @@
 Title: Entering Kaggle Competitions with Google Predict
 Date: 2013-01-17 16:30
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: entering-kaggle-competitions-with
 
 BigML had a [great series of

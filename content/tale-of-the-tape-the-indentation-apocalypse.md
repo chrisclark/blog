@@ -1,6 +1,6 @@
 Title: Tale of the Tape (The Indentation Apocalypse)
 Date: 2012-07-01 22:13
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: tale-of-tape-whitespace
 
 *RING ANNOUNCER*: In the blue trunks, with a reach of approximately

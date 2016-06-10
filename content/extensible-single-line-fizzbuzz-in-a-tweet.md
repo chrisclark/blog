@@ -1,6 +1,6 @@
 Title: Extensible, Single-Line Fizzbuzz in a Tweet
 Date: 2012-11-01 19:55
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: extensible-single-line-fizzbuzz-in-tweet
 
 Yep, it's a

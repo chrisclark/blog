@@ -1,6 +1,6 @@
 Title: Changing Our Development Process
 Date: 2013-07-11 00:22
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: changing-our-development-process
 
 This is a post about change management at a start-up.  

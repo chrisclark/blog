@@ -1,6 +1,6 @@
 Title: Rapidly Saving .jpgs in Photoshop
 Date: 2012-10-17 23:52
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: rapidly-saving-jpgs-in-photoshop
 
 **Cliffs notes**: Now, whenever I hit F2 in Photoshop, I get a high

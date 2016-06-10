@@ -1,6 +1,6 @@
 Title: The No-Frills Guide to PGP on OS X
 Date: 2013-11-01 00:09
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: the-no-frills-guide-to-pgp-on-mac-os-x
 
 Want to get started using PGP on your Mac, but confused by the morass of

@@ -1,6 +1,6 @@
 Title: Four Fun Facts From Big Data
 Date: 2012-06-29 03:00
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: four-fun-facts-from-big-data
 
 1. The credit card industry's term of art for false positives in fraud

@@ -1,6 +1,6 @@
 Title: Communicating Performance Thresholds
 Date: 2012-03-01 22:52
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: communicating-performance-thresholds
 
 I think visually, so here's a way I like to communicate performance

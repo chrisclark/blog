@@ -1,16 +1,14 @@
 Title: Getting Started with Pandas - Predicting SAT Scores for New York City Schools
 Date: 2013-01-23 01:20
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: getting-started-with-pandas-predicting
 
-  
-
-#Predicting SAT Scores for NYC Schools
 ##An Introduction to Pandas
 
 This tutorial will get you started with Pandas - a data analysis library for Python that is great for data preparation, joining, and ultimately generating well-formed, tabular data that's easy to use in a variety of visualization tools or (as we will see here) machine learning applications. This tutorial assumes a solid understanding of core Python functionality, but nothing about machine learning or Pandas.
 
 ###Goals
+
 1. Using data from [NYC Open Data] (https://data.cityofnewyork.us/), build a unified, tabular dataset ready for use with machine learning algorithms to predict student SAT scores on a per school basis.
 2. Learn and use the Pandas data analysis package.
 3. Learn how data is typically prepared for machine learning algorithms (ingestion, cleaning, joining, feature generation).
@@ -66,8 +64,6 @@ Output:
     Mathematics Mean         460  non-null values
     Writing Mean             460  non-null values
     dtypes: object(6)
-
-
 
 ##Target Variable and Joining Strategy
 

@@ -1,6 +1,6 @@
 Title: Juggernaut in Windows
 Date: 2012-03-09 19:49
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: juggernaut-in-windows
 
 I've fallen in love with

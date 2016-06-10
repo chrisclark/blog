@@ -1,6 +1,6 @@
 Title: No Bugs != Quality
 Date: 2012-01-29 19:48
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: no-bugs-quality
 
 A low bug count is not a good indicator of quality software. Lack of

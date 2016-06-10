@@ -1,6 +1,6 @@
 Title: How to Improve Chrome Web App Adoption
 Date: 2012-01-03 17:51
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark()
 Slug: how-to-improve-chrome-web-app-adoption
 
 There was big news in the browser world this month, as Google's Chrome

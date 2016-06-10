@@ -1,6 +1,6 @@
 Title: Localization (or: Localisation) Tip
 Date: 2012-01-03 21:22
-Author: Chris Clark (noreply@blogger.com)
+Author: Chris Clark
 Slug: localization-or-localisation-tip
 
 I just learned something from our documentation team: Try to avoid using
