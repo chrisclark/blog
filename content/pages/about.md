@@ -1,5 +1,5 @@
 Title: About
-Illustration: /me.jpg
+Illustration: me.jpg
 
 # About
 
