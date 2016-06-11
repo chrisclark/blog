@@ -35,6 +35,7 @@ THEME = 'theme'
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 AUTHOR_SAVE_AS = ''
+AUTHOR_URL = 'pages/about.html'
 DISPLAY_PAGES_ON_MENU = True
 #MENUITEMS = [('Categories','/categories.html'),]
 
