@@ -9,7 +9,8 @@ eCommerce web site.
 
 There are basically two types of approaches that you can take:
 content-based and collaborative-filtering. We'll look at some pros and
-cons of each approach, and then we'll dig into a simple implementation
+cons of each approach, and then we'll dig into a
+[simple implementation](https://github.com/groveco/content-engine/blob/master/engines.py)
 (ready for deployment on Heroku!) of a content-based engine.
 
 For a sneak peak at the results of this approach, take a look at how
