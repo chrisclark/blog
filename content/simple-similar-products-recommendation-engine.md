@@ -7,14 +7,20 @@ Category: Data Science
 Let's pretend we need to build a recommendation engine for an
 eCommerce web site.
 
-There are basically two buckets your engine will fall into:
-content-based, or collaborative-filtering.
+There are basically two types of approaches that you can take:
+content-based and collaborative-filtering. We'll look at some pros and
+cons of each approach, and then we'll dig into a simple implementation
+(ready for deployment on Heroku!) of a content-based engine.
 
-## Introducing Content-Based Recommenders
+For a sneak peak at the results of this approach, take a look at how
+we use a nearly-identical recommendation engine
+[in production at Grove](https://www.grove.co/catalog/product/cellulose-sponge/?v=802).
+
+## How Content-Based Recommenders Works
 
 Content-based systems are the ones that your friends and colleagues
 all assume you are building; using actual item properties like
-description, title, price, etc, etc. If you had never thought about
+description, title, price, etc. If you had never thought about
 recommendation systems before, and someone put a gun to your head,
 Swordfish-style, and forced you to describe one out loud in 30
 seconds, you would probably describe a content-based system. "Uhh,
@@ -28,9 +34,9 @@ all the toaster ovens, which are probably physically arranged on the
 shelf according to brand, or price, or ability to also cook a full
 turkey in under 30 minutes.
 
-## Why This Doesn't Always Work Well
+## Where Content-Based Falls Short
 
-On most eCommerce sites it's easy enough for folks to
+On most eCommerce sites it's already easy enough for folks to
 [browse the toaster oven category](http://www.target.com/c/toaster-ovens-kitchen-appliances/-/N-5xtri)
 already. What we really want is a recommendation system that drives
 incremental sales (e.g. sales that would not have happened
@@ -42,7 +48,7 @@ that that customer already knew there were more than two books in the
 series and would have bought Prisoner of Azkaban anyway. It was *not*
 an incremental sale.
 
-## Introducing Collaborative Filtering
+## How Collaborative Filtering Recommenders Work
 
 We need another approach. Enter Collaborative Filtering, or CF. The
 big idea behind CF is also pretty intuitive; the product someone is
@@ -69,32 +75,39 @@ Nope.
 In most cases, essentially 100% of the 'signal' is retrievable from a
 simple matrix of who bought what.
 
-Great. With that out of the way, who is excited to learn how to build
-a content-based recommendation engine??? Anyone still here?
+So why on earth would you use content-based approaches?
 
-## I'm Still Here!
+## When Content-Based Approaches Make Sense
 
-Content-based engine can still be really useful, I swear! Sometimes
-you *do* want to tell people about Harry Potter, or automatically
-curate the toaster-over aisle. Or, more realistically, let them know
-that if you love
+But sometimes CF isn't a viable option; let's say we want to make
+recommendations to a customer viewing a product details page, who just
+got there from a Google SERP link. We don't know anything about this
+customer, so we can't build a matrix of purchases. But we *can* use a
+content-based system to recommend similar products. In that sense,
+content-based recommenders can solve the "cold-start" problem that CF
+systems have.
+
+They can also provide a measure of automated curation when you have a
+strong indication of buying intent for a particular product (like when
+a lead comes from a Google search for a term related to that
+product). If you're interested in the
 [Nike Pro Hypercool Fitted Men's Compression Shirt](http://store.nike.com/us/en_us/pd/pro-hypercool-fitted-shirt/pid-10862654/pgid-11296413),
 you might also love the
 [Nike Pro Hypercool Printed Men's Tights](http://store.nike.com/us/en_us/pd/pro-hypercool-print-3-4-tights/pid-10862709/pgid-11296417). A
 content-based engine rocks at picking up related products like this,
 without a bunch of manual curation (those products don't appear
-together in the 'pants' category, nor in 'shirts'). Sometimes we
-conceptually really do want to show "similar products" and not "people
-who bought x also bought y"
+together in the 'pants' category, nor in 'shirts').
 
-## OK, Let's Build it with TF-IDF.
+## Let's Build it with TF-IDF.
 
-It's easy. The meat of it is
+Like many algorithms, we can use a bunch of off-the-shelf libraries to
+make life pretty easy. As I walk through the approach, bear in mind
+that the entire implementation is going to ultimately be
 [fewer than 10 lines of Python](https://github.com/groveco/content-engine/blob/master/engines.py#L50). But
 before we get to the big reveal and look at the code, let's talk
 through the approach.
 
-We're going to use a sample dataset of outdoor clothing and products
+I've provided a sample dataset of outdoor clothing and products
 from Patagonia. The data looks like this, and you can view the whole
 thing (~550kb)
 [on Github](https://github.com/groveco/content-engine/blob/master/sample-data.csv).
