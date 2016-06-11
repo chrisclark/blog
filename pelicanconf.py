@@ -53,8 +53,6 @@ NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'
 NEST_SITEMAP_MENU = [('Archives', '/archives.html'),
                      ('Categories','/categories.html'),
                      ('About', '/pages/about.html'),]
-NEST_SITEMAP_ATOM_LINK = u'Atom Feed'
-NEST_SITEMAP_RSS_LINK = u'RSS Feed'
 NEST_SOCIAL_COLUMN_TITLE = u'Social'
 NEST_LINKS_COLUMN_TITLE = u'Links'
 NEST_COPYRIGHT = '&copy; untrod.com %s<br/>' % datetime.now().strftime('%Y')
