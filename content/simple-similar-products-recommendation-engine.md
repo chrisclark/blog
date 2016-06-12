@@ -7,7 +7,7 @@ Category: Data Science
 Let's pretend we need to build a recommendation engine for an
 eCommerce web site.
 
-There are basically two types of approaches that you can take:
+There are basically two approaches you can take:
 content-based and collaborative-filtering. We'll look at some pros and
 cons of each approach, and then we'll dig into a
 [simple implementation](https://github.com/groveco/content-engine/blob/master/engines.py)
@@ -26,7 +26,7 @@ recommendation systems before, and someone put a gun to your head,
 Swordfish-style, and forced you to describe one out loud in 30
 seconds, you would probably describe a content-based system. "Uhh,
 uhh, I'd like, show a bunch of products from the same manufacturer
-that has a similar description."
+that have a similar description."
 
 You're using the actual attributes of the item itself to recommend
 similar products. This makes a ton of sense, as it's how we actually
@@ -38,16 +38,16 @@ turkey in under 30 minutes.
 ## Where Content-Based Falls Short
 
 On most eCommerce sites it's already easy enough for folks to
-[browse the toaster oven category](http://www.target.com/c/toaster-ovens-kitchen-appliances/-/N-5xtri)
-already. What we really want is a recommendation system that drives
-incremental sales (e.g. sales that would not have happened
-otherwise). If a customer is looking at the product details page for
-Harry Potter and the Chamber of Secrets, and your recommended shows
-Prisoner of Azkaban, and the customer buys it, the data scientists
-back at Random House HQ should *not* be high-fiving. It's a safe bet
-that that customer already knew there were more than two books in the
-series and would have bought Prisoner of Azkaban anyway. It was *not*
-an incremental sale.
+[browse the toaster oven category](http://www.target.com/c/toaster-ovens-kitchen-appliances/-/N-5xtri). What
+we really want is a recommendation system that drives incremental
+sales (e.g. sales that would not have happened otherwise). If a
+customer is looking at the product details page for Harry Potter and
+the Chamber of Secrets, and your recommender shows Prisoner of
+Azkaban, and the customer buys it, the data scientists back at Random
+House HQ should *not* be high-fiving. It's a safe bet that that
+customer already knew there were more than two books in the series and
+would have bought Prisoner of Azkaban anyway. It was *not* an
+incremental sale.
 
 ## How Collaborative Filtering Recommenders Work
 
