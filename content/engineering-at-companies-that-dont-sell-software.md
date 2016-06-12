@@ -1,5 +1,4 @@
 Title: Engineering at Companies That Don't Sell Software
-Status: draft
 Date: 2016-06-12 05:33
 Author: Chris Clark
 Slug: engineering-at-companies-that-dont-sell-software

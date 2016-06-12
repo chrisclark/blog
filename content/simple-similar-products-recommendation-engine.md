@@ -272,4 +272,4 @@ instructions in the
 and you'll have it running locally in no time, using the sample
 Patagonia data. The engine is ready to be deployed to Heroku as well.
 
-Suck it, collaborative filtering! #contentbasedforlife
+Take that, collaborative filtering! #contentbased

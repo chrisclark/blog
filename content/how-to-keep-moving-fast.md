@@ -1,5 +1,4 @@
 Title: How to Keep Moving Fast
-Status: draft
 Date: 2016-06-12 05:33
 Author: Chris Clark
 Slug: How to Keep Moving Fast

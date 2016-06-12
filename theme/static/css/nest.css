@@ -20,9 +20,9 @@
 /* Default styling */
 body {
     font-family: "Open Sans", sans-serif;
-/*    font-size: 15px;*/
+    font-size: 16px;
     color: #4b505a;
-    background-color: #f5f5f5;
+    background-color: #f8f7f5;
     line-height: 24px;
     -webkit-font-smoothing:antialiased;
     text-rendering: optimizeLegibility;
@@ -33,9 +33,6 @@ th, td {
 }
 
 /* Links */
-/* eb2344*/
-/* 009bff*/
-/* CE2323 */
 a, a:visited { 
     color: #eb2344; 
     text-decoration: none; 
@@ -49,7 +46,6 @@ a:hover, a:active{
 
 a.navigate{
     background-color: rgba(0,0,0,0.5);
-    font-size: 12px;
     padding-left: 4px;
     padding-right: 4px;
     min-width: 100px;
@@ -64,8 +60,7 @@ a.navigate:hover{
     opacity: 0.8;
 }
 
-a.more{
-    font-size: 12px;
+a.more {
     margin-top: 30px;
 }
 
@@ -75,9 +70,9 @@ pre, code {
     background: #f8f7fa;
     padding: 34px;
     font-family: Consolas, monaco, monospace;
+    font-size: 16px;
     border-radius: 0px;
     color: #4b505a;
-    margin: 34px 0;
     font-weight: 700; 
 }
 
@@ -85,16 +80,11 @@ code {
     padding: 3px 6px;
 }
 
-.linenos pre{
+.linenos pre {
 	border:none;
-	margin-top:20px;
-	margin-bottom:20px;
-	padding-top:20px;
-	padding-bottom:20px;
-	padding-left:20px;
-	padding-right:0px;
+    margin: 2rem 0;
+    padding: 2rem;
 	background:#333;
-	font-size:14px;
 	font-weight:400;
 	font-family:Consolas,monaco,monospace;
 	color:#fff
@@ -102,14 +92,9 @@ code {
 
 .highlight pre {
   border:none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin: 2rem 0;
+  padding: 2rem;
   background:#333; 
-  font-size: 14px;
   font-weight: 400;
   font-family: Consolas, monaco, monospace;
   color: #fff;
@@ -179,7 +164,6 @@ h4:after {
     height:100px;
     line-height:100px;
     color:#fff;
-    font-size:12px;
     font-weight:600;
 }
 
@@ -212,7 +196,6 @@ h4:after {
 }
 
 .header-logo {
-    font-size:15px;
     font-weight:600;
     text-transform: uppercase;
 }
@@ -247,7 +230,6 @@ h4:after {
 
 .header-date {
     margin-top: 15px;
-    font-size: 12px;
     color: #fff;
     opacity: 0.8;
 
@@ -267,7 +249,6 @@ h4:after {
 }
 
 .header-subtitle {
-    font-size: 14px;
     line-height: 24px;
     color: #fff;
     font-weight: 300;
@@ -291,13 +272,11 @@ h4:after {
 
 /* Content */
 .content{
-    background-color: #fff;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     border-left: 1px solid rgba(0,0,0,0.1);
-    border-right: 1px solid rgba(0,0,0,0.1);
 }
 
 .content img{
@@ -313,31 +292,20 @@ h4:after {
 }
 
 .content.highlight pre {
-    padding-left: -40px;
-    padding-right: -40px;
-}
-
-.content dt{
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 24px;    
+    padding-left: -2rem;
+    padding-right: -2rem;
 }
 
 /* Navigation */
 .navigation{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 2rem 0;
     padding: 0;
 }
 .navigation2{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 2rem 0;
 }
 
 /* Menu */
-.menu{
-  font-size: 14px;
-}
 
 .menu h4{
     margin-top: 0px;
@@ -348,16 +316,13 @@ h4:after {
   color: #fff;
   padding:0px;
   background-color: #eb2344;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px 3px;
   opacity: 0.6;
 }
 
 /* Article */
 .article-container{
-    margin-top: 40px; 
+    margin-top: 2rem; 
 }
 
 .article {
@@ -439,7 +404,7 @@ blockquote{
 
 /* Gradients */
 .gradient {
-    background-color: #356689;
+    background-color: #577c84;
 }
 
 /* Footer */
