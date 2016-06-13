@@ -1,5 +1,6 @@
 # Writing blog posts
 
+0. workon blog (or if virtualenv doesn't exist, pip install -r requirements.txt)
 1. Create a new .md file in /content/
 2. Run ``fab dev`` to build the site, and run an auto-reloading webserver.
 3. When you're ready, run ``fab publish`` to publish to s3

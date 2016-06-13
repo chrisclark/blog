@@ -271,10 +271,8 @@ h4:after {
 
 /* Content */
 .content{
-    margin-top: 4rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
     border-left: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -356,15 +354,6 @@ h4:after {
     margin-bottom: 40px; 
 }
 
-.archive {
-    font-size: 14px;
-    line-height: 24px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-top: 1px solid rgba(0,0,0,0.1);
-}
-
 .archive h2{
     margin-top: 15px;
     margin-bottom: 20px;  
@@ -376,7 +365,7 @@ h4:after {
 }
 
 .archive dt{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;    
 }

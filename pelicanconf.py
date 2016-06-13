@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime
 
 AUTHOR = u'Chris Clark'
-SITENAME = u'blog.untrod.com'
+SITENAME = u'untrod.com'
 SITEURL = ''
 
 PATH = 'content'

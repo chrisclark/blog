@@ -77,11 +77,12 @@ pieces and came up with the script below:
       return timeStamp;
     }
 
-If you save this as "Quick
-save to jpg.jsx" to \\Program Files\\Adobe\\Adobe Photoshop
-CS5.1\\Presets\\Scripts, you will then be able to access the script by
-going to File-&gt;Scripts. I went one step further and recorded an
-action of the script firing and bound it to my f2 key.
+If you save this as "Quick save to jpg.jsx" to ``\\Program
+Files\\Adobe\\Adobe Photoshop CS5.1\\Presets\\Scripts`` (or
+``/Applications/Adobe Photoshop CS6/Presets/Scripts`` on Mac OS X), you
+will then be able to access the script by going to File-&gt;Scripts. I
+went one step further and recorded an action of the script firing and
+bound it to my ``f2`` key.
   
-Now, whenever I'm in Photoshop, I can just hit f2 and get a .jpg image
+Now, whenever I'm in Photoshop, I can just hit ``f2`` and get a .jpg image
 saved to my current directory, with no dialogs or anything! Neat!
