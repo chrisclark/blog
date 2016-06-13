@@ -372,8 +372,10 @@ h4:after {
 
 /* Styling */
 blockquote{
-    font-size: 15px;
     opacity: 0.75;
+    font-size: 16px;
+    border-left: none;
+    font-style: italic;
 }
 
 /* Comments */
@@ -412,8 +414,7 @@ blockquote{
 }
 
 .footer-container{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 2rem 0;
 }
 
 .footer a{
