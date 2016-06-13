@@ -36,16 +36,16 @@ pieces and came up with the script below:
       
       var docName = thedoc.name;
       if (docName.indexOf(".") != -1) {
-        var basename = docName.match(/(.*)\.[\^\.]+\$/)[1]
+        var basename = docName.match(/(.*)\.[^\.]+$/)[1];
       } else {
-        var basename = docName
+        var basename = docName;
       }
       
       //getting the location, if unsaved save to desktop;
       try {
-        var docPath = thedoc.path
+        var docPath = thedoc.path;
       } catch (e) {
-        var docPath = "\~/Desktop"
+        var docPath = "~/Desktop";
       }
       
       var jpegOptions = new JPEGSaveOptions();
