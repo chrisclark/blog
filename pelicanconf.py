@@ -8,6 +8,7 @@ SITENAME = u'untrod.com'
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['files','images']
 
 TIMEZONE = 'America/Los_Angeles'
 
@@ -51,8 +52,8 @@ NEST_INDEX_HEADER_SUBTITLE = u'Comments on software, technology, and teams, from
 NEST_INDEX_CONTENT_TITLE = u'Posts'
 # footer.html
 NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'
-NEST_SITEMAP_MENU = [('Archives', '/archives.html'),
-                     ('Categories','/categories.html'),
+NEST_SITEMAP_MENU = [('Categories','/categories.html'),
+                     ('Archives', '/archives.html'),
                      ('About', '/pages/about.html'),]
 NEST_SOCIAL_COLUMN_TITLE = u'Social'
 NEST_LINKS_COLUMN_TITLE = u'Links'
@@ -71,7 +72,7 @@ NEST_ARTICLE_HEADER_IN = u'in'
 # categories.html
 NEST_CATEGORIES_HEAD_TITLE = u'Categories'
 NEST_CATEGORIES_HEAD_DESCRIPTION = u'Archives listed by category'
-NEST_CATEGORIES_HEADER_TITLE = u'Untrod: Categories'
+NEST_CATEGORIES_HEADER_TITLE = u'Categories'
 NEST_CATEGORIES_HEADER_SUBTITLE = u''
 # category.html
 NEST_CATEGORY_HEAD_TITLE = u'Category Archive'

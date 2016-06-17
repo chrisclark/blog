@@ -14,7 +14,7 @@ using GPG. By the time you're done, you might actually find the GPG
 manual pages for [simple
 tasks](http://gnupg.org/gph/en/manual/x135.html) illuminating instead of
 totally incoherent.
-  
+
 Really explaining how public key encryption works or why you'd want to
 use it is not the goal of this post by a long shot - this is just a
 simple block-and-tackle tutorial on how to use the stuff. If you want an
