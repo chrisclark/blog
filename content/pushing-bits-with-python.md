@@ -91,6 +91,7 @@ Problem solved!
 
 One last trick; using the built-in binascii library, we can convert ascii to bits and back.
 
+    :::python
     # The built-in binascii library can convert binary to bits
     hex = binascii.hexlify('foobar')
     bits = BitArray(hex=hex)
@@ -102,5 +103,6 @@ We get:
 
 ...which we can then convert back to an ASCII string:
 
+    :::python
     print binascii.unhexlify(bits.hex)
     > foobar
