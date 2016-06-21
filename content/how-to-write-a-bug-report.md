@@ -1,6 +1,6 @@
 Title: How to Write a Bug Report
 Date: 2013-07-11 00:32
-Author: Chris Clark
+Author: Chris
 Slug: how-to-write-bug-report
 Category: Engineering Management
 

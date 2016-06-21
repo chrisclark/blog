@@ -1,6 +1,6 @@
 Title: Refactoring for Testability: A Real World Example in Python/Django
 Date: 2014-04-21 22:25
-Author: Chris Clark
+Author: Chris
 Slug: refactoring-for-testability-quick
 Category: code & tutorials
 

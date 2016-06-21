@@ -47,8 +47,8 @@ DEFAULT_CATEGORY = 'Everything Else'
 # header & index
 NEST_HEADER_LOGO = None
 NEST_INDEX_HEAD_TITLE = u'untrod.com'
-NEST_INDEX_HEADER_TITLE = u'Untrod Software'
-NEST_INDEX_HEADER_SUBTITLE = u'Comments on software, technology, and teams, from Chris Clark.'
+NEST_INDEX_HEADER_TITLE = u'<small>a blog by</small></br/><a href="pages/about.html">CHRIS CLARK</a>'
+NEST_INDEX_HEADER_SUBTITLE = u'Comments on software, technology, and teams.'
 NEST_INDEX_CONTENT_TITLE = u'Posts'
 # footer.html
 NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'

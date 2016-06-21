@@ -1,10 +1,8 @@
 Title: How Celery Chord Synchronization Works
 Date: 2015-03-26 10:20
-Authors: Chris Clark
+Authors: Chris
 Slug: how-celery-chord-synchronization-works
 Category: Code & Tutorials
-
-# How Celery Chord Synchronization Works
 
 Celery is a powerful tool for managing asynchronous tasks in
 Python. The basic model is synchronous Python code pushes a task

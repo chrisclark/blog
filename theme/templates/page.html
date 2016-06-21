@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ page.title }} - {{ super() }}{% endblock title %}
 {% block description %}{{ page.content|striptags|truncate(200)|escape }}{% endblock description %}
 
 {% block headerstyle %}
     {% if page.illustration %}
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ page.illustration }}'); background-position: center; background-color: #333333; background-size: contain; background-repeat: no-repeat;">
+    <div class="header-container header-page" style="background-image: url('{{ SITEURL }}/images/{{ page.illustration }}');">
     {% elif NEST_HEADER_IMAGES %}
     <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
     {% else %}

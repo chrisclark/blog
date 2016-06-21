@@ -1,7 +1,8 @@
 Title: Pushing Bits with Python
 Date: 2016-06-17
-Author: Chris Clark
+Author: Chris
 Slug: pushing-bits-with-python
+Category: code & tutorials
 
 Ever wanted to directly manipulate binary data? Perhaps not, given that it's somewhat of a specialty need, but should that need arise, Python has you covered! The awesome [bitstring](http://pythonhosted.org/bitstring/) module makes it super simple take raw data in whatever form you have it (bits, hex, octal, a file) and manipulate the raw bits. Be sure to ``pip install bitstring``. Away we go!
 
