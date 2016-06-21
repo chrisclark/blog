@@ -20,11 +20,10 @@
 /* Default styling */
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 16px;
     color: #4b505a;
     background-color: #f8f7f5;
+    font-size: 16px;
     line-height: 24px;
-    -webkit-font-smoothing:antialiased;
     text-rendering: optimizeLegibility;
 }
 
@@ -68,8 +67,7 @@ a.more {
 pre, code {
     background: #f8f7fa;
     padding: 34px;
-    font-family: Consolas, monaco, monospace;
-    font-size: 16px;
+    font-family: 'Source Code Pro', Consolas, monaco, monospace;
     border-radius: 0px;
     color: #4b505a;
     font-weight: 700; 
@@ -79,24 +77,13 @@ code {
     padding: 3px 6px;
 }
 
-.linenos pre {
+.linenos pre, .highlight pre {
 	border:none;
-    margin: 2rem 0;
-    padding: 2rem;
+    margin: 24px 0;
+    padding: 24px;
 	background:#333;
 	font-weight:400;
-	font-family:Consolas,monaco,monospace;
 	color:#fff
-}
-
-.highlight pre {
-  border:none;
-  margin: 2rem 0;
-  padding: 2rem;
-  background:#333; 
-  font-weight: 400;
-  font-family: Consolas, monaco, monospace;
-  color: #fff;
 }
 
 /* Titles */
@@ -271,8 +258,8 @@ h4:after {
 
 /* Content */
 .content{
-    margin: 4rem auto;
-    padding: 0 2rem;
+    margin: 40px auto;
+    padding: 0 16px;
     border-left: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -284,22 +271,22 @@ h4:after {
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .content.highlight pre {
-    padding-left: -2rem;
-    padding-right: -2rem;
+    padding-left: -24px;
+    padding-right: -24px;
 }
 
 /* Navigation */
 .navigation{
-    margin: 2rem 0;
+    margin: 24px 0;
     padding: 0;
 }
 .navigation2{
-    margin: 2rem 0;
+    margin: 24px 0;
 }
 
 /* Menu */
@@ -319,11 +306,11 @@ h4:after {
 
 /* Article */
 .article-container{
-    margin-top: 2rem; 
+    margin-top: 24px; 
 }
 
 .article {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     margin-bottom: 20px;
     padding-top: 20px;
@@ -394,7 +381,8 @@ blockquote{
 
 /* Gradients */
 .gradient {
-    background-color: #577c84;
+    background-color: #1068c1;
+    -webkit-font-smoothing:antialiased;
 }
 
 /* Footer */
@@ -404,6 +392,7 @@ blockquote{
     font-weight: 300;
     text-align: left;
     color: #fff;
+    -webkit-font-smoothing:antialiased;
 }
 
 .footer-title {
@@ -414,7 +403,7 @@ blockquote{
 }
 
 .footer-container{
-    padding: 2rem 0;
+    padding: 24px 0;
 }
 
 .footer a{

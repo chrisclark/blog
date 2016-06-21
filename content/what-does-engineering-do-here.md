@@ -22,13 +22,13 @@ Startups are defined by growth. And it's pretty obvioust that, to be profitable,
 
 When you're shipping physical product though, there are a lot more parts of the business that, left to their own devices, naturally want to creep headcount in lockstep with the size of the business. It's hard to move twice as many boxes through the warehouse without twice as many people doing it. Or service twice as many customer questions without twice the number of support reps.
 
-Since day 1 we've operated in a capital-constrained environment, so throwing bodies at problems has never been an option. Better systems and better tools are the only way to do more with the same. Every time we hire a new support rep, we measure our ratio of customers:reps and make sure that it is signficantly higher than it was when we made the last hire. We started off with one rep able to support about 5,000 customers, and now a single rep supports upwards of 20,000. And we've done while *increasing* the average number of touches per customer. We're not hiding our contact information.
+Since day 1 we've operated in a capital-constrained environment, so throwing bodies at problems has never been an option. Better systems and better tools are the only way to do more with the same. Every time we hire a new support rep, we measure our ratio of customers:reps and make sure that it is signficantly higher than it was when we made the last hire. We started off with one rep able to support about 5,000 customers, and now a single rep supports upwards of 20,000. And we've done while *increasing* the average number of touches per customer, not by hiding our contact page.
 
 # 2. Bear 100% of the Technical Risk
 
 The rest of the business has enough to worry about without fearing that the website might go down. Technical risk always exists, but we aim to contain it completely within the engineering organization. There are parts of the business, like marketing, and merchandising, and design, and white-label product development, that need to constantly be pushing the boundaries and charting new territories. Then there are areas like operations, engineering, and customer support, that need to be excellent day in and day out, and meet their service level agreements every time.
 
-These are dial-tone services. When you pick up the phone, no one at AT&T headquarters is scrambling to make sure your phone line is working. You just get a dial tone and it works, every time. When our marketing team wants to run a campaign, they don't spend time wondering if operations can ship the boxes, or whether the website can handle the traffic. They know that when they pick up the phone, the dial tone will be there.
+The latter are dial-tone services. When you pick up the phone, no one at AT&T headquarters is scrambling to make sure your phone line is working. You just get a dial tone and it works, every time. When our marketing team wants to run a campaign, they don't spend time wondering if operations can ship the boxes, or whether the website can handle the traffic. They know that when they pick up the phone, the dial tone will be there.
 
 # 3. Say 'Yes' to the Rest of the Organization
 
@@ -36,13 +36,8 @@ At the risk of making a blanket statement, engineering always seems to be the lo
 
 Too often other departments are forced to go around engineering. At Grove, the engineering team has the specific goal of saying "yes" to the rest of the company; for being an accelerant, not a hindrance, to other departments' ability to move fast. To succeed as a start-up you need to be opportunistic, and you need to be fast. Last minute partnership opportunity that requires a new integration? Don't worry, we'll get it done. A chance to run a timely promotion, but the site doesn't support that discounting scheme? Let's make it happen.
 
+This aggressive stance affects how we go about building our applications. Things needs to be decoupled and flexible; quick-n-dirty hacks sometimes happen, but we work hard to isolate them to one function or class so they don't pollute the codebase. We make clear to the rest of the organization what kind of trade-offs are being made in order to say 'yes', so we have the space to clean things up, refactor, and improve when we're not under the gun.
 
-## When do we build?
-  1. When our data distinguishes us from the rest of the industry
-     - Unique recurring model means we do our own forecasting
-     - Uniquely small # of SKUs and SKU overlap means we build out own recommendation engine
-     - Our fulfillment is standard; so we use off the shelf warehouse & order mgmt software
-  2. Where we need to be uniquely differentiated
+I suspect the yes-man approach sounds scary to a lot of engineering departments, but it can really work. The secret, of course, is that the only thing that permits speed, is quality. Without a great automated test suite, how can you refactor or make changes quickly and with confidence? Without the ability to deploy into production many times a day, how can you respond in real-time when marketing campaigns are running? Without well-factored, simple code, how can you make changes fast enough to make a difference?
 
-## How are we structured to meet the goals?
-  1. ENG is responsible for tooling within ops, CS, inventory, and marketing. ENG provides service to these orgs, not exclusively product focused, and does not rely on IT.
+Speed and quality are two sides of the same coin; not competing priorities. Speed, quality, and cost -- it turns out you can't actually pick speed without also picking quality.
