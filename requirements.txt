@@ -25,3 +25,4 @@ singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.3
 Unidecode==0.4.19
+requests==2.10.0
