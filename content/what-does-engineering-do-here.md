@@ -1,20 +1,27 @@
 Title: What does engineering do here?
-Date: 2016-06-12 05:33
+Date: 2016-06-23
 Author: Chris Clark
 Slug: what-does-engineering-do-here
 Category: Engineering Management
-Status: draft
+Status: Draft
 
-My company, Grove Collaborative, is an online brand and retailer for household consumables. We sell physical products on the internet, that get shipped from our warehouses to our customers.
+My company, [Grove Collaborative](https://www.grove.co), is an online brand and retailer for household consumables. We sell physical products on the internet, that get shipped from our warehouses to our customers.
 
-We do not sell technology. We sell soap and toilet paper. We are a Type B company, and we're a start-up. So what the heck do we do? Well, we build the website. We build internal tools; customer service tools; inventory forecasting tools. We help other groups select and implement systems. We decide when to buy and when to build. We convince people they do in fact want to use a keyboard and monitor with their laptop because ergonomics are important. We use technology to help further the business.
+We do not sell technology. We sell soap and toilet paper. In the very early days (we've been around for 3 years now), we self-identified as a technology company. It felt like, in Silicon Valley, you have to be a tech company. Over time though, it became apparent that we're first and foremore a brand (we make our own products), and then a retailer, not a software company. We are a Type B company
 
-But we need organizing principles. I love this quote from chess grandmaster Savielly Tartakower:
+Given that we don't directly monetize our technology, our engineering strategy looks a little different than a software company.
 
-> Tactics is what you do when there is something to do; strategy is
-> what you do when there is nothing to do.
+What engineering *does* is pretty much what you'd expect:
 
-We need strategy. At Grove, the technology group has 3 strategic goals.
+- We building and maintain the website.
+- We create internal tools; for customer service tools, for inventory forecasting, for operations.
+- We help teams select and implement software systems.
+
+But that's a list of tasks, not a strategy for what part technology plays in the business. When I try to develop a strategy, I always return to this quote from chess grandmaster Savielly Tartakower:
+
+> Tactics are what you do when there is something to do; strategy is what you do when there is nothing to do.
+
+At Grove, our engineering team has 3 strategic goals.
 
 # 1. Keep Headcount Growth Sublinear to Revenue Growth
 
@@ -40,4 +47,4 @@ This aggressive stance affects how we go about building our applications. Things
 
 I suspect the yes-man approach sounds scary to a lot of engineering departments, but it can really work. The secret, of course, is that the only thing that permits speed, is quality. Without a great automated test suite, how can you refactor or make changes quickly and with confidence? Without the ability to deploy into production many times a day, how can you respond in real-time when marketing campaigns are running? Without well-factored, simple code, how can you make changes fast enough to make a difference?
 
-Speed and quality are two sides of the same coin; not competing priorities. Speed, quality, and cost -- it turns out you can't actually pick speed without also picking quality.
+Speed and quality are two sides of the same coin; not competing priorities. In the long term, it turns out you can't actually pick speed without also picking quality.
