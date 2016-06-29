@@ -1,5 +1,5 @@
 Title: Software at Companies that Don't Sell Software
-Date: 2016-06-22
+Date: 2016-06-29
 Author: Chris
 Slug: software-at-companies-that-dont-sell-software
 Category: Engineering Management
