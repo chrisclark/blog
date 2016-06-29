@@ -1,12 +1,11 @@
 Title: Software at Companies that Don't Sell Software
 Date: 2016-06-22
-Author: Chris Clark
+Author: Chris
 Slug: software-at-companies-that-dont-sell-software
 Category: Engineering Management
-Status: Draft
 
-If you're a software professional, there are basically two types of
-companies you might work for; those whose products are fudamentally
+If you're a software professional, there are two types of
+companies you might work for; those whose products are fundamentally
 software (they make money directly from technology), and those that
 make their money some other way, but rely on software. Let's call the
 first Type A, and the second Type B<sup>[1](#footnote1)</sup>.
@@ -26,102 +25,106 @@ These guys are enabled by technology, but don't make money from it
 directly.
 
 - FedEx (fundamentally a logistics company)
-- Amazon.com (the retailer; not AWS)
+- WalMart (big website, complex internal systems...but a retailer)
 - Wells Fargo (and other financial institutions)
+
+## Biased
+
+Early in my career, one of the things I looked for on resumes was
+experience at a Type A company. I believed that the best engineers
+would gravitate away from Type B companies. I thought Type A employees
+were more likely to be at the top of the talent heap, and more likely
+to be current with the tools and practices of the trade.
+
+But in the intervening years, two things have become apparent:
+
+1. Where there is a big, successful business, there are great
+   people<sup>[2](#footnote2)</sup>.
+2. Engineers with Type B experience are more likely to play well with
+   others.
+
+I can't stand engineering groups with superior attitudes, that aren't
+supportive of the rest of the organization. A little competition
+between departments is healthy, but if we're all building bicycles for
+the mind, then fundamentally our job is to augment others. It's a
+service job -- we build tools. A humble, cooperative attitude is
+invaluable.
+
+There are a few reasons I think Type B companies do a better job
+fostering this attitude.
 
 ## Software Engineer at a Type A company
 
 **Your job is to build awesome technology that customers will pay for.**
 
+**You are close to the money**
+
 It's straightforward to be a technologist at a Type A company. The
 software you create is very closely tied to revenue, which is
 ultimately what drives business. The closer you are to the money, the
-closer you are to the beating heart of any company.
+closer you are to the beating heart of a company.
 
-Company cultures vary widely, and there are certainly Type A companies
-led by sales and marketing (Oracle), and type A companies led by
-engineering (Google). But regardless of the culture, engineers are
-highly valued because they are ultimately responsible for revenue
-generation. On the income statement, engineering & R&D are a cost
+On the income statement, engineering & R&D are a cost
 centers<sup>[2](#footnote2)</sup>, but they are also the golden
 goose that made the business possible in the first place.
+
+In the words of one engineer I worked with "If it doesn't come out of
+these fingers, it doesn't happen."
 
 ## Software Engineer at a Type B company
 
 **Your job is to support the business goals of the organization.**
 
-There's a spectrum here, both in terms of how crucial technology is to
-the business, and the culture of the company.
+**You are further from the money**
 
-On one end of the spectrum, we have Type B companies like Amazon (the
-retailer) that make their money by selling and shipping physical
-products, but have a very clear and important dependency on their
-retail website, and a culture steeped in engineering. If the website
-doesn't carefully meet consumer expectations, sales drop. There is a
-true customer-facing component to the software, even if it's not being
-monetized directly.
+In a Type B company, you're a true cost center, and perhaps viewed
+with a bit of skepticism. Is all this software really necessary?
 
-On the other end, we have banks. There's no question that banks run on
-software, but the vast majority of it is internal and far from the
-money. The quality of a bank's customer-facing website, ATM machines,
-etc, has much less bearing on the success of the bank.
-Correspondingly, engineers are lower on the cultural totem pole than
-revenue-generating professionals.
-
-## Further From the Money
+- Your work is more likely to be internal, rather than
+customer-facing.
+- It's more likely to be an auxiliary function, as
+opposed to a market differentiator
+    - Even at tech-heavy Type B companies this is
+      true<sup>[3](#footnote3</sup>; Amazon's differentiator is not
+      the quality of their website. It's their selection, pricing
+      power, and market position.
+- When it's not a differentiator, every project is subject to a
+  build-or-buy decision.
 
 Money is the central pillar of business, and the further from it you
-are, the less influence you generally have.
-
-In a Type B company, you're also a cost center, and perhaps one that's
-viewed with a bit of skepticism. Is all this software really
-necessary? Your work is more likely to be internal, rather than
-customer-facing, and less glamorous IT tasks may be grouped with
-engineering. It's more likely to be an auxilliary function, as opposed
-to a core competency that differentiates the company, and thus more
-likely to be outsourced (to a Type A company), or replaced with an
-off-the-shelf solution.
+are, the less influence you have.
 
 ## Closer to the Customer
 
 But working for a Type B company can also be a heck of a lot of
 fun. Your customers are often the folks sitting down the hall from
-you. Product feedback is instant. Your users have less variance in
-terms of training and environment, and everyone shares a lot of tribal
+you. Product feedback is instant. You might get a literal pat on the
+back for a job well done. Your users have less variance in terms of
+training and environment, and everyone shares a lot of tribal
 knowledge.
 
 Good engineering is 20% building product right, and 80% building right
-product. With the tight feedback loop you get developing for customers
-down the hall, you're much more likely to get it right. And with a
-forgiving customer base, often running on the same infrastructure, you
-can iterate quickly. You can literally get a pat on the back for good
-work.
+product. With the tight feedback loop you get developing internally,
+you're much more likely to get it right. And with a forgiving customer
+base, often running on the same infrastructure, you can iterate
+quickly.
 
-## A Healthier Mindset
+## A Healthier Mind-set
 
-Early in my career, one of the things I looked for on resumes was
-experience at a Type A company. I believed that the best engineers
-would gravitate away from Type B companies, and that Type A employees
-were more likely to be up to speed on high-quality development
-practices.
+If I never overhear the following at my company, we're doing good
+work:
 
-But in the intervening years, two things have become readily apparent:
+- "I can't get cycles from the engineering group."
+- "Engineering doesn't think it's a priority."
+- "I'm nervous to ask because I don't want to distract anyone on the
+  engineering team."
 
-1. That's just not true. There are great people at any big, successful business.
-2. Employees from Type B companies are often better collaborators.
-
-Everyone has worked in or with a company that has an ivory-tower
-engineering department. The common refrain is that no one can get
-cycles from the engineering group; engineering doesn't think it's a
-priority; engineers don't want to be distracted. Whether engineering
-is at the top or the bottom of the cultural hierarchy, technology
-exists to improve the lives of its users. Engineering is a functional
-group like marketing, or sales, or operations. These teams need to
-work alongside each other, not in a hierarchical way, but as
-peers. The cultures in Type B companies are more liekly to foster that
-mindset.
-
-## 
+Whether engineering is at the top or the bottom of the cultural
+hierarchy, technology exists to improve the lives of its
+users. Engineering is a functional group like marketing, or sales, or
+operations. These teams need to work alongside each other as
+peers. The cultures in Type B companies are more likely to foster that
+mind set.
 
 ### Notes
 
@@ -130,6 +133,13 @@ software companies. Boeing, for instance, clearly makes money directly
 from their technology products...which are not strictly software
 products. I would describe them more as giant flying tubes of metal.
 
-<a name="footnote2">2</a>: Except in the case of services companies
-with their "billable resources".
+<a name="footnote2">2</a>: I do still believe that bad engineers are
+more likely to be hiding out at Type B companies, but that has no
+bearing if you are trying to recruit top performers. You'll spot them
+right away. The difference between MIT and Georgia Tech is not at the
+top of the class; both have some of the world's best. But at the
+bottom of the class, there's more room to hide in a larger, less
+focused organization.
 
+<a name="footnote3">3</a>: Excluding Amazon Web Services, of
+course. I'm talking about Amazon the retailer.

@@ -1,10 +1,10 @@
 Title: Trello vs. Asana
 Date: 2016-06-23
-Author: Chris Clark
+Author: Chris
 Slug: trello-vs-asana
 Category: Engineering Management
 
-In two totally different companies over the past 4 years, across very
+In two totally different companies over the past 4 years, across
 different personalities, teams, and processes, I've seen Asana
 rejected no fewer than a dozen times in favor of Trello, in spite of
 multiple executive mandates to use Asana.

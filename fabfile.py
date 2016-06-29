@@ -74,6 +74,7 @@ def clear_cache():
 
 def publish():
     local('make s3_upload')
+    print "clearing cache..."
     clear_cache()
 
 
