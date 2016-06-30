@@ -39,3 +39,16 @@ So that's what I tell new engineers: When you worry you might *not*
 figure it out? That you weren't cut out for this? Been there. Been
 there again. You'll figure it out, I promise. Just barrel through and
 keep going.
+
+#### The Second Thing I Tell New Engineers
+
+The second thing I tell new engineers (specifically, engineers just
+out of college) is:
+
+Things are going to happen on a very different
+time scale.
+
+In college, a tough professor might give you a huge
+assignment that might take you 20 hours. What a jerk! In the
+full-time-work world, that's a project that's done by
+Thursday.
