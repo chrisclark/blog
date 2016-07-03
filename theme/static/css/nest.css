@@ -211,9 +211,12 @@ h4:after {
 
 .header-page {
     background-position: center;
-    background-color: #333333;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.header-about {
+    background-color: #333333 !important;
 }
 
 .header-title {
