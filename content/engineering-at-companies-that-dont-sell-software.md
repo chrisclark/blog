@@ -39,7 +39,7 @@ to be current with the tools and practices of the trade.
 But in the intervening years, two things have become apparent:
 
 1. Where there is a big, successful business, there are great
-   people<sup>[2](#footnote2)</sup>.
+   people<sup>[2](#footnote2)</sup>, and great systems<sup>[3](#footnote3)</sup>.
 2. Engineers with Type B experience are more likely to play well with
    others.
 
@@ -65,7 +65,7 @@ ultimately what drives business. The closer you are to the money, the
 closer you are to the beating heart of a company.
 
 On the income statement, engineering & R&D are a cost
-centers<sup>[2](#footnote2)</sup>, but they are also the golden
+centers<sup>[4](#footnote4)</sup>, but they are also the golden
 goose that made the business possible in the first place.
 
 In the words of one engineer I worked with "If it doesn't come out of
@@ -136,10 +136,16 @@ products. I would describe them more as giant flying tubes of metal.
 <a name="footnote2">2</a>: I do still believe that bad engineers are
 more likely to be hiding out at Type B companies, but that has no
 bearing if you are trying to recruit top performers. You'll spot them
-right away. The difference between MIT and Georgia Tech is not at the
+right away. The difference between MIT and Virginia Polytech is not at the
 top of the class; both have some of the world's best. But at the
 bottom of the class, there's more room to hide in a larger, less
 focused organization.
 
-<a name="footnote3">3</a>: Excluding Amazon Web Services, of
+<a name="footnote3">3</a>: Popular, influential open-source projects
+came out of Type B companies all the time. The New York Times alone
+produces incredible open source projects, from D3 to their Objective-C
+Style Guide, to Gizmo. And don't forget that Django was created by the
+Lawrence Journal-World newspaper.
+
+<a name="footnote4">4</a>: Excluding Amazon Web Services, of
 course. I'm talking about Amazon the retailer.
