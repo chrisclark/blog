@@ -277,7 +277,6 @@ h4:after {
 .content{
     margin: 40px auto;
     padding: 0 16px;
-    border-left: 1px solid rgba(0,0,0,0.1);
 }
 
 .content img{
@@ -380,6 +379,9 @@ blockquote{
     font-size: 16px;
     border-left: none;
     font-style: italic;
+    border-left: 3px solid #9CC4E4;
+    padding: 0px 20px;
+    margin: 16px 0 16px 16px;
 }
 
 /* Comments */

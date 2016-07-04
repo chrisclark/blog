@@ -19,12 +19,12 @@ Illustration: projects.png
 </div>
 <div class="row row-eq-height">
   <div class="col-xs-12 col-md-6" style="height: 300px;">
-    <h3>Django Spinklers</h3>
+    <h3>Django Sprinklers</h3>
     <a href="https://github.com/groveco/django-sprinklers">
       <img class="pure-img" src="//placehold.it/1440x960/9CC4E4/ffffff?text=Sprinklers" alt="" title="">
     </a>
     <p>
-    Django Sprinklers imposes structure on Celery jobs that perform
+    Django Sprinklers imposes structure on <a href="http://www.celeryproject.org/">Celery</a> jobs that perform
     asynchronous processing of Django models. Using this
     wrapper you get bulletproof async tasks, and consistent logging.
     Avoid fiddly bits of Celery code and focus on writing and testing
@@ -52,7 +52,7 @@ Illustration: projects.png
       <img class="pure-img" src="//placehold.it/1440x960/F26C4F/ffffff?text=CIO+CLI" alt="" title="">
     </a>
     <p>
-    A Clojure CLI application to bulk upset records into customer.io.
+    A Clojure CLI application to bulk upset records into <a href="http://www.customer.io">customer.io</a>.
     </p>
   </div>
     <div class="col-xs-12 col-md-6">
@@ -61,12 +61,12 @@ Illustration: projects.png
       <img class="pure-img" src="//placehold.it/1440x960/3A89C9/fffff?text=Retentionizer" alt="" title="">
     </a>
     <p>
-    In conjuntion with David Chuszicki. Using the techniques in
+    In conjunction with <a href="http://www.davidchudzicki.com/">David Chudzicki</a>. Using the techniques in
     <a href="https://marketing.wharton.upenn.edu/files/?whdmsaction=public:main.file&fileID=327">
     How to Project Customer Retention</a> by Fader & Hardie (2006)
     , & an implementation of those techniques by <a href="https://github.com/jdmaturen">
-    JD Maturen</a>, Retentionizer will visualzie projected retention rates for each
-    cohort and calculate the LTV.
+    JD Maturen</a>, Retentionizer will visualize projected retention rates for each
+    cohort and calculate the LTV. <a href="http://retentionizer.herokuapp.com">Try it!</a>
     </p>
   </div>
 </div>
