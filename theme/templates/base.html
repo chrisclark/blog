@@ -12,15 +12,10 @@
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
         <!-- Stylesheets -->
-        {% if NEST_CSS_MINIFY %}
-        <link href="{{ SITEURL }}/theme/css/all.min.css" rel="stylesheet">new
-        {% else %}
-        <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/css/fonts.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/css/nest.css" rel="stylesheet">
-        <link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet">
-        {% endif %}
-        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+        {% assets filters="scss,cssmin", output="css/all.css", "css/bootstrap.scss", "css/fonts.scss", "css/theme.scss", "css/pygment.scss" %}
+          <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+        {% endassets %}
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
         <!-- /Stylesheets -->
 
         <!-- RSS Feeds -->

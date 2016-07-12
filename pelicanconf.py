@@ -14,6 +14,11 @@ TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = u'en'
 
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['assets']
+
+ASSET_DEBUG = True
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None

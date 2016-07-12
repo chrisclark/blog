@@ -4,6 +4,10 @@ Author: Chris
 Slug: juggernaut-in-windows
 Category: Code & Tutorials
 
+**Note**: This is an old post, and no longer relevant as Juggernaut is
+no longer a thing. Just use
+[socket.io](https://github.com/socketio/socket.io/) directly.
+
 I've fallen in love with
 [Juggernaut](https://github.com/maccman/juggernaut).
 
