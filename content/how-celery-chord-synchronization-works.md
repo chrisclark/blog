@@ -123,7 +123,7 @@ Celery,
 [inherits from](https://github.com/celery/celery/blob/b3d8ba2781189b7de0894f11295e815fa0bbd0b5/celery/backends/amqp.py)).
 
 When the chord starts, ``apply_chord`` calls
-``callback_chord_unlock``, which in turn queues up the builtin
+``callback_chord_unlock``, which in turn queues up the built-in
 ``celery.chord_unlock``
 [task](https://github.com/celery/celery/blob/04e77c0bd14596d8ddc9214e7cca5e817f74c9d2/celery/app/builtins.py#L59). Here's
 the crucial bit of code in chord_unlock that polls for the completion
@@ -154,5 +154,5 @@ expensive.
 
 So that's it -- an under-the-covers look at how Celery actually
 coordinates tasks. I was surprised to learn that the strategy varied
-to radically based on the broker backend, but certainly reaffirms my
+so radically based on the broker backend, but certainly reaffirms my
 love for Redis and all its flexibility.

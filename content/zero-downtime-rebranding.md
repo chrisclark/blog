@@ -2,7 +2,7 @@ Title: Zero Downtime Rebrand
 Author: Chris
 Date: July 12, 2016
 
-Noah Smith and I gave this presentation at the San Francisco Django meetup in March of 2016, shortly after we rebranded ePantry to Grove Collaborative. Here's how we pulled it off.
+[Noah Smith](https://github.com/noazark/) and I gave this presentation at the San Francisco Django meetup in March of 2016, shortly after we rebranded ePantry to Grove Collaborative. Here's how we pulled it off.
 
 ![first-screen]({filename}/images/rebrand-slides/20160330-Rebrand-Django-Meetup-01.png)
 _Welcome folks!_
