@@ -30,5 +30,5 @@ A lightly-modified version of Nest (https://github.com/molivier/nest)
 
 # TODO
 
-[ ] set up https (needs s3 cert, then enable cloudflare)
-[ ] simplify typography (http://devinhunt.github.io/typebase.css/)
+- [ ] set up https (needs s3 cert, then enable cloudflare)
+- [ ] simplify typography (http://devinhunt.github.io/typebase.css/)
