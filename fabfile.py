@@ -60,9 +60,9 @@ def clear_cache():
     # -H "X-Auth-Key: <key>" \
     # -H "Content-Type: application/json"
 
-    cf_zone = 'a5f5672c9471d5fca08912db32d7f1d3'
-    cf_auth_key = '55edefc1c418ca263eea896623e6d66c0e4d2'
-    cf_email = 'chris@untrod.com'
+    cf_zone = os.environ.get('CLOUDFLARE_ZONE')
+    cf_auth_key = os.environ.get('CLOUDFLARE_AUTH_KEY')
+    cf_email = os.environ.get('CLOUDFLARE_EMAIL')
     url = "https://api.cloudflare.com/client/v4/zones/%s/purge_cache" % cf_zone
     headers = {'X-Auth-Email': cf_email,
                'X-Auth-Key': cf_auth_key,
