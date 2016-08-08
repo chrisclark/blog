@@ -1,9 +1,6 @@
-from fabric.api import *
-import fabric.contrib.project as project
+from fabric.api import local, env
 import os
 import shutil
-import sys
-import SocketServer
 from livereload import Server
 from pelican import Pelican
 from pelican.settings import read_settings
@@ -67,7 +64,9 @@ def clear_cache():
     cf_auth_key = '55edefc1c418ca263eea896623e6d66c0e4d2'
     cf_email = 'chris@untrod.com'
     url = "https://api.cloudflare.com/client/v4/zones/%s/purge_cache" % cf_zone
-    headers = {'X-Auth-Email': cf_email, 'X-Auth-Key': cf_auth_key, 'Content-Type': 'application/json'}
+    headers = {'X-Auth-Email': cf_email,
+               'X-Auth-Key': cf_auth_key,
+               'Content-Type': 'application/json'}
     data = {'purge_everything': True}
     requests.delete(url, data=json.dumps(data), headers=headers)
 
