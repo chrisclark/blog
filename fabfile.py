@@ -23,32 +23,34 @@ def clean():
         os.makedirs(DEPLOY_PATH)
 
 
-def build():
-    """Build local version of site"""
+def build_dev():
     local('pelican -s pelicanconf.py')
 
 
-def rebuild():
-    """`clean` then `build`"""
+def build_prod():
+    local('pelican -s publishconf.py')
+
+
+def rebuild_dev():
     clean()
-    build()
+    build_dev()
 
 
 def dev():
     """Build, and run a auto-reloading server w/ file watching."""
-    rebuild()
+    rebuild_dev()
     p = Pelican(read_settings('pelicanconf.py'))
 
     def compile():
         try:
-            rebuild()
+            p.run()
         except SystemExit as e:
             pass
 
     server = Server()
-    server.watch('content/', compile)
+    server.watch('content/', rebuild_dev)
     server.watch('theme/', compile)
-    server.watch('pelicanconf.py', rebuild)
+    server.watch('pelicanconf.py', rebuild_dev)
     server.serve(root='output')
 
 
@@ -72,6 +74,8 @@ def clear_cache():
 
 
 def publish():
+    clean()
+    build_prod()
     local('make s3_upload')
     print "clearing cache..."
     clear_cache()

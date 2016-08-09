@@ -14,6 +14,7 @@ SITEURL = 'http://blog.untrod.com'
 RELATIVE_URLS = False
 
 ASSET_DEBUG = False
+DEBUG = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
