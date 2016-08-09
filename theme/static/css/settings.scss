@@ -1,0 +1,16 @@
+$dark: #1B325F;
+$accent: #9CC4E4;
+$subtle: #E9F2F9;
+$primary: #3A89C9;
+$alert: #F26C4F;
+$font-color: #4b505a;
+$code-bg: #333333;
+$white: #FFFFFF;
+$black: #000000;
+$body-bg: #FaF9F7;
+
+
+$baseFontSize: 16;                // in pixels. This would result in 22px on desktop
+$baseLineHeight: 1.5 ;            // how large the line height is as a multiple of font size
+$leading: $baseLineHeight * 1rem;
+$scale: 1.414;                    // Rate of growth for headings. I actually like this to be slightly smaller then the leading. Makes for tight headings.

@@ -2,7 +2,7 @@ Title: Projects
 Illustration: projects.png
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-sm-12">
     <h3>SQL Explorer</h3>
     <a href="https://www.github.com/groveco/django-sql-explorer">
       <img class="pure-img" src="//placehold.it/1440x960/1B325F/ffffff?text=SQL+Explorer" alt="" title="">
@@ -17,8 +17,8 @@ Illustration: projects.png
     </p>
   </div>
 </div>
-<div class="row row-eq-height">
-  <div class="col-xs-12 col-md-6" style="height: 300px;">
+<div class="row">
+  <div class="col-sm-12 col-md-6">
     <h3>Django Sprinklers</h3>
     <a href="https://github.com/groveco/django-sprinklers">
       <img class="pure-img" src="//placehold.it/1440x960/9CC4E4/ffffff?text=Sprinklers" alt="" title="">
@@ -31,7 +31,7 @@ Illustration: projects.png
     your business logic.
     </p>
   </div>
-  <div class="col-xs-12 col-md-6 style="height: 300px;"">
+  <div class="col-sm-12 col-md-6">
     <h3>Django Segments</h3>
     <a href="https://github.com/groveco/django-segments">
       <img class="pure-img" src="//placehold.it/1440x960/E9F2F9/9CC4E4?text=Segments" alt="" title="">
@@ -46,7 +46,7 @@ Illustration: projects.png
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-md-6">
+  <div class="col-sm-12 col-md-6">
     <h3>Customer.io CLI</h3>
     <a href="https://github.com/chrisclark/clj-customerio">
       <img class="pure-img" src="//placehold.it/1440x960/F26C4F/ffffff?text=CIO+CLI" alt="" title="">
@@ -55,7 +55,7 @@ Illustration: projects.png
     A Clojure CLI application to bulk upset records into <a href="http://www.customer.io">customer.io</a>.
     </p>
   </div>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-sm-12 col-md-6">
     <h3>The Retentionizer</h3>
     <a href="https://github.com/chrisclark/retentionizer">
       <img class="pure-img" src="//placehold.it/1440x960/3A89C9/fffff?text=Retentionizer" alt="" title="">

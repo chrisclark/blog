@@ -7,7 +7,7 @@
     {% if NEST_HEADER_IMAGES %}
     <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
     {% else %}
-    <div class="header-container gradient">
+    <div class="header-container">
     {% endif %}
 {% endblock headerstyle %}
 
@@ -24,18 +24,15 @@
         </div>
     </div>
 {% endblock header %}
-
-{% block content %}
-    <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="{{ SITEURL }}/archives.html">{{ NEST_ARCHIVES_CONTENT_TITLE }}</a></h2>
-            <dl class="dl-horizontal">
-            	{% for article in articles %}
-            	<dt>{{ article.locale_date}}</dt>
-            	<dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-            	{% endfor %}
-            </dl>
-        </div>
+    {% block content %}
+    <div class="container content archive">
+      <h2><a href="{{ SITEURL }}/archives.html">{{ NEST_ARCHIVES_CONTENT_TITLE }}</a></h2>
+      <dl class="dl-horizontal">
+        {% for article in articles %}
+        <dt>{{ article.locale_date}}</dt>
+        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        {% endfor %}
+      </dl>
     </div>
 {% endblock content %}
 

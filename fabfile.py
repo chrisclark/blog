@@ -41,7 +41,7 @@ def dev():
 
     def compile():
         try:
-            p.run()
+            rebuild()
         except SystemExit as e:
             pass
 

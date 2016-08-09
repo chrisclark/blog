@@ -12,10 +12,10 @@
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
         <!-- Stylesheets -->
-        {% assets filters="scss,cssmin", output="css/all.css", "css/bootstrap.scss", "css/fonts.scss", "css/theme.scss", "css/pygment.scss" %}
+        {% assets filters="scss,cssmin", output="css/all.css", "css/main.scss" %}
           <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
         {% endassets %}
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,600,300,700|Source+Code+Pro" rel="stylesheet" type="text/css">
         <!-- /Stylesheets -->
 
         <!-- RSS Feeds -->
@@ -113,12 +113,12 @@
         <!-- /Content --> 
 
         <!-- Footer -->
-        <div class="footer gradient-2">
+        <div class="footer">
             <div class="container footer-container ">
                 <div class="row">
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled hug">
                             {% for title, link in NEST_SITEMAP_MENU %}
                             <li><a href="{{ SITEURL }}{{ link }}">{{ title }}</a></li>
                             {% endfor %}
@@ -133,7 +133,7 @@
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         {% if SOCIAL %}
                         <div class="footer-title">{{ NEST_SOCIAL_COLUMN_TITLE }}</div>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled hug">
                             {% for name, link in SOCIAL %}
                             <li><a href="{{ link }}" target="_blank">{{name}}</a></li>
                             {% endfor %}
@@ -143,7 +143,7 @@
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         {% if LINKS %}
                         <div class="footer-title">{{ NEST_LINKS_COLUMN_TITLE }}</div>
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled hug">
                             {% for name, link in LINKS %}
                             <li><a href="{{ link }}" target="_blank">{{name}}</a></li>
                             {% endfor %}

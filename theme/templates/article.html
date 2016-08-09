@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ article.title }} - {{ super() }}{% endblock title %}
 {% block description %}{{ article.content|striptags|truncate(200)|escape }}{% endblock description %}
@@ -8,7 +8,7 @@
     {% if article.illustration %}
     <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ article.illustration }}'); background-position: center; ">
     {% else %}
-    <div class="header-container gradient">
+    <div class="header-container">
     {% endif %}
 {% endblock headerstyle %}
 
@@ -23,10 +23,9 @@
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       {% if article.tags %}
-                      <p class="pull-right header-tags">
-                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+                        <p class="pull-right header-tags">
                           {% for tag in article.tags|sort %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
-                      </p>
+                        </p>
                       {% endif %}
                   </div>
               </div>

@@ -1,6 +1,6 @@
 Title: DOET Shower
 Date: 2012-01-02 15:12
-Author: Chris Clark()
+Author: Chris Clark
 Slug: doet-shower
 
 I stayed at a friend's apartment a few weeks ago. It is difficult to
