@@ -175,9 +175,18 @@ h6 {
 
 .header-container {
     background-color: $primary;
-    padding: 0;
     min-height: 360px;
+    color: $white;
 
+    h1 {
+        color: $white;
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+    
     &.header-page {
         background-position: center;
         background-size: contain;
@@ -188,17 +197,10 @@ h6 {
         background-color: $code-bg !important;
     }
 
-    /* Navbar */
     .header-nav{
         height: 6rem;
         line-height: 6rem;
-        color: $white;
-
-        a {
-            color: $white;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+        text-transform: uppercase;
         
         .nav{
             a {
@@ -208,13 +210,11 @@ h6 {
             }
             
             a:hover {
-                color:$white;
                 opacity: 1;
                 background-color: transparentize($black, 0.8);
             }
 
             .active{
-                color:$white;
                 background-color: transparentize($black, 0.8);
             }
         }    
@@ -225,20 +225,11 @@ h6 {
         padding-right: 4rem;
     }
 
-    .header-title {
-        color: $white;
-        a {
-            color: $white;
-            text-decoration: none;
-        }
-    }
+    .header-subtitle {
+        margin-top: 0;
+        font-style: italic;
 
-    .header-date {
-        margin-top: 1rem;
-        color: $white;
-        opacity: 0.8;
         a {
-            color: $white;
             text-decoration: underline;
         }
     }
@@ -249,20 +240,6 @@ h6 {
         margin-bottom: 1rem;
         width: 3.125rem;
         border-bottom: 3px solid $dark;
-    }
-
-    .header-subtitle {
-        color: $white;
-        margin-top: 0;
-        font-style: italic;
-    }
-
-    .header-tags {
-        color: $white;
-        font-style: italic;
-        a {
-            color: $white;
-        }
     }
 }
 

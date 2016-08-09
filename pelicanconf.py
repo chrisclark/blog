@@ -16,7 +16,6 @@ DEFAULT_LANG = u'en'
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['assets']
-
 ASSET_DEBUG = True
 
 # Feed generation is usually not desired when developing
@@ -43,7 +42,6 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 AUTHOR_SAVE_AS = ''
 AUTHOR_URL = 'pages/about.html'
 DISPLAY_PAGES_ON_MENU = True
-#MENUITEMS = [('Categories','/categories.html'),]
 
 DEFAULT_CATEGORY = 'Everything Else'
 

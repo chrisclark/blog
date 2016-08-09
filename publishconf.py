@@ -13,12 +13,10 @@ from pelicanconf import *
 SITEURL = 'http://blog.untrod.com'
 RELATIVE_URLS = False
 
+ASSET_DEBUG = False
+
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-
-DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
 
 DISQUS_SITENAME = 'untrodblog'
 GOOGLE_ANALYTICS = 'UA-9552542-1'

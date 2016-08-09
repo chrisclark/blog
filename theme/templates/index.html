@@ -13,17 +13,11 @@
 
 {% block header %}
     <div class="container header-wrapper">
-        <div class="row">
-              <div class="col-lg-12">
-                  <div class="header-content">
-                      <h1 class="header-title">{{ NEST_INDEX_HEADER_TITLE }}</h1>
-                      <div class="header-underline"></div>
-                      {% if NEST_INDEX_HEADER_SUBTITLE %}
-                      <p class="header-subtitle header-subtitle-homepage">{{ NEST_INDEX_HEADER_SUBTITLE }}</p>
-                      {% endif %}
-                  </div>
-              </div>
-        </div>
+      <h1>{{ NEST_INDEX_HEADER_TITLE }}</h1>
+      <div class="header-underline"></div>
+      {% if NEST_INDEX_HEADER_SUBTITLE %}
+      <p class="header-subtitle header-subtitle-homepage">{{ NEST_INDEX_HEADER_SUBTITLE }}</p>
+      {% endif %}
     </div>
 {% endblock header %}
 
