@@ -3,6 +3,7 @@ Date: 2016-07-30
 Author: Chris
 Slug: observations-from-a-year-of-parenting
 Category: Everything Else
+Illustration: dash-and-chris-header.jpg
 
 I have a 13-month-old son named Dashiell (pronounced Dash-uhl, and I'm sorry in advance to schoolage Dashiell, whose teachers will all say "Dah-sheel?" on his first day). He's awesome. I mean...I'm not super objective, but even so, he's definitely a good dude. We're going to keep him.
 
@@ -53,3 +54,5 @@ Last weekend: Dash is a little over a year old. It's Saturday evening, we're out
 ## So that's it.
 
 Basically, just relax. People way less competent that you have raised perfectly reasonable, happy kids. Re-read observation #5 when you get nervous, look forward to awesomely fun times as per point #8, and for the love of god do #4. Good luck and I look forward to seeing our children play against each other in the NBA, but still be civil when mingling backstage before their respective TED talks.
+
+![first-screen]({filename}/images/dash-peeking.jpg)
