@@ -1,5 +1,5 @@
 Title: Eight Surprises During My First Year as a Father
-Date: 2016-08-10
+Date: 2016-07-30
 Author: Chris
 Slug: observations-from-a-year-of-parenting
 Category: Everything Else
