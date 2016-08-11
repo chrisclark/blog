@@ -5,11 +5,13 @@
 {% block keywords %}{% for tag in article.tags|sort %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}{% endblock keywords %}
 
 {% block headerstyle %}
-    {% if article.illustration %}
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ article.illustration }}'); background-position: center; ">
-    {% else %}
-    <div class="header-container">
-    {% endif %}
+
+{% if article.illustration %}
+  <div class="header-container" style="background-image: url('{{ SITEURL }}/images/{{ article.illustration }}'); background-size: {{ article.illustration_size }}">
+  <div class="header-darken">
+{% else %}
+  <div class="header-container">
+{% endif %}
 {% endblock headerstyle %}
 
 {% block header %}
@@ -25,6 +27,9 @@
       </p>
       {% endif %}
     </div>
+    {% if article.illustration %}
+    </div>
+    {% endif %}
     <!-- /Header -->
 {% endblock header %}
 

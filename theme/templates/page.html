@@ -4,10 +4,9 @@
 {% block description %}{{ page.content|striptags|truncate(200)|escape }}{% endblock description %}
 
 {% block headerstyle %}
-    {% if page.illustration %}
-    <div class="header-container header-page{% if page.title == 'About' %} header-about{% endif %}" style="background-image: url('{{ SITEURL }}/images/{{ page.illustration }}');">
-    {% elif NEST_HEADER_IMAGES %}
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
+{% if page.illustration %}
+  <div class="header-container {% if page.title == 'About' %} header-about{% endif %}" style="background-image: url('{{ SITEURL }}/images/{{ page.illustration }}'); background-size: {{ page.illustration_size }}">
+  <div class="header-darken">
     {% else %}
     <div class="header-container">
     {% endif %}
@@ -18,6 +17,10 @@
       <h1>{{ page.title }}</h1>
       <div class="header-underline"></div>
     </div>
+    {% if page.illustration %}
+      </div>
+    {% endif %}
+
 {% endblock header %}
 
 {% block content %}

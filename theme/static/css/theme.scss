@@ -177,6 +177,18 @@ h6 {
     background-color: $primary;
     min-height: 360px;
     color: $white;
+    @media (min-width: 1120px) {
+        background-size: contain;
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+
+    .header-darken {
+        background: linear-gradient(transparentize($black, 0.8), transparentize($black, 0.8));
+        min-height: 360px;
+    }
 
     h1 {
         color: $white;
@@ -185,12 +197,6 @@ h6 {
     a {
         color: $white;
         text-decoration: none;
-    }
-    
-    &.header-page {
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
     }
 
     &.header-about {
@@ -201,14 +207,14 @@ h6 {
         height: 6rem;
         line-height: 6rem;
         text-transform: uppercase;
-        
+
         .nav{
             a {
                 padding: .5rem;
                 margin-left: 1.25rem;
                 transition: all 0.2s ease-out;
             }
-            
+
             a:hover {
                 opacity: 1;
                 background-color: transparentize($black, 0.8);
@@ -217,7 +223,7 @@ h6 {
             .active{
                 background-color: transparentize($black, 0.8);
             }
-        }    
+        }
     }
 
     .header-wrapper{
@@ -228,6 +234,7 @@ h6 {
     .header-subtitle {
         margin-top: 0;
         font-style: italic;
+        padding-bottom: 1rem;
 
         a {
             text-decoration: underline;
@@ -250,8 +257,8 @@ h6 {
     &.highlight pre {
         padding-left: -1.5rem;
         padding-right: -1.5rem;
-    } 
-    
+    }
+
     img {
         border: 0;
         display: block;
