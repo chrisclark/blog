@@ -48,8 +48,8 @@ def dev():
             pass
 
     server = Server()
-    server.watch('content/', rebuild_dev)
-    server.watch('theme/', compile)
+    server.watch('content/', compile)
+    server.watch('theme/', rebuild_dev)
     server.watch('pelicanconf.py', rebuild_dev)
     server.serve(root='output')
 

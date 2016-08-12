@@ -4,30 +4,33 @@ Author: Chris Clark
 Slug: actually-understanding-timezones-in-postgresql
 Category: Code & Tutorials
 
-Everyone hates confusing timezone stuff, and everyone has had to deal
-with it at some point. It's the worst. And it's also incredibly
-boring, so doesn't lend itself to digging in and figuring out what the
-hell is going on. But sometimes you don't have a choice, like me,
-yesterday, when my slightly-imprecise understanding of how PostgreSQL
-handles timestamps and timezones ended with a nervous breakdown at my
-desk, and the marketing department looking very concerned. The results
-I kept getting seemed *impossible*! Down was up, up was down, Pacific
-Time suddenly had no meaning, and I imagined that the official GMT
-clock was spinning around like something from Alice in Wonderland,
-laughing at me.
+Timezones are the worst. We should all just live in UTC, reasonable
+sunset hours be damned. And learning about timezone implementation
+details is incredibly boring and esoteric<sup>[1](#footnote1)</sup>,
+so most developers are not inclined to figure out what the hell is
+actually going on until they really need to. Like me, yesterday, when
+my slightly-imprecise understanding of how PostgreSQL handles
+timezones ended with a nervous breakdown at my desk, and the marketing
+department looking very concerned.
 
-But it turns out all is actually right with the world, and everything
-makes sense, and I totally know what's going on. Follow along (you
-just need the ability to run SQL on PostgreSQL) and join me in the
-basking glow of timezone comprehension.
+My query results seemed
+*impossible*! Down was up, up was down, Pacific Time suddenly had no
+meaning, and I imagined a bunch of National Time Service officials in
+Greenwhich sniggering at me.
+
+But it turns out all is indeed right with the world, everything makes
+sense, and I totally know what's going on, now. Follow along (you just
+need the ability to run SQL on PostgreSQL) and join me in the basking
+glow of timezone comprehension.
 
 If you make it all the way through, I promise you'll know enough to
-puzzle out any Postgres timezone question you have. It's detail, but
-it's important detail.
+puzzle out any Postgres timezone question you may have - with the
+exception of my mystery question at the end, which is totally insane
+and inexplicable.
     
 ## Easy Sample Data
 
-Let's make a test table. Easy.
+To start, let's make a test table. Easy.
 
     :::sql
     CREATE TABLE test
@@ -36,13 +39,12 @@ Let's make a test table. Easy.
         ts_tz timestamp with time zone
     );
 
-An pretend that you, like me, live in California and our local time
-zone on our computer is 'America/Los_Angeles'.
+One tz-unaware timestamp field, and one that knows about
+timezones. We'll unpack what "knows about timezones" means shortly.
 
-And we'll also pretend we have a PostgreSQL server running in
-California, but it's set to UTC time, via the timezone parameter into
-postgresql.conf being set like ``timezone = 'US/Central'``. So that's
-our setup.
+And I'll also assume you have a PostgreSQL server, with a default of
+UTC time, via the timezone parameter into postgresql.conf being set
+like this: ``timezone = 'UTC'``.
 
 ## Insertin' Stuff
 
@@ -89,9 +91,8 @@ save* the timezone information for the tz-aware field; this is a
 really important distinction. Postgres TIMESTAMP WITH TIME ZONE fields
 *do not actually store any TZ info*, they just expect TZ info to be
 *present* when the fields are written to. Under the covers, Postgres
-converts it to whatever time is set in the postgresql.conf file (UTC
-in our case) and internally says "yep, great, I am confident that I am
-storing this timestamp, normalized to a known time zone". With that
+converts it to UTC and internally says "yep, great, I am confident that I am
+storing this timestamp, normalized to UTC". With that
 confidence, Postgres can now perform any timezone conversion you'd
 like. But there's no way to ever retrieve the fact that I originally
 sent down a timestamp with a UTC-07 offset; that information is gone
@@ -118,11 +119,12 @@ no surprise, bad shit happens when you try to use it with timezones:
      2016-08-12 10:22:31.949271+00
 
 Yeah...that's pretty wacky. Postgres has no idea wtf time you actually
-stored, so it just treats it as whatever you configured in
-postgresql.conf, applies the offsets you requested, and kinda throws
-up its hands and gives up by returning a timestamp without an offset
-(as indicated by the +00). So that's not very useful. Don't use
-timestamps without time zones in PostgreSQL. There, easy.
+stored, so it just treats it as whatever the current server timezone
+is (UTC in our case, from setting timezone in the postgresql.conf
+file), applies the offsets you requested, and kinda throws up its
+hands and gives up by returning a timestamp without an offset (as
+indicated by the +00). So that's not very useful. Don't use timestamps
+without time zones in PostgreSQL. There, easy.
 
 Now let's focus on the interesting one. It behaves like you'd
 hope...for now.
@@ -170,9 +172,11 @@ But check this out!
      2016-08-12 10:22:31.949271-07
      
 Whaaaaaa??! It turns out that *every Postgres session has its own time
-zone*. Whoa.
+zone*. Whoa. The 'timezone' setting that we specified in the
+postgresql.conf file actually just provides a default timezone value
+to every session, nothing more than that.
 
-And this is where it's very easy to get surprised. For instance, when
+And this is where it's easy to get very surprised. For instance, when
 Django connects to Postgres, it
 '[ensures timezone](https://github.com/django/django/blob/master/django/db/backends/postgresql/base.py#L195)'
 and slaps the application time zone onto the psycopg2 connection so
@@ -183,7 +187,7 @@ That's clever, but can lead to incredibly confusion if you are trying
 to compare results from the same database, but via 2 different
 connections, which are set to two different time zones. You can always
 check the current session TZ via ``SELECT
-current_setting('TIMEZONE');``
+current_setting('TIMEZONE');`` or ``show timezone;``.
  
 Isn't this fun??
  
@@ -248,20 +252,50 @@ So all of those time zones are the same, and can be abbreviated
 because it takes daylight savings time into account, whereas PST does
 not and is a true UTC-08 offset.
 
+Most of time this doesn't matter, but it can definitely bite you. For
+instance (in fact, the issue that motivated this entire post), I wrote
+a bunch of queries that reported on the number of customer membership
+renewals each month. These queries all did AT TIME ZONE 'PST'
+conversions. Our membership renewal process runs at 11:00pm,
+nightly. We're setting up a new BI tool, and I set the session time
+zone to Pacific/Los_Angeles, not thinking too hard about it. Well,
+guess what? For seven months out of the year, that time zone and PST
+differ by an hour. And 11pm is within 1 hour of midnight. So all of
+these renewals were suddenly and inexplicably shifted forward by one
+day. Oof.
+
 ## Recap
 
 That's pretty much it! To recap:
 
 1. Use only TIMESTAMP WITH TIME ZONE fields.
-2. Remember that Postgres doesn't store time zones; it just normalizes tz-aware timestamps to the server time.
-2. Be aware of your server time zone.
-3. Be aware of your session time zone (which may be set somewhere deep in your application code). For your own sanity, rely on your session's time zone when possible, rather than using AT TIME ZONE operators in your queries.
-4. Be aware that offsets and time zones are not the same.
+2. Remember that Postgres doesn't store time zones; it just normalizes
+   tz-aware timestamps to the server time.
+3. Be aware of your server time zone.
+4. Be aware of your session time zone (which may be set somewhere deep
+   in your application code). For your own sanity, make sure all
+   connections to a given database use the same session time zone.
+5. Rely on your session's time zone when possible, rather than using
+   AT TIME ZONE operators in your queries.
+6. Be aware that offsets and time zones are not the same. Most of the
+   time it doesn't matter, until it suddenly does.
+   
+If you want to know even more, I do actually recommend
+[section 8.5.3](https://www.postgresql.org/docs/9.1/static/datatype-datetime.html#DATATYPE-TIMEZONES)
+of the PostgreSQL documentation. As far as database server technical
+docs goes, it's pretty entertaining. And if that isn't a strong enough
+endorsement, then maybe I can tempt you with some gleaned trivia: One
+reason PostgreSQL does not recommend using simple TIME WITH TIME ZONE
+(e.g. a time with no date component) is because Moscow's MSK offset
+means UTC+3 in certain years, and UTC+4 in other years.
+
+Oof.
 
 ## A Final Mystery
 
-I've internalized all of this, and really do feel like I understand
-it. Except for one lingering mystery. Check this out:
+I really do feel like I understand how Postgres handles timezones, and
+it's all pretty sensible once you know how it works. Except for one
+lingering mystery. Check this out:
 
     :::psql
     #=> select * from pg_timezone_names where utc_offset='-08:00:00' and is_dst=false;
@@ -284,3 +318,15 @@ categorical about this fact:
 But apparently Postgres thinks they are opposites. Or something. If
 anyone can explain this in the comments, I'd really appreciate
 it. Thanks!
+
+### Footnotes
+
+<a name="footnote1">1</a>: Don't believe me? The actual Postgres time
+zone documentation
+[opens with](https://www.postgresql.org/docs/9.1/static/datatype-datetime.html#DATATYPE-TIMEZONES)
+this confidence-inspiring passage:
+
+> Time zones, and time-zone conventions, are influenced by political
+> decisions, not just earth geometry. Time zones around the world
+> became somewhat standardized during the 1900s, but continue to be
+> prone to arbitrary changes
