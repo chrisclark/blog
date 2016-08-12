@@ -319,6 +319,15 @@ But apparently Postgres thinks they are opposites. Or something. If
 anyone can explain this in the comments, I'd really appreciate
 it. Thanks!
 
+**edit** Mystery solved! A very careful reading of section 8.5.3 reveals the secret:
+
+>Another issue to keep in mind is that in POSIX time zone names,
+>positive offsets are used for locations west of Greenwich. Everywhere
+>else, PostgreSQL follows the ISO-8601 convention that positive
+>timezone offsets are east of Greenwich.
+
+That is unfortunate.
+
 ### Footnotes
 
 <a name="footnote1">1</a>: Don't believe me? The actual Postgres time
