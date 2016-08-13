@@ -270,11 +270,11 @@ That's pretty much it! To recap:
 
 1. Use only TIMESTAMP WITH TIME ZONE fields.
 2. Remember that Postgres doesn't store time zones; it just normalizes
-   tz-aware timestamps to the server time.
-3. Be aware of your server time zone.
-4. Be aware of your session time zone (which may be set somewhere deep
-   in your application code). For your own sanity, make sure all
-   connections to a given database use the same session time zone.
+   tz-aware timestamps to UTC.
+4. Know what time zone your session is using. It might be set deep in
+   your application code, or in a config file, or in an env var. For
+   your own sanity, make sure all connections to a given database use
+   the same session time zone.
 5. Rely on your session's time zone when possible, rather than using
    AT TIME ZONE operators in your queries.
 6. Be aware that offsets and time zones are not the same. Most of the
