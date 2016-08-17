@@ -126,8 +126,24 @@ hands and gives up by returning a timestamp without an offset (as
 indicated by the +00). So that's not very useful. Don't use timestamps
 without time zones in PostgreSQL. There, easy.
 
-Now let's focus on the interesting one. It behaves like you'd
-hope...for now.
+It's also worth noting at this point that Postgres will let you apply
+AT TIME ZONE conversions to *date* fields. I think this is nuts and
+Postgres should at least throw up a warning, as it's very weird to
+request a *date* at a specific timezone and get a totally different
+date. Thursday August 18th is Thursday August 18th in every time zone;
+but instead Postgres will sneakily cast it to a datetime, assume
+midnight, do the TZ conversion, and return a datetime. Check it out:
+
+    :::psql
+    #=> SELECT ('July 1, 2015'::date AT TIME ZONE 'America/Los_Angeles')::date;
+      timezone
+    ------------
+     2015-06-30
+    
+I mean...come on.
+
+Ok, enough with things you *shouldn't* do, let's focus on the
+interesting one. It behaves like you'd hope...for now.
 
     :::psql
     #=> select ts_tz AT TIME ZONE 'UTC' from test;
@@ -262,7 +278,7 @@ zone to Pacific/Los_Angeles, not thinking too hard about it. Well,
 guess what? For seven months out of the year, that time zone and PST
 differ by an hour. And 11pm is within 1 hour of midnight. So all of
 these renewals were suddenly and inexplicably shifted forward by one
-day. Oof.
+day.
 
 ## Recap
 
