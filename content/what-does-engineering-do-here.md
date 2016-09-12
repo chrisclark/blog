@@ -36,7 +36,7 @@ grandmaster Savielly Tartakower:
 
 At Grove, our engineering team has 3 internal strategic goals<sup>[1](#footnote1)</sup>.
 
-# 1. Keep Headcount Growth Sublinear to Revenue Growth
+## 1. Keep Headcount Growth Sublinear to Revenue Growth
 
 Startups are defined by growth. And it's pretty obvious that, to be
 profitable, you can't just scale headcount in line with revenue. Every
@@ -62,7 +62,7 @@ customers, and now a single rep supports upwards of 20,000. And we've
 done while *increasing* the average number of touches per customer,
 not by hiding our contact page.
 
-# 2. Bear 100% of the Technical Risk
+## 2. Bear 100% of the Technical Risk
 
 The rest of the business has enough to worry about without fearing
 that the website might go down. Technical risk always exists, but we
@@ -82,7 +82,7 @@ wondering if operations can ship the boxes, or whether the website can
 handle the traffic. They know that when they pick up the phone, the
 dial tone will be there.
 
-# 3. Say 'Yes' to the Rest of the Organization
+## 3. Say 'Yes' to the Rest of the Organization
 
 At the risk of making a blanket statement, engineering departments
 tend to be the long pole in the tent. Or the the black-box where
@@ -120,7 +120,7 @@ priorities. In the long term, it turns out you can't actually pick
 speed without also picking quality, and you'd better be fast if you
 want to be an accelerant rather than a bottleneck.
 
-# Evolution
+## Evolution
 
 I've been surprised how these goals have remained in place through our
 growth (we're more than 10 times larger than we were 2 years
