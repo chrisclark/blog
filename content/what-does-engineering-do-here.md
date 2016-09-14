@@ -1,4 +1,4 @@
-Title: What does engineering do here?
+Title: What does engineering actually do here?
 Date: 2016-09-12
 Author: Chris
 Slug: what-does-engineering-do-here
@@ -7,34 +7,40 @@ Category: Engineering Management
 My company, [Grove Collaborative](https://www.grove.co), is an online
 brand and retailer for non-toxic household consumables. We sell
 physical products on the internet, that get shipped from our
-warehouses to our customers.
+warehouses to our customers. This is so simple that it's almost always
+met with some incredulity. We're a Silicon Valley startup
+afterall. Aren't we supposed to be some sort of tech-centric AI big
+data thing? When I left my previous job, at a tech-centric AI big data
+company, my father in law said it well: "So...you're leaving your
+job...to sell toilet paper...on the internet?".
 
-We do not sell technology. We sell soap and toilet paper. In the very
-early days (we've been around for 3 years now), we self-identified as
-a technology company. It felt like, in Silicon Valley, you have to be
-a tech company. Over time though, it became apparent that we're first
-and foremost a brand (we make our own products), and then a retailer,
-not a software company. We are a
+And in fact, in the very early days (we've been around for 3 years
+now), we self-identified as a technology company. No one would love us
+if we weren't! Over time though, we've confronted our own corporate
+soul in the mirror and discovered that we're first and foremost a
+brand and a retailer, not a software company. We are a
 [Type B company](http://blog.untrod.com/2016/06/software-at-companies-that-dont-sell-software.html).
 
 Given that we don't directly monetize our technology, our engineering
-strategy looks a little different than a software company.
+strategy looks a different than a software company.
 
 What engineering *does* is pretty much what you'd expect:
 
-- We building and maintain the website.
-- We create internal tools; for customer service tools, for inventory
+- Building and maintain the website.
+- Create internal tools; for customer service tools, for inventory
   forecasting, for operations.
-- We help teams select and implement software systems.
+- Help teams select and implement software systems.
 
-But that's a list of tasks, not a strategy for what part technology
-plays in the business. What's strategy? I like this quote from chess
-grandmaster Savielly Tartakower:
+But that's a list of tasks, not a strategy for technology in the
+business; there's no competitive advantage there. When thinking about
+strategy, I like this quote from chess grandmaster Savielly
+Tartakower:
 
 > Tactics are what you do when there is something to do; strategy is
 > what you do when there is nothing to do.
 
-At Grove, our engineering team has 3 internal strategic goals<sup>[1](#footnote1)</sup>.
+At Grove, our engineering team has 3 strategic
+goals<sup>[1](#footnote1)</sup>.
 
 ## 1. Keep Headcount Growth Sublinear to Revenue Growth
 
@@ -120,15 +126,15 @@ priorities. In the long term, it turns out you can't actually pick
 speed without also picking quality, and you'd better be fast if you
 want to be an accelerant rather than a bottleneck.
 
-## Evolution
+## Evolution...?
 
-I've been surprised how these goals have remained in place through our
-growth (we're more than 10 times larger than we were 2 years
-ago). Most processes break down each time a company grows by about a
-factor of 3, but that isn't the case for strategies. These goals
-continue to feel like the right ones for us, but there are bends in
-the road that are hard to see around, and I look forward to revisiting
-in a year's time.
+I'm genuinely surprised that these goals, which I first laid out when
+we were ~20x smaller than we are today, have remained in place. Most
+processes break down each time a company grows by about a factor of 3,
+but that isn't the case for strategies. The three strategic goals
+continue to feel right for us, but there are bends in the road that
+are hard to see around, and I look forward to revisiting in a year's
+time.
 
 <a name="footnote1">1</a>: Note these are distinct from product
 strategies; this is not what we are trying to accomplish in the
