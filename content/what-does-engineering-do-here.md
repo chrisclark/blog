@@ -14,9 +14,9 @@ data thing? When I left my previous job, at a tech-centric AI big data
 company, my father in law said it well: "So...you're leaving your
 job...to sell toilet paper...on the internet?".
 
-And in fact, in the very early days (we've been around for 3 years
-now), we self-identified as a technology company. No one would love us
-if we weren't! Over time though, we've confronted our own corporate
+And in fact, in the very early days (late 2013 or so), we
+self-identified as a technology company. No one would love us if we
+weren't, right?! Over time though, we've confronted our own corporate
 soul in the mirror and discovered that we're first and foremost a
 brand and a retailer, not a software company. We are a
 [Type B company](http://blog.untrod.com/2016/06/software-at-companies-that-dont-sell-software.html).
