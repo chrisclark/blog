@@ -8,21 +8,21 @@ My company, [Grove Collaborative](https://www.grove.co), is an online
 brand and retailer for non-toxic household consumables. We sell
 physical products on the internet, that get shipped from our
 warehouses to our customers. This is so simple that it's almost always
-met with some incredulity. We're a Silicon Valley startup
-afterall. Aren't we supposed to be some sort of tech-centric AI big
-data thing? When I left my previous job, at a tech-centric AI big data
-company, my father in law said it well: "So...you're leaving your
-job...to sell toilet paper...on the internet?".
+met with some incredulity. We're a Silicon Valley startup after all!
+Aren't we supposed to be some sort of tech-centric AI big-data thing?
+When I left my previous job, at a tech-centric AI big-data company, my
+father in law said it well: "So...you're leaving your job...to sell
+toilet paper...on the internet?".
 
-And in fact, in the very early days (late 2013 or so), we
-self-identified as a technology company. No one would love us if we
-weren't, right?! Over time though, we've confronted our own corporate
-soul in the mirror and discovered that we're first and foremost a
-brand and a retailer, not a software company. We are a
+And in fact, in the early days, we self-identified as a technology
+company. No one would love us if we weren't, right?! Over time though,
+we've confronted our own corporate soul in the mirror and discovered
+that we're first and foremost a brand and a retailer, not a software
+company. We are a
 [Type B company](http://blog.untrod.com/2016/06/software-at-companies-that-dont-sell-software.html).
 
 Given that we don't directly monetize our technology, our engineering
-strategy looks a different than a software company.
+strategy looks a little different than that of a software company.
 
 What engineering *does* is pretty much what you'd expect:
 
@@ -128,13 +128,19 @@ want to be an accelerant rather than a bottleneck.
 
 ## Evolution...?
 
-I'm genuinely surprised that these goals, which I first laid out when
-we were ~20x smaller than we are today, have remained in place. Most
-processes break down each time a company grows by about a factor of 3,
-but that isn't the case for strategies. The three strategic goals
-continue to feel right for us, but there are bends in the road that
-are hard to see around, and I look forward to revisiting in a year's
-time.
+I'm surprised that these goals, which I first laid out when we were
+~20x smaller than we are today, have remained in place. Most processes
+break down each time a company grows by about a factor of 3, but
+strategies tend to be more resilient. Nonetheless, changing
+circumstances will inevitably require evolution. If we had a massive
+amount of cash in the bank, would I feel as strongly about goal #1? At
+some point do we access marketing channels that spike in ways where #2
+is no longer a reasonable goal?  What would have to change for #3 to
+no longer make sense?
+
+For now, these three strategic goals continue to feel right, but there
+are bends in the road that are hard to see around. I'll continue to
+crane my neck.
 
 <a name="footnote1">1</a>: Note these are distinct from product
 strategies; this is not what we are trying to accomplish in the
