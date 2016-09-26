@@ -4,14 +4,14 @@
 {% block description %}{{ SITENAME }}, {{ SITESUBTITLE }}{% endblock description %}
 
 {% block headerstyle %}
-    {% if NEST_HEADER_IMAGES %}
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
-    {% else %}
-    <div class="header-container">
+{% if NEST_HEADER_IMAGES %}
+<div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
+  {% else %}
+  <div class="header-container">
     {% endif %}
-{% endblock headerstyle %}
+    {% endblock headerstyle %}
 
-{% block header %}
+    {% block header %}
     <div class="container header-wrapper">
       <h1>{{ NEST_INDEX_HEADER_TITLE }}</h1>
       <div class="header-underline"></div>
@@ -19,33 +19,37 @@
       <p class="header-subtitle header-subtitle-homepage">{{ NEST_INDEX_HEADER_SUBTITLE }}</p>
       {% endif %}
     </div>
-{% endblock header %}
+    {% endblock header %}
 
-{% block content %}
-    {% if DEFAULT_PAGINATION %}    
+    {% block content %}
+    {% if DEFAULT_PAGINATION %}
     <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="{{ SITEURL }}/{{ articles_page.url }}">{{ NEST_INDEX_CONTENT_TITLE }} {% if articles_page.has_previous() %}<small>- page {{ articles_page.number }}</small>{% endif %}</a></h2>
-            <dl class="dl-horizontal">
-                {% for article in articles_page.object_list %}
-                <dt>{{ article.locale_date}}</dt>
-                <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-                {% endfor %}
-            </dl>
-        </div>
+      <div class="container content archive">
+        <h2><a href="{{ SITEURL }}/{{ articles_page.url }}">{{ NEST_INDEX_CONTENT_TITLE }} {% if articles_page.has_previous() %}<small>- page {{ articles_page.number }}</small>{% endif %}</a></h2>
+        <dl class="dl-horizontal">
+          {% for article in articles_page.object_list %}
+            <dt><strong>{{ article.locale_date }}</strong></dt>
+            <dd>
+              <a href="{{ SITEURL }}/{{ article.url }}"><strong>{{ article.title }}</strong></a>
+              {{ article.summary }}
+              <p>&nbsp;</p>
+            </dd>
+          {% endfor %}
+        </dl>
+      </div>
     </div>
     {% include 'pagination.html' %}
     {% else %}
     <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="{{ SITEURL }}/">{{ NEST_INDEX_CONTENT_TITLE }}</a></h2>
-            <dl class="dl-horizontal">
-                {% for article in articles %}
-                <dt>{{ article.locale_date}}</dt>
-                <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-                {% endfor %}
-            </dl>
-        </div>
+      <div class="container content archive">
+        <h2><a href="{{ SITEURL }}/">{{ NEST_INDEX_CONTENT_TITLE }}</a></h2>
+        <dl class="dl-horizontal">
+          {% for article in articles %}
+            <dt>{{ article.locale_date}}</dt>
+            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+          {% endfor %}
+        </dl>
+      </div>
     </div>
     {% endif %}
-{% endblock content %}
+    {% endblock content %}

@@ -15,8 +15,10 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = u'en'
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['assets']
+PLUGINS = ['assets', 'summary']
 ASSET_DEBUG = True
+
+DEFAULT_DATE_FORMAT = ('%x')
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

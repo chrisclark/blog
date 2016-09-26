@@ -6,14 +6,16 @@ Category: Engineering Management
 
 We have a problem. People can't get from one area of town to a
 neighboring area because there is a river in between and no road. So
-let's build a bridge. 
- 
+let's build a bridge.
+
+<!-- PELICAN_END_SUMMARY -->
+
 ### Step 1: Requirements
 
 We'll get detailed requirements from civil engineers and government
 officials, including environmental constraints, safety guidelines,
-traffic considerations, and all sorts of other arcana. 
- 
+traffic considerations, and all sorts of other arcana.
+
 ### Step 2: Design
 
 We'll have architects, designers, and engineers create a plan that meets
@@ -24,22 +26,22 @@ bridge we're building and exactly how much it will cost. Our engineers
 and designers will have estimates of exactly how many pounds of concrete
 we'll need. And how many nails. And which suppliers the nails will be
 coming from. And backup nail suppliers in case something happens to the
-primary supplier. 
- 
+primary supplier.
+
 ### Step 3: Implementation
 
 Contractors go to work. Using the detailed design a team of
 professionals can reasonably be expected to deliver this massive project
-on time, and on budget. And we have our bridge! 
+on time, and on budget. And we have our bridge!
 
-Hmmm... 
- 
+Hmmm...
+
 **Requirements--&gt; Design--&gt; Implementation**
- 
+
 Does that sound familiar? Oh yeah! It's [waterfall
 development](http://en.wikipedia.org/wiki/Waterfall_model)! And it
-doesn't work for software. 
- 
+doesn't work for software.
+
 Since the beginning, we've tried to wrap traditional project management
 and construction metaphors around software development. It sounds
 reasonable - in both cases we have teams of designers and engineers
@@ -51,23 +53,23 @@ budgets and deadlines
 ([whoosh](http://www.quotationspage.com/quote/723.html)!), companies
 also often react by investing more up front. We get long, detailed
 requirements documents that no one reads. Using construction techniques
-to solve software problems doesn't work because it's a flawed analogy. 
- 
+to solve software problems doesn't work because it's a flawed analogy.
+
 ### Let's try that bridge again, but with software
- 
+
 We're going to start by focusing on the problem to solve: get people
 from A to B. With software, the solution isn't necessarily as obvious as
 it is in the physical world. Maybe we need a bridge. But maybe we need a
 ferry. Or a helicopter service. Or maybe we should just move the two
-pieces of land closer together. Or freeze the river. 
- 
+pieces of land closer together. Or freeze the river.
+
 Customers speak in terms of solutions: I want a bridge. I want a bigger
 kitchen. But with software we know to be wary of this: unlike the
 physical world, the users of software often do not have a good intuitive
 understanding of what's possible. So while they speak in terms of
 functionality and solutions, it's our job to root out the real problem
-and come up with an appropriate solution. 
- 
+and come up with an appropriate solution.
+
 But let's say a bridge is the right answer and we've settled on the
 bridge we want to build. It's big, it's complicated. Unlike building a
 real bridge, spending lots and lots of time up front on our software
@@ -76,16 +78,16 @@ construction. There are lots of reasons for this: programming is
 fundamentally an individual task and developers work at dramatically
 different levels of productivity. We may not know which developers are
 working on our bridge. Or the ones that provide the estimate may not
-deliver the parts they estimated. 
- 
+deliver the parts they estimated.
+
 Furthermore, software complexity increases exponentially with the size
 of the project. A 10,000 line program is hundreds of times more complex
 than a 1,000 line program. But a 10,000sqft house is linearly more
-complex than a 1,000sqft house\*. 
- 
+complex than a 1,000sqft house\*.
+
 The result is we have a unique statistical challenge when estimating
 software. Michael Church on Hacker News [explains it
-beautifully](http://news.ycombinator.com/item?id=3522910): 
+beautifully](http://news.ycombinator.com/item?id=3522910):
 
 > Let's say that you have 20 tasks. Each involves rolling a 10-sided
 > die. If it's a 1 through 8, wait that number of minutes. If it's a 9,
@@ -112,7 +114,7 @@ beautifully](http://news.ycombinator.com/item?id=3522910):
 
 Software teams will not be able to tell you the number of nails needed.
 Or the pounds of concrete. Software estimates are unintuitive and must
-account for a great degree of uncertainty. 
+account for a great degree of uncertainty.
 
 Good software teams use a completely different set of techniques to
 battle uncertainty: They ship frequently (there are not many shippable
@@ -122,7 +124,7 @@ phases together into one process. We encourage iterative, creative
 thinking. We want to try lots of things, fail fast, and move on. It's
 not unusual to read something like this about building software (from
 [Little
-Bets](http://www.amazon.com/Little-Bets-Breakthrough-Emerge-Discoveries/dp/1439170428)): 
+Bets](http://www.amazon.com/Little-Bets-Breakthrough-Emerge-Discoveries/dp/1439170428)):
 
 > Learn by doing. Fail quickly to learn fast. Develop experiments and
 > prototypes to gather insights, identify problems, and build up
@@ -131,13 +133,13 @@ Bets](http://www.amazon.com/Little-Bets-Breakthrough-Emerge-Discoveries/dp/14391
 
 It's not surprising that the waterfall approach to software has failed.
 Waterfall was taken from the world of construction, but construction is
-simply not analogous to software. We need new processes. 
+simply not analogous to software. We need new processes.
 
 It's only in the last ten years with the emergence of Agile, Kanban,
 rapid prototyping, and general acceptance of iterative, fail-fast
 approaches that software development has come into its own. We are good
 at building bridges, and we're finally getting good at building
-software. 
+software.
 
 \* <small>I was a little uncomfortable
 making this assertion without knowing much about construction, so I

@@ -4,9 +4,10 @@ Author: Chris Clark
 Slug: getting-started-with-pandas-predicting
 Category: Code & Tutorials
 
-##An Introduction to Pandas
+##An Introduction to Pandas<!-- PELICAN_BEGIN_SUMMARY -->
 
 This tutorial will get you started with Pandas - a data analysis library for Python that is great for data preparation, joining, and ultimately generating well-formed, tabular data that's easy to use in a variety of visualization tools or (as we will see here) machine learning applications. This tutorial assumes a solid understanding of core Python functionality, but nothing about machine learning or Pandas.
+<!-- PELICAN_END_SUMMARY -->
 
 ###Goals
 
@@ -19,7 +20,7 @@ First, let's ingest the data and get the lay of the land. You can download the d
     :::python
     import pandas as pd
     import numpy as np
-    
+
     # Load the data
     dsProgReports = pd.read_csv('C:/data/NYC_Schools/School_Progress_Reports_-_All_Schools_-_2009-10.csv')
     dsDistrict = pd.read_csv('C:/data/NYC_Schools/School_District_Breakdowns.csv')
@@ -134,7 +135,7 @@ Output:
     #Strip the first two characters off the DBNs so we can join to School Code
     dsProgReports.DBN = dsProgReports.DBN.map(lambda x: x[2:])
     dsSATs.DBN = dsSATs.DBN.map(lambda x: x[2:])
-    
+
     #We can now see the keys match
     pd.DataFrame(data=[dsProgReports['DBN'].take(range(5)), dsSATs['DBN'].take(range(5)), dsClassSize['SCHOOL CODE'].take(range(5))])
 
@@ -231,7 +232,7 @@ Output:
     import re
     dsDistrict['JURISDICTION NAME'] = dsDistrict['JURISDICTION NAME'].map(lambda x: re.match( r'([A-Za-z]*\s)([0-9]*)', x).group(2)).astype(int)
     dsAttendEnroll.District = dsAttendEnroll.District.map(lambda x: x[-2:]).astype(int)
-    
+
     #We can now see the keys match
     pd.DataFrame(data=[dsProgReports['DISTRICT'][:3], dsDistrict['JURISDICTION NAME'][:3], dsAttendEnroll['District'][:3]])
 
@@ -303,7 +304,7 @@ Output:
     Name: Critical Reading Mean
 
 Now we filter it out
-    
+
     :::python
     #We create a boolean vector mask. Open question as to whether this semantically ideal...
     mask = dsSATs['Number of Test Takers'].map(lambda x: x != 's')
@@ -313,7 +314,7 @@ Now we filter it out
     dsSATs['Critical Reading Mean'] = dsSATs['Critical Reading Mean'].astype(int)
     dsSATs['Mathematics Mean'] = dsSATs['Mathematics Mean'].astype(int)
     dsSATs['Writing Mean'] = dsSATs['Writing Mean'].astype(int)
-    
+
     #We can see those values are gone
     dsSATs['Critical Reading Mean'].take(range(5))
 
@@ -357,7 +358,7 @@ Output:
       8.9]]
 
 Extracting the Pupil-Teacher Ratio
-    
+
     :::python
     #Take the column
     dsPupilTeacher = dsClassSize.filter(['SCHOOLWIDE PUPIL-TEACHER RATIO'])
@@ -366,12 +367,12 @@ Extracting the Pupil-Teacher Ratio
     dsPupilTeacher = dsPupilTeacher[mask]
     #Then drop from the original dataset
     dsClassSize = dsClassSize.drop('SCHOOLWIDE PUPIL-TEACHER RATIO', axis=1)
-    
+
     #Drop non-numeric fields
     dsClassSize = dsClassSize.drop(['BORO','CSD','SCHOOL NAME','GRADE ','PROGRAM TYPE',\
     'CORE SUBJECT (MS CORE and 9-12 ONLY)','CORE COURSE (MS CORE and 9-12 ONLY)',\
     'SERVICE CATEGORY(K-9* ONLY)','DATA SOURCE'], axis=1)
-    
+
     #Build features from dsClassSize
     #In this case, we'll take the max, min, and mean
     #Semantically equivalent to select min(*), max(*), mean(*) from dsClassSize group by SCHOOL NAME
@@ -381,7 +382,7 @@ Extracting the Pupil-Teacher Ratio
         join(grouped.aggregate(np.min), lsuffix=".max").\
         join(grouped.aggregate(np.mean), lsuffix=".min", rsuffix=".mean").\
         join(dsPupilTeacher)
-    
+
     print dsClassSize.columns
 
 Output:
@@ -436,10 +437,10 @@ Next:
     #Just drop string columns.
     #In theory we could build features out of some of these, but it is impractical here
     final = final.drop(['School Name','SCHOOL','PRINCIPAL','SCHOOL LEVEL*','PROGRESS REPORT TYPE'],axis=1)
-    
+
     #Remove % signs and convert to float
     final['YTD % Attendance (Avg)'] = final['YTD % Attendance (Avg)'].map(lambda x: x.replace("%","")).astype(float)
-    
+
     #The last few columns we still have to deal with
     final.dtypes[final.dtypes.map(lambda x: x=='object')]
 
@@ -458,15 +459,15 @@ We can see above that the remaining non-numeric field are grades . Intuitively, 
 
     :::python
     gradeCols = ['2009-2010 OVERALL GRADE','2009-2010 ENVIRONMENT GRADE','2009-2010 PERFORMANCE GRADE','2009-2010 PROGRESS GRADE','2008-09 PROGRESS REPORT GRADE']
-    
+
     grades = np.unique(final[gradeCols].values) #[nan, A, B, C, D, F]
-    
+
     for c in gradeCols:
         for g in grades:
             final = final.join(pd.Series(data=final[c].map(lambda x: 1 if x is g else 0), name=c + "_is_" + str(g)))
-    
+
     final = final.drop(gradeCols, axis=1)
-    
+
     #Uncomment to generate csv files
     #final.drop(['Critical Reading Mean','Mathematics Mean','Writing Mean'],axis=1).to_csv('C:/data/NYC_Schools/train.csv')
     #final.filter(['Critical Reading Mean','Mathematics Mean','Writing Mean']).to_csv('C:/data/NYC_Schools/target.csv')
@@ -477,17 +478,17 @@ We now have a feature matrix and it's trivial to use it with any number of machi
 
     :::python
     from sklearn.ensemble import RandomForestRegressor
-    
+
     target = final.filter(['Critical Reading Mean'])
     #We drop all three dependent variables because we don't want them used when trying to make a prediction.
     train = final.drop(['Critical Reading Mean','Writing Mean','Mathematics Mean'],axis=1)
     model = RandomForestRegressor(n_estimators=100, n_jobs=-1, compute_importances = True)
     model.fit(train, target)
-    
+
     predictions = np.array(model.predict(train))
     rmse = math.sqrt(np.mean((np.array(target.values) - predictions)**2))
     imp = sorted(zip(train.columns, model.feature_importances_), key=lambda tup: tup[1], reverse=True)
-    
+
     print "RMSE: " + str(rmse)
     print "10 Most Important Variables:" + str(imp[:10])
 

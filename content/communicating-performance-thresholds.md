@@ -10,6 +10,8 @@ application behave differently. Test against those dimensions and plot
 the thresholds of each one. Here are some that I made up, for a
 theoretical application.
 
+<!-- PELICAN_END_SUMMARY -->
+
 ![slide1](http://3.bp.blogspot.com/-77vbiIFVUGY/T0_3mZHApWI/AAAAAAAAAFk/v9uPHmoHgc0/s1600/Slide1.GIF)
 
 The goal is to have all real world scenarios fit inside your polygon. So

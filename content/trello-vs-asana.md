@@ -9,6 +9,8 @@ different personalities, teams, and processes, I've seen Asana
 rejected no fewer than a dozen times in favor of Trello, in spite of
 multiple executive mandates to use Asana.
 
+<!-- PELICAN_END_SUMMARY -->
+
 In both companies, management (of which I am a part) made a hard push
 to use Asana. Everyone gave it a shot, and then somehow ended up back
 on Trello.

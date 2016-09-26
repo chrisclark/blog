@@ -11,6 +11,8 @@ encountering a new project, with a new stack, in a new language. The
 feeling is: *OK.* And you roll up your sleeves and get to
 work.
 
+<!-- PELICAN_END_SUMMARY -->
+
 But do you remember the first time you were in a professional setting,
 in front of a new project with years of engineer-hours invested in it?
 You are staring at a foreign IDE for the first time, and a senior

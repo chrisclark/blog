@@ -4,6 +4,8 @@ Date: July 12, 2016
 
 [Noah Smith](https://github.com/noazark/) and I gave this presentation at the San Francisco Django meetup in March of 2016, shortly after we rebranded ePantry to Grove Collaborative. Here's how we pulled it off.
 
+<!-- PELICAN_END_SUMMARY -->
+
 ![first-screen]({filename}/images/rebrand-slides/20160330-Rebrand-Django-Meetup-01.png)
 _Welcome folks!_
 
@@ -39,7 +41,7 @@ _Here's how the SSL config works. This is probably a 90% solution, in that if yo
 _Foreshadowing! We'll be redirecting everyone from epantry.com to the new grove.co domain. Can you guess what bad thing is going to happen?_
 
 ![first-screen]({filename}/images/rebrand-slides/20160330-Rebrand-Django-Meetup-13.png)
-_This is bad. We are a subscription commerce site. The last thing you want to do is log out every single one of your users. That is not a way to help retention during the changeover. Not to mention our emails are going to be coming from a different domain, with less sender reputation, and customers may not recognize them. Password managers also won't be aware of the new domain_
+_This is bad. We are a subscription commerce site. The last thing you want to do is log out every single one of your users. That is not a way to help retention during the changeover. Not to mention our emails are going to be coming from a different domain, with less sender reputation, and customers may not recognize them. Password managers also won't be aware of the new domain._
 
 ![first-screen]({filename}/images/rebrand-slides/20160330-Rebrand-Django-Meetup-14.png)
 _This is all Noah! He came up with a great way to keep folks logged in (securely) across domains._
