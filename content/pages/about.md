@@ -1,7 +1,7 @@
 Title: About
 Illustration: me.jpg
 
-Hi there.
+Hi there!
 
 I'm Chris Clark. I'm co-founder of
 [Grove Collaborative](https://www.grove.co) (formerly called

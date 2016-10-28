@@ -1,4 +1,4 @@
-Title: What does engineering actually do here?
+Title: What does engineering do here?
 Date: 2016-09-12
 Author: Chris
 Slug: what-does-engineering-do-here

@@ -1,5 +1,4 @@
 Title: Projects
-Illustration: projects.png
 
 <div class="row">
   <div class="col-sm-12">
