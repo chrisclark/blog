@@ -7,28 +7,25 @@
 {% if NEST_HEADER_IMAGES %}
 <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; ">
   {% else %}
-  <div class="header-container">
+  <div class="header-container index">
     {% endif %}
     {% endblock headerstyle %}
 
     {% block header %}
-    <div class="container header-wrapper">
-      <h1>{{ NEST_INDEX_HEADER_TITLE }}</h1>
-      <div class="header-underline"></div>
-      {% if NEST_INDEX_HEADER_SUBTITLE %}
-      <p class="header-subtitle header-subtitle-homepage">{{ NEST_INDEX_HEADER_SUBTITLE }}</p>
-      {% endif %}
-    </div>
     {% endblock header %}
 
     {% block content %}
     {% if DEFAULT_PAGINATION %}
     <div class="archive-container">
       <div class="container content archive">
-        <h2><a href="{{ SITEURL }}/{{ articles_page.url }}">{{ NEST_INDEX_CONTENT_TITLE }} {% if articles_page.has_previous() %}<small>- page {{ articles_page.number }}</small>{% endif %}</a></h2>
+        <p>Hi, I'm Chris.</p>
+        <p>I'm a technologist living in San Francisco and co-founder of <a href="https://www.grove.co">Grove Collaborative.</a> Over the years I've written a number of articles about <strong>software, technology, and teams</strong>. I hope you'll find some of them useful.</p>
+        <p>If you'd like to get notified when I publish something new (about once a month), <a href="http://tinyletter.com/chrisclark">join the newsletter</a>. If you'd like to get in touch, <a href="mailto:chris@untrod.com">emailing me</a> is your best bet.</p>
+        <h3>Posts{% if articles_page.has_previous() %}<small>page {{ articles_page.number }}</small>{% endif %}</a></h3>
+        <p>&nbsp;</p>
         <dl class="dl-horizontal">
           {% for article in articles_page.object_list %}
-            <dt><strong>{{ article.locale_date }}</strong></dt>
+            <dt>{{ article.locale_date }}</dt>
             <dd>
               <a href="{{ SITEURL }}/{{ article.url }}"><strong>{{ article.title }}</strong></a>
               {{ article.summary }}

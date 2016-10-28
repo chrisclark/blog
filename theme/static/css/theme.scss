@@ -185,6 +185,10 @@ h6 {
     background-position-x: center;
     background-position-y: top;
 
+    &.index {
+        min-height: 0;
+    }
+
     .header-darken {
         background: linear-gradient(transparentize($black, 0.8), transparentize($black, 0.8));
         min-height: 360px;
@@ -234,7 +238,7 @@ h6 {
     .header-subtitle {
         margin-top: 0;
         font-style: italic;
-        padding-bottom: 1rem;
+        padding-bottom: 3rem;
 
         a {
             text-decoration: underline;
