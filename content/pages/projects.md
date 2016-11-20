@@ -2,9 +2,8 @@ Title: Projects
 
 <div class="row">
   <div class="col-sm-12">
-    <h3>SQL Explorer</h3>
     <a href="https://www.github.com/groveco/django-sql-explorer">
-      <img alt="SQL Explorer" src="//placehold.it/1440x960/1B325F/ffffff?text=SQL+Explorer">
+      <img alt="SQL Explorer" src="//placehold.it/1440x480/1B325F/ffffff?text=SQL+Explorer">
     </a>
     <p>
     SQL Explorer aims to make the flow of data between people fast,
@@ -18,7 +17,6 @@ Title: Projects
 </div>
 <div class="row">
   <div class="col-sm-12 col-md-6">
-    <h3>Django Sprinklers</h3>
     <a href="https://github.com/groveco/django-sprinklers">
       <img alt="Django Spinklers" class="pure-img" src="//placehold.it/1440x960/9CC4E4/ffffff?text=Sprinklers">
     </a>
@@ -31,9 +29,8 @@ Title: Projects
     </p>
   </div>
   <div class="col-sm-12 col-md-6">
-    <h3>Django Segments</h3>
     <a href="https://github.com/groveco/django-segments">
-      <img alt="Django Segments" src="//placehold.it/1440x960/E9F2F9/9CC4E4?text=Segments">
+      <img alt="Django Segments" src="//placehold.it/1440x960/E9F2F9/1B325F?text=Segments">
     </a>
     <p>
     Django Segments allows you slice and dice your user models into
@@ -46,18 +43,16 @@ Title: Projects
 </div>
 <div class="row">
   <div class="col-sm-12 col-md-6">
-    <h3>Customer.io CLI</h3>
     <a href="https://github.com/chrisclark/clj-customerio">
-      <img alt="Customer.io CLI" src="//placehold.it/1440x960/F26C4F/ffffff?text=CIO+CLI">
+      <img alt="Customer.io CLI" src="//placehold.it/1440x960/F26C4F/ffffff?text=C.IO+CLI">
     </a>
     <p>
-    A Clojure CLI application to bulk upset records into <a href="http://www.customer.io">customer.io</a>.
+    A Clojure CLI application to bulk upsert records into <a href="http://www.customer.io">customer.io</a>.
     </p>
   </div>
     <div class="col-sm-12 col-md-6">
-    <h3>The Retentionizer</h3>
     <a href="https://github.com/chrisclark/retentionizer">
-      <img alt="Retentionizer" src="//placehold.it/1440x960/3A89C9/fffff?text=Retentionizer">
+      <img alt="Retentionizer" src="//placehold.it/1440x960/3A89C9/ffffff?text=Retentionizer">
     </a>
     <p>
     In conjunction with <a href="http://www.davidchudzicki.com/">David Chudzicki</a>. Using the techniques in

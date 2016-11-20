@@ -250,6 +250,8 @@ is great for negotiation purposes). Next up you'll request a pricing
 quote, a statement of work (a scope), and a contract. Stay tuned for
 part 2 - how to negotiate price, and get the deal done.
 
+## Footnotes
+
 <a name="footnote1">1</a>: The exception is things that start of cheap
 and get expensive based on usage
 

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ article.title }} - {{ super() }}{% endblock title %}
 {% block description %}{{ article.content|striptags|truncate(200)|escape }}{% endblock description %}
@@ -17,7 +17,7 @@
 {% block header %}
     <!-- Header -->
     <div class="container header-wrapper">
-      <h1>{{ article.title }}</h1>                
+      <h1>{{ article.title }}</h1>
       <div class="header-underline"></div>
       <p class="header-subtitle">{{ NEST_ARTICLE_HEADER_BY }} {% for author in article.authors %}<a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>{% if not loop.last %}, {% endif %}{% endfor %}, {{ article.locale_date }}{% if article.modified %}, {{ NEST_ARTICLE_HEADER_MODIFIED }} {{ article.locale_modified }}{% endif %}, {{ NEST_ARTICLE_HEADER_IN }} <a href="{{ SITEURL }}/{{ category.url }}">{{ article.category|capitalize }}</a></p>
       <div class="clearfix"></div>
@@ -45,9 +45,11 @@
                 <dd><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></dd>
             {% endfor %}
             </dl>
-        {% endif %}
+            {% endif %}
+
+            <h4><i>Like what you read?</i> <a href="http://tinyletter.com/chrisclark">Join the newsletter</a> and get updated when there's something new.</h4>
 
         {% include "disqus_script.html" %}
-        
+
     </div>
 {% endblock %}
