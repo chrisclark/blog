@@ -15,7 +15,8 @@
         {% assets filters="scss,cssmin", output="css/all.css", "css/main.scss" %}
           <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
         {% endassets %}
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,600,300,700|Source+Code+Pro" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/theme/type/cmun-concrete.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
         <!-- /Stylesheets -->
 
         <!-- RSS Feeds -->
@@ -110,7 +111,7 @@
         <!-- Content -->
         {% block content %}
         {% endblock %}
-        <!-- /Content --> 
+        <!-- /Content -->
 
         <!-- Footer -->
         <div class="footer">
@@ -149,7 +150,7 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                    </div> 
+                    </div>
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                         <p class="pull-right text-right">
                             <small>{{ NEST_COPYRIGHT }}</small>

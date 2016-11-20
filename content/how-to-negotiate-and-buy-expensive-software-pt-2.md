@@ -1,10 +1,11 @@
-Title: How to Negotiate & Buy Expensive Software
+Title: How to Buy Expensive Software Part 2: Negotiating Price
 Date: 2016-10-27
-Status: Draft
 Author: Chris
-Slug: how-to-begotiate-and-buy-expensive-saas-software
+Status: Draft
+Slug: how-to-negotiate-and-buy-expensive-saas-software-part-2
 Category: Engineering Management
 
+# Part 2 - Negotiating price
 
 1. Know what you want.
 
@@ -20,7 +21,7 @@ Be able to answer these questions:
 - What's your budget?
 - What would actually cause you to walk away?
 
-If you are negotiating just to make sure no dollars are left on the table, it'll be an unpleasant and meaningless process. You can get results that way, but I'd rather sign something that I know works for me and gets everyeone excited about the partnership. If I know what I need and I get it, I have no reason to stress about whether or not the vendor is making money.
+If you are negotiating just to make sure no dollars are left on the table, it'll be an unpleasant and meaningless process. You can get results that way, but I'd rather sign something that I know works for me and gets everyone excited about the partnership. If I know what I need and I get it, I have no reason to stress about whether or not the vendor is making money.
 
 2. Know your levers
 
@@ -28,11 +29,11 @@ Payment terms. Contract length. Functionality you don't need. Taking on some imp
 
 3. The sales rep is on your side, so be on their side too.
 
-Structure pricing so that success is aligned. Let's say you're signing a per-seat licensing agreeement, and you need 10 seats now
+Structure pricing so that success is aligned. Let's say you're signing a per-seat licensing agreement, and you need 10 seats now
 
-Set up external peronsalities and checkpoints. It allows you to 'fight the good fight' on behalf of your vendor and even if you have to push back hard on a term, it's not personal and allows you to stay aligned with the rep.
+Set up external personalities and checkpoints. It allows you to 'fight the good fight' on behalf of your vendor and even if you have to push back hard on a term, it's not personal and allows you to stay aligned with the rep.
 
-If you do get caught off guard with a specific question, it will also allow you to create time for yourself to think ("I can't answer that beacuse it's not my decision, but I will check with the team/my CFO and get back to you.")
+If you do get caught off guard with a specific question, it will also allow you to create time for yourself to think ("I can't answer that because it's not my decision, but I will check with the team/my CFO and get back to you.")
 
 4. Write it down
 
@@ -48,4 +49,4 @@ Get your rep to cough up some sort of number (or range) as soon as you can. You'
 
 Something that is quoted at 100k per year? I'll bet I can get it for $60k. I probably can't get it for $10k. I should have a sense of that in advance.
 
-Some vendors really need your business (early-stage companies that are as interested in market proof points as they are in profitable customers). Some really don't. I tried to negotiate pricing with a highly profitable, bootstrapped, ggrowing, family-run business. I had zero leverage because the guy I was speaking with really did not care if I signed. "The price is the price. My business has grown 40% this year. We'd love to have you, but the price is the price." He was very willing to walk away.
+Some vendors really need your business (early-stage companies that are as interested in market proof points as they are in profitable customers). Some really don't. I tried to negotiate pricing with a highly profitable, bootstrapped, growing, family-run business. I had zero leverage because the guy I was speaking with really did not care if I signed. "The price is the price. My business has grown 40% this year. We'd love to have you, but the price is the price." He was very willing to walk away.
