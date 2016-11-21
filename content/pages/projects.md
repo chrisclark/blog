@@ -1,10 +1,13 @@
 Title: Projects
 
+<div class="projects">
 <div class="row">
   <div class="col-sm-12">
     <a href="https://www.github.com/groveco/django-sql-explorer">
       <img alt="SQL Explorer" src="//placehold.it/1440x480/1B325F/ffffff?text=SQL+Explorer">
     </a>
+<a class="github-button" href="https://github.com/groveco/django-sql-explorer" data-icon="octicon-star" data-style="mega" data-count-href="/groveco/django-sql-explorer/stargazers" data-count-api="/repos/groveco/django-sql-explorer#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star groveco/django-sql-explorer on GitHub">Star</a>
+<a class="github-button" href="https://github.com/groveco/django-sql-explorer/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/groveco/django-sql-explorer/network" data-count-api="/repos/groveco/django-sql-explorer#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork groveco/django-sql-explorer on GitHub">Fork</a>
     <p>
     SQL Explorer aims to make the flow of data between people fast,
     simple, and confusion-free.  Quickly write and share SQL queries in a
@@ -33,10 +36,10 @@ Title: Projects
       <img alt="Django Segments" src="//placehold.it/1440x960/E9F2F9/1B325F?text=Segments">
     </a>
     <p>
-    Django Segments allows you slice and dice your user models into
-    SEGMENTS using arbitrary SQL queries. You could use it for targeting
+    Slice and dice your users into
+    SEGMENTS using arbitrary SQL queries. Use it for targeting
     marketing offers to certain users, building mailing lists,
-    identifying "good" vs. "bad" customers, or just about anything else
+    identifying "good" vs. "bad" customers, feature-flaggin, or just about anything else
     you can think of.
     </p>
   </div>
@@ -63,4 +66,5 @@ Title: Projects
     cohort and calculate the LTV. <a href="http://retentionizer.herokuapp.com">Try it!</a>
     </p>
   </div>
+</div>
 </div>

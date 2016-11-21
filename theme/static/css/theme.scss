@@ -1,4 +1,4 @@
-html {
+html, body {
     font-family: "Computer Modern Concrete", sans-serif;
     font-size: $baseFontSize / 16 * 100%;
     -webkit-font-smoothing: antialiased;
@@ -255,7 +255,7 @@ h6 {
 }
 
 .content{
-    margin: $leading auto 0;
+    margin: $leading auto;
     padding: 0 1rem;
 
     &.highlight pre {
@@ -350,4 +350,10 @@ img + em {
 
 .newsletter {
     margin-bottom: 2.5rem;
+}
+
+.projects {
+    p {
+        margin-bottom: $leading;
+    }
 }
