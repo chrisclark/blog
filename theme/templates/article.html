@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ article.title }} - {{ super() }}{% endblock title %}
 {% block description %}{{ article.content|striptags|truncate(200)|escape }}{% endblock description %}
@@ -47,7 +47,7 @@
             </dl>
             {% endif %}
 
-            <h4><i>Like what you read?</i> <a href="http://tinyletter.com/chrisclark">Join the newsletter</a> and get updated when there's something new.</h4>
+            <h4 class="newsletter"><i>Like what you read?</i> <a href="http://tinyletter.com/chrisclark">Join the newsletter</a> and get updated when there's something new.</h4>
 
         {% include "disqus_script.html" %}
 

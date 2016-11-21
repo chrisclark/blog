@@ -208,8 +208,8 @@ h6 {
     }
 
     .header-nav{
-        height: 6rem;
-        line-height: 6rem;
+        height: $leading * 4;
+        line-height: $leading * 4;
         text-transform: uppercase;
 
         .nav{
@@ -238,7 +238,7 @@ h6 {
     .header-subtitle {
         margin-top: 0;
         font-style: italic;
-        padding-bottom: 3rem;
+        padding-bottom: $leading * 2;
 
         a {
             text-decoration: underline;
@@ -255,12 +255,12 @@ h6 {
 }
 
 .content{
-    margin: 2.5rem auto;
+    margin: $leading auto 0;
     padding: 0 1rem;
 
     &.highlight pre {
-        padding-left: -1.5rem;
-        padding-right: -1.5rem;
+        padding-left: -$leading;
+        padding-right: -$leading;
     }
 
     img {
@@ -288,13 +288,23 @@ img + em {
 }
 
 .navigation{
-    margin: $leading 0;
-    padding: 0;
+    margin: 0 auto $leading;
+    padding: 0 1rem;
+}
+
+.paginate {
+    font-size: 1rem;
+    font-style: italic;
+    color: $dark !important;
 }
 
 .archive {
 
-    h2{
+    dl {
+        border-left: 1px solid $accent;
+    }
+
+    h2 {
         margin-top: 1rem;
         margin-bottom: $leading;
 
@@ -305,14 +315,13 @@ img + em {
 
     }
 
-    dt{
+    dt {
         font-size: .9rem;
         font-weight: 400;
         line-height: $leading;
     }
 }
 
-/* Comments */
 .comments{
     margin-top: 2.5rem;
 }
@@ -337,4 +346,8 @@ img + em {
     a {
         color: $white;
     }
+}
+
+.newsletter {
+    margin-bottom: 2.5rem;
 }

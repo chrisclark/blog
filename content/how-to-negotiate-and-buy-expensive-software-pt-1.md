@@ -125,8 +125,8 @@ slideshow like this:
   GOING TO GET SUPER LASER NINJA POWERS WHEN YOU BUY THIS THING
 
 #### Slide 3:
-- List of modules and features. 90% chance of the word "proprietary"
-  appearing in at least one of the bullet points.
+- List of modules and features. 90% chance the word "proprietary"
+  appears in at least one of the bullet points.
 
 #### Slide 4:
 - I'm not really sure, I've generally tuned out by now. There are
@@ -154,8 +154,8 @@ the first call (when relevant), and why I ask them:
 - **How big is your largest customer? How small is your smallest?**
     - Like Goldilocks, I want to find a vendor that serves customers
       my size. If I'm a tiny customer, I won't be able to get
-      attention when I need it. And I don't want to pioneer scaling
-      challenges by being the biggest customer.
+      attention when I need it. And I don't want to be the biggest
+      customer, and the first to run into scaling challenges.
 - **How many customers do you have? How many engineers? Are you
   profitable?**
     - How big is this company? Do they serve lots of companies just

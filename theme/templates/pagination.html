@@ -2,11 +2,11 @@
 <!-- /Navigation -->
 <div class="container navigation">
 	{% if articles_page.has_previous() %}
-    	<a class="navigate pull-left" href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i class="fa fa-caret-left"></i> {{ NEST_PAGINATION_PREVIOUS }}</a>
+      <a class="paginate pull-left" href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo; {{ NEST_PAGINATION_PREVIOUS }}</a>
     {% endif %}
     {% if articles_page.has_next() %}
-    	<a class="navigate pull-right" href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ NEST_PAGINATION_NEXT }} <i class="fa fa-caret-right"></i></a>
+      <a class="paginate pull-right" href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ NEST_PAGINATION_NEXT }} &raquo;</a>
     {% endif %}
-</div>              
-<!-- /Navigation --> 
+</div>
+<!-- /Navigation -->
 {% endif %}

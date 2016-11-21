@@ -35,7 +35,7 @@ SOCIAL = (('Github', 'https://www.github.com/chrisclark'),
           ('LinkedIn', 'https://www.linkedin.com/in/chriswclark'),
           ('Flickr', 'https://www.flickr.com/photos/chriscl/'),)
 
-DEFAULT_PAGINATION = 200
+DEFAULT_PAGINATION = 15
 
 THEME = 'theme'
 
@@ -63,7 +63,7 @@ NEST_SITEMAP_MENU = [('Categories','/categories.html'),
 NEST_SOCIAL_COLUMN_TITLE = u'Social'
 NEST_LINKS_COLUMN_TITLE = u'Links'
 NEST_COPYRIGHT = '&copy; untrod.com %s<br/>' % datetime.now().strftime('%Y')
-NEST_FOOTER_HTML = u'Powered by <a href="http://getpelican.com">Pelican</a> & <a href="https://github.com/molivier/nest">Nest</a>'
+NEST_FOOTER_HTML = u'Built with<br><a href="http://getpelican.com">Pelican</a> & <a href="https://github.com/molivier/nest">Nest</a>'
 # archives.html
 NEST_ARCHIVES_HEAD_TITLE = u'Archives'
 NEST_ARCHIVES_HEAD_DESCRIPTION = u'Post Archives'

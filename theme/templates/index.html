@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ NEST_INDEX_HEAD_TITLE }} {% if articles_page.has_previous() %}- page {{ articles_page.number }} {% endif %}- {{ super() }}{% endblock title %}
 {% block description %}{{ SITENAME }}, {{ SITESUBTITLE }}{% endblock description %}
@@ -33,7 +33,7 @@
           touch, <a href="mailto:chris@untrod.com">emailing me</a> is
           your best bet.
         </p>
-        <h3>Posts{% if articles_page.has_previous() %}<small>page {{ articles_page.number }}</small>{% endif %}</a></h3>
+        <h3>Posts{% if articles_page.has_previous() %}<small class="pull-right">page {{ articles_page.number }}</small>{% endif %}</a></h3>
         <p>&nbsp;</p>
         <dl class="dl-horizontal">
           {% for article in articles_page.object_list %}
