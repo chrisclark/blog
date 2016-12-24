@@ -99,7 +99,7 @@ pre, code {
     font-family: 'Source Code Pro', Consolas, monaco, monospace;
     border-radius: 0px;
     color: $font-color;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 code {
@@ -300,8 +300,10 @@ img + em {
 
 .archive {
 
-    dl {
-        border-left: 1px solid $accent;
+    @media (min-width: 768px) {
+        dl {
+            border-left: 1px solid $accent;
+        }
     }
 
     h2 {

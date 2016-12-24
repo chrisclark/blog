@@ -252,14 +252,14 @@ part 2 - how to negotiate price, and get the deal done.
 
 ## Footnotes
 
-<a name="footnote1">1</a>: The exception is things that start of cheap
-and get expensive based on usage
+<a name="footnote1">1</a>: The exceptions are things that start of cheap
+and get expensive based on usage.
 
 <a name="footnote2">2</a>: I think there may be an opportunity for a
-start-up that doesn't really innovate on product but enters some
-market like mid-market CRM and innovates on the sales process by
-somehow avoiding it entirely, and charging e.g. $900/mo, which would
-radically undercut their competitors).
+start-up that doesn't really innovate on product but instead makes,
+e.g., a perfectly decent mid-market CRM product and innovates instead
+on the sales process by somehow avoiding it entirely, and charging,
+like, $900/mo, which would radically undercut their competitors.
 
 <a name="footnote3">3</a>: The answer is: They all look terrible. Save
-the special effects budget for somethign else.
+the special effects budget for something else.
