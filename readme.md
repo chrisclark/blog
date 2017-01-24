@@ -20,11 +20,14 @@ has no line numbers.
 
 # To set up on another machine
 
-You'll need to configure s3_cmd, which is required for uploading to s3: `brew install s3cmd`
+You'll need to configure s3_cmd, which is required for uploading to
+s3: `brew install s3cmd`
 
-Get the AWS access key and secret key, and then ``s3cmd --configure`` (use `/usr/local/bin/gpg` when asked for path to gpg).
+Get the AWS access key and secret key, and then ``s3cmd --configure``
+(use `/usr/local/bin/gpg` when asked for path to gpg).
 
-You will also need to `pip install requirements.txt` and `gem install sass`
+You will also need to `pip install requirements.txt` and `gem install
+sass`
 
 Set cloudflare environmental variables (see fabfile for which ones).
 
