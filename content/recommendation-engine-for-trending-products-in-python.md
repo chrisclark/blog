@@ -23,12 +23,13 @@ Yahoo!
 
 ## The Britney Spears Effect.
 
-Let's say you're reading about this weekend's upcoming NFL games.
-Underneath that article are a bunch of additional, recommended
-algorithms. In the early 2000s, it turned out just about everyone
-wanted to read about Britney Spears. Ev. ery. one.
+Let's say you're reading about this weekend's upcoming NFL game.
+Underneath that article are a bunch of additional articles,
+recommended for you by an algorithm. In the early 2000s, it turned out
+just about *everyone* wanted to read about Britney Spears, whether
+they would admit it or not.
 
-So you get to the bottom of your NFL game preview and it says "You
+So you get to the bottom of your Super Bowl game preview and it says "You
 might also like:" and then shows you an article about Britney and
 K-fed. You feel kind of insulted by the algorithm. Yahoo! thinks I
 want to read about Britney Spears??
@@ -39,9 +40,9 @@ to click. This stuff matters!
 
 Just like a good catcher can frame a on-the-margin baseball pitch for
 an umpire, showing product recommendations on a website in the right
-context puts customers in the right mood to buy.
+context puts customers in the right mood to buy or click.
 
-"Recommended for you" -- ick. So the website thinks it knows me, eh?
+"Recommended for you" -- ugh. So the website thinks it knows me, eh?
 How about this instead:
 
 "Households like yours frequently buy"
@@ -52,19 +53,17 @@ that customers just like me found useful. Chock-full of social proof!
 
 ## Finding Some Plausible Serendipity
 
-So randomness is no good; I have no reason to think it will yield good
-recommendations, and on top of that there is no narrative or framing I
-can share with customers that will make them interested in clicking.
-
 After an awesome brainstorming session with one of our investors, Paul
-Martino from Bullpen Capital, we came up with the idea of a trending
-products algorithm. We'll take all of the add-to-cart actions every
-day, and find products that are trending upwards that day. Sometimes,
-of course, this will just reflect the activities of our marketing
-department (promoting a product in an email, for instance, would cause
-it to trend), but with proper standardization it should also highlight
-newness, trending search terms, and other serendipitous reasons a
-product might be trending.
+Martino from [Bullpen Capital](http://bullpencap.com/), we came up
+with the idea of a trending products algorithm. We'll take all of the
+add-to-cart actions every day, and find products that are trending
+upwards. Sometimes, of course, this will just reflect the activities
+of our marketing department (promoting a product in an email, for
+instance, would cause it to trend), but with proper standardization it
+should also highlight newness, trending search terms, and other
+serendipitous reasons a product might be of interest. It's also easier
+for slower-moving products to make sudden gains in popularity so
+should get some of those long-tail products to the surface.
 
 ## Implementing a Trending Products Engine
 
@@ -123,15 +122,17 @@ on a particular day in the past 20 days. I use 'age' as -20 (20 days
 ago) to -1 (yesterday) so that, when visualizing the data, it reads
 left-to-right, past-to-present, intuitively.
 
-I've included sample data for 100 random products from our database
-here. I'm anonymized both the product IDs and the cart-adds in such a
-way that, when standardized, the results are completely real, but the
-individual data points don't represent our actual business.
+[Here's sample data]({filename}/files/sample-cart-add-data.csv) for
+100 random products from our database. I'm anonymized both the product
+IDs and the cart-adds in such a way that, when standardized, the
+results are completely real, but the individual data points don't
+represent our actual business.
 
 ## Basic Approach
 
 Before we dive into the code, let's outline the basic approach by
-visualizing the data.
+visualizing the data. All the code for each intermediate step, and the
+visualizations, is included and explained later.
 
 Here's the add-to-carts for product 542, from the sample dataset:
 
