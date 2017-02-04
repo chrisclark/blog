@@ -1,9 +1,8 @@
 Title: A Simple Trending Products Recommendation Engine in Python
-Date: 2016-12-17
+Date: 2017-02-04
 Author: Chris Clark
 Slug: recommendation-engine-for-trending-products-in-python.md
 Category: Data Science
-Status: Draft
 
 Our product recommendations were boring. I knew that because our
 customers told us. When surveyed, the #1 thing they wanted from us was
@@ -311,8 +310,10 @@ The final implementation is below:
             smoothed = smooth(trend, SMOOTHING_WINDOW_SIZE, SMOOTHING_WINDOW_FUNCTION)
             nsmoothed = standardize(smoothed)
             slopes = nsmoothed[1:] - nsmoothed[:-1]
-            if len(slopes):
-                trend_snap[i] = slopes[-1]
+            # I blend in the previous slope as well, to stabalize things a bit and
+            # give a boost to things that have been trending for more than 1 day
+            if len(slopes) > 1:
+                trend_snap[i] = slopes[-1] + slopes[-2] * 0.5
         return sorted(trend_snap.items(), key=operator.itemgetter(1), reverse=True)
 
     def smooth(series, window_size, window):
@@ -353,9 +354,14 @@ we're putting in place to goose the performance further:
    easily appear in the results just by jumping to 10+ adds for one
    day.
 
-2. Smoothing the slopes themselves, in order to give additional weight
-   to products that have been trending up for > 1 day.
+2. Weighting products so that a product that jumps from an average of
+   500 adds/day to 600 adds/day has a chance to trend alongside a
+   product that jumped from 20 to 40.
 
-3. Lowering the bar for trending products so that a product that jumps
-   from an average of 500 adds/day to 600 adds/day has a chance to
-   trend alongside a product that jumped from 20 to 40.
+There is weirdly little material out there about trending algorithms -
+and it's entirely possible (likely, even) that others have more
+sophisticated techniques that yield better results.
+
+But for Grove, this hits all the marks: explicable, serendipitous, and
+gets more clicks than anything other product feed we've put in front
+of our customers.
