@@ -300,12 +300,6 @@ img + em {
 
 .archive {
 
-    @media (min-width: 768px) {
-        dl {
-            border-left: 1px solid $accent;
-        }
-    }
-
     h2 {
         margin-top: 1rem;
         margin-bottom: $leading;
