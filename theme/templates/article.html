@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ article.title }} - {{ super() }}{% endblock title %}
 {% block description %}{{ article.content|striptags|truncate(200)|escape }}{% endblock description %}
@@ -35,6 +35,7 @@
 
 {% block content %}
     <div class="container content">
+      {% include 'callout.html' %}
         {{ article.content }}
 
         {% if article.related_posts %}

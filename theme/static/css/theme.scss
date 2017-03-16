@@ -353,3 +353,10 @@ img + em {
         margin-bottom: $leading;
     }
 }
+
+.callout {
+    background-color: lighten($accent, 20%);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 3px;
+}
