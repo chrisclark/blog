@@ -15,7 +15,7 @@ community of data scientists.
 
 When I started my career, I thought I was going to be a good
 engineer. It turns out I'm only an OK engineer, and am probably better
-at building products and teams. I've working in Python, JavaScript,
+at building products and teams. I've worked in Python, JavaScript,
 Clojure, and .NET but now spend most of my time debugging
 communication problems, and helping teams move fast.
 
