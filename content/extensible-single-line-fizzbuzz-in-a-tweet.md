@@ -8,7 +8,7 @@ Yep, it's a
 [fizzbuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html)
 blog post! I can hardly believe I've gone this long without ever doing
 one.
-  
+
 I was thinking about hiring and what I would do if someone asked me
 fizzbuzz, and I think I would have used it as an opportunity to show off
 some engineering practices. Basically, I'd write unit tests and make it
@@ -20,10 +20,11 @@ thing) and created very explicit implementation:
     swaps = []
     swaps.append((3, "fizz"))
     swaps.append((5, "buzz"))
-    for i in xrange(1,101):  
+    for i in xrange(1,101):
         out = ""
         for s in swaps:
-            if i % s[0] == 0: out = out + s[1]
+            if i % s[0] == 0:
+                out += s[1]
         if not len(out):
             out = i
         print out
@@ -51,9 +52,8 @@ spaces, and condense variable declarations:
     :::python
     s=[(3,"fizz"),(5,"buzz")]
     for i in range(1,101):
-       o="".join([x[1] if i%x[0]==0 else "" for x in s])
+        o="".join([x[1] if i%x[0]==0 else "" for x in s])
         print o or i
- 
 
 And I still have 21 characters to spare. But Twitter doesn't support
 linebreaks so if I were to Tweet it, no one could run it without
@@ -62,7 +62,8 @@ works but only gets me this far (the line break after the semicolon is
 still required):
 
     :::python
-    s=[(3,"fizz"),(5,"buzz")];for i in range(1,101): o="".join([x[1] if i%x[0]==0 else "" for x in s]);print o or i
+    s=[(3,"fizz"),(5,"buzz")];
+    for i in range(1,101): o="".join([x[1] if i%x[0]==0 else "" for x in s]);print o or i
 
 This is because Python won't let you inline control flow statements. I
 don't want to move the variable declaration inline because it
@@ -91,4 +92,3 @@ get this, which is pretty darn short)
 
     :::python
     for i in range(1,101):print "".join((i%x[0]==0)*x[1] for x in [(3,"fizz"),(5,"buzz")]) or i
-
