@@ -16,17 +16,17 @@ reproduction steps. Here's my guidance on how to write these:
 
 So good reproduction steps look like this:
 
-1. Log in as user test@test.com with password "foo" on the live website
-2. View the dashboard
-3. Note the dollar amount in the "Your subscription plan" area in the
-lower left
-4. Hit the "pay" button next to that amount
-
-**Expected Result**
-"Today's Payment" is populated in step 1 of the checkout form
-
-**Actual Result**
-"Today's Payment" is blank
+> 1. Log in as user test@test.com with password "foo" on the live website
+> 2. View the dashboard
+> 3. Note the dollar amount in the "Your subscription plan" area in the
+> lower left
+> 4. Hit the "pay" button next to that amount
+>
+> **Expected Result**
+> "Today's Payment" is populated in step 1 of the checkout form
+>
+> **Actual Result**
+> "Today's Payment" is blank
 
 Yes this can be a little tedious, but if you get in the habit of doing
 it, it only takes like 30 seconds more per bug, and if it takes longer
