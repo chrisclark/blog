@@ -1,0 +1,24 @@
+- Work as an infinite list. If this is so, then the order matters; not driving towards done. This is motivating for engineers.
+- Tom DeMarco: Software estimation is a sham
+- How to sell to engineers. It empowers them to sell to themselves and work on stuff that matters.
+- "Eat the frog" culture
+- Ratio of good ideas to bandwidth increases over time. (or ideas that at least appear to be 'good' -- obvious and valuable)
+- The problem we are solving is the one of resource contention
+- Hiring: How we do it. And it's a dynamic system, so we can dial things up and down depending on what we are optimizing for (false negatives, etc.)
+- People hire people like themselves because it's easier for them to get conviction by pattern-matching.
+- Agents vs. Principles
+- Good product management is primarily concerned with avoiding building software except when absolutely forced to
+- Step functions vs. smooth functions (and exponential vs. linear)
+- Completeness of catalog drives retention (because you own mindshare)
+- Your job in a growing startup is to be one chapter ahead in the babv book.
+
+- Art installation idea
+  - Register to attend via facebook
+  - Pull some people and stalk the heck out of them
+  - They give an ID and give it to a team behind glass
+  - They start pulling a bunch of info and projecting it
+  - Starts off obvious
+  - Gets more sophisticated
+  - Ultimately threads in some fake, pernicious stuff
+
+- Our instincts are often right. Our ideas are often wrong. (Mark Pincus from Masters of Scale)

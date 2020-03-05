@@ -137,7 +137,7 @@ unaware of where, like, you end up on sales calls based on that fact
 that you both swiped right on each other's LinkedIn profiles, you've
 almost certainly read this information on their website. I just never
 learn much via cookie-cutter PowerPoint presentations, other than
-slide transitions look the least crappy when screen
+which slide transitions look the least crappy when screen
 sharing<sup>[2](#footnote2)</sup>.
 
 I save my detailed solution and product questions for demos (which
