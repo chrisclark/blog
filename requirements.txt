@@ -22,7 +22,7 @@ pycrypto==2.6.1
 python-dateutil==2.5.3
 python-magic==0.4.11
 pytz==2016.4
-requests==2.10.0
+requests==2.20.0
 s3cmd==1.6.1
 singledispatch==3.4.0.3
 six==1.10.0
