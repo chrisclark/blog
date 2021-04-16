@@ -15,7 +15,7 @@ ecdsa==0.13
 feedgenerator==1.8
 feedparser==5.2.1
 livereload==2.4.1
-lxml==3.6.0
+lxml==4.6.3
 paramiko==1.17.0
 pelican==3.6.3
 pycrypto==2.6.1
