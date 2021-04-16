@@ -11,7 +11,7 @@ blinker==1.4
 certifi==2016.2.28
 cssmin==0.2
 docutils==0.12
-ecdsa==0.13
+ecdsa==0.13.3
 feedgenerator==1.8
 feedparser==5.2.1
 livereload==2.4.1
