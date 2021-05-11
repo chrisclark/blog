@@ -100,12 +100,12 @@ that is my public RSA key. But you don't even have to interact with that
 keys. In the GPG Keychain Access tool (under Applications on your Mac),
 go to Apple &gt; Preferences and point to the MIT key server:
 
-![first-screen]({filename}/images/pgp-1.png)
+![first-screen]({static}/images/pgp-1.png)
 
 Now you can publish your public key to the server by right-clicking your
 key and hitting "Send public key to Keyserver":
 
-![first-screen]({filename}/images/pgp0.png)
+![first-screen]({static}/images/pgp0.png)
 
 Now go [search](http://pgp.mit.edu/) for your email on MIT's servers and
 you can find your public key! Not only that, MIT's key server will
@@ -122,7 +122,7 @@ With Engimail installed, this is really pretty easy. Open Thunderbird
 and compose a new message. You'll see the OpenPGP drop down menu at the
 top, and you can elect to encrypt the message.
 
-![first-screen]({filename}/images/pgp1.png)
+![first-screen]({static}/images/pgp1.png)
 
 When you go to send the message, you'll of course have to select the
 public key with which to encrypt the message. Enigmail will detect the
@@ -133,18 +133,18 @@ keyserver).
 
 So if you write me a message like this:
 
-![first-screen]({filename}/images/pgp3.png)
+![first-screen]({static}/images/pgp3.png)
 
 And choose to encrypt it with my private key, here is the email that
 actually gets sent (note that the subject line is ***NOT*** encrypted):
 
-![first-screen]({filename}/images/pgp2.png)
+![first-screen]({static}/images/pgp2.png)
 
 And if I open it in Thunderbird, Engimail detects the encryption,
 prompts for my password, decrypts it, and lets me know that it's
 decrypted a message:
 
-![first-screen]({filename}/images/pgp4.png)
+![first-screen]({static}/images/pgp4.png)
 
 Couldn't be easier! The harder thing is actually finding someone who
 also knows how to send and receive encrypted emails. Hah hah.
@@ -198,11 +198,11 @@ the message contents and the sending time. Cool!
 
 Sending and receiving signed messages through Engimail is just as easy
 as sending and receiving encrypted messages - just select the option
-when sending, and Engimail handles everything for you. Signed messages
+when sending, and Enigmail handles everything for you. Signed messages
 are automatically verified. Here's what the above message looks like
 when viewed in Engimail:
 
-![first-screen]({filename}/images/pgp5.png)
+![first-screen]({static}/images/pgp5.png)
 
 Sometimes you might want to verify blocks of text (or an email you
 received through a client other than Thunderbird). That's really simple
@@ -210,7 +210,7 @@ with GPG as well, though you'll have to go to the command line. To try
 it out for yourself, save the above signed message as test.txt and then
 run the following from a terminal window:
 
-![first-screen]({filename}/images/pgp6.png)
+![first-screen]({static}/images/pgp6.png)
 
 Ta-da! Piece of cake.
 
@@ -242,7 +242,7 @@ replace my "Really!" with "Really." and re-run the verification (also
 note that I've now set my own key back to "Ultimate" trust so the
 warning is gone):
 
-![first-screen]({filename}/images/pgp7.png)
+![first-screen]({static}/images/pgp7.png)
 
 And that's it! You know how to use the GPG tool to communicate securely.
 There are all sorts of intricacies and details that are loads of fun to

@@ -1,24 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
 from datetime import datetime
 
-AUTHOR = u'Chris Clark'
-SITENAME = u'Chris Clark'
+AUTHOR = 'Chris Clark'
+SITENAME = 'Chris Clark'
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['files','images']
+#STATIC_PATHS = ['files','images']
 
 TIMEZONE = 'America/Los_Angeles'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['assets', 'summary']
-ASSET_DEBUG = True
+PLUGINS = ['pelican.plugins.webassets', 'summary']
+WEBASSET_DEBUG = True
 
-DEFAULT_DATE_FORMAT = ('%x')
+#DEFAULT_DATE_FORMAT = ('%x')
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -47,43 +46,46 @@ DISPLAY_PAGES_ON_MENU = True
 
 DEFAULT_CATEGORY = 'Everything Else'
 
+S3_BUCKET = 'blog.untrod.com'
+AWS_PROFILE = 'blog'
+
 # Theming
 
 # header & index
 NEST_HEADER_LOGO = None
-NEST_INDEX_HEAD_TITLE = u'untrod.com'
-NEST_INDEX_HEADER_TITLE = u'untrod.com'
-NEST_INDEX_HEADER_SUBTITLE = u'Comments on software, technology, and teams.'
-NEST_INDEX_CONTENT_TITLE = u'Posts'
+NEST_INDEX_HEAD_TITLE = 'untrod.com'
+NEST_INDEX_HEADER_TITLE = 'untrod.com'
+NEST_INDEX_HEADER_SUBTITLE = 'Comments on software, technology, and teams.'
+NEST_INDEX_CONTENT_TITLE = 'Posts'
 # footer.html
-NEST_SITEMAP_COLUMN_TITLE = u'Sitemap'
+NEST_SITEMAP_COLUMN_TITLE = 'Sitemap'
 NEST_SITEMAP_MENU = [('Categories','/categories.html'),
                      ('Archives', '/archives.html'),
                      ('About', '/pages/about.html'),]
-NEST_SOCIAL_COLUMN_TITLE = u'Social'
-NEST_LINKS_COLUMN_TITLE = u'Links'
+NEST_SOCIAL_COLUMN_TITLE = 'Social'
+NEST_LINKS_COLUMN_TITLE = 'Links'
 NEST_COPYRIGHT = '&copy; untrod.com %s<br/>' % datetime.now().strftime('%Y')
 NEST_FOOTER_HTML = u'Built with<br><a href="http://getpelican.com">Pelican</a> & <a href="https://github.com/molivier/nest">Nest</a>'
 # archives.html
-NEST_ARCHIVES_HEAD_TITLE = u'Archives'
-NEST_ARCHIVES_HEAD_DESCRIPTION = u'Post Archives'
-NEST_ARCHIVES_HEADER_TITLE = u'Archives'
-NEST_ARCHIVES_HEADER_SUBTITLE = u'Archives for all posts'
-NEST_ARCHIVES_CONTENT_TITLE = u'Archives'
+NEST_ARCHIVES_HEAD_TITLE = 'Archives'
+NEST_ARCHIVES_HEAD_DESCRIPTION = 'Post Archives'
+NEST_ARCHIVES_HEADER_TITLE = 'Archives'
+NEST_ARCHIVES_HEADER_SUBTITLE = 'Archives for all posts'
+NEST_ARCHIVES_CONTENT_TITLE = 'Archives'
 # article.html
-NEST_ARTICLE_HEADER_BY = u'By'
-NEST_ARTICLE_HEADER_MODIFIED = u'modified'
-NEST_ARTICLE_HEADER_IN = u'in'
+NEST_ARTICLE_HEADER_BY = 'By'
+NEST_ARTICLE_HEADER_MODIFIED = 'modified'
+NEST_ARTICLE_HEADER_IN = 'in'
 # categories.html
-NEST_CATEGORIES_HEAD_TITLE = u'Categories'
-NEST_CATEGORIES_HEAD_DESCRIPTION = u'Archives listed by category'
-NEST_CATEGORIES_HEADER_TITLE = u'Categories'
-NEST_CATEGORIES_HEADER_SUBTITLE = u''
+NEST_CATEGORIES_HEAD_TITLE = 'Categories'
+NEST_CATEGORIES_HEAD_DESCRIPTION = 'Archives listed by category'
+NEST_CATEGORIES_HEADER_TITLE = 'Categories'
+NEST_CATEGORIES_HEADER_SUBTITLE = ''
 # category.html
-NEST_CATEGORY_HEAD_TITLE = u'Category Archive'
-NEST_CATEGORY_HEAD_DESCRIPTION = u'Category Archive'
-NEST_CATEGORY_HEADER_TITLE = u'Untrod'
-NEST_CATEGORY_HEADER_SUBTITLE = u'Archive for Category'
+NEST_CATEGORY_HEAD_TITLE = 'Category Archive'
+NEST_CATEGORY_HEAD_DESCRIPTION = 'Category Archive'
+NEST_CATEGORY_HEADER_TITLE = 'Untrod'
+NEST_CATEGORY_HEADER_SUBTITLE = 'Archive for Category'
 # pagination.html
-NEST_PAGINATION_PREVIOUS = u'Previous'
-NEST_PAGINATION_NEXT = u'Next'
+NEST_PAGINATION_PREVIOUS = 'Previous'
+NEST_PAGINATION_NEXT = 'Next'

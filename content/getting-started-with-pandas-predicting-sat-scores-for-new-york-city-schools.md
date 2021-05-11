@@ -15,7 +15,7 @@ This tutorial will get you started with Pandas - a data analysis library for Pyt
 2. Learn and use the Pandas data analysis package.
 3. Learn how data is typically prepared for machine learning algorithms (ingestion, cleaning, joining, feature generation).
 
-First, let's ingest the data and get the lay of the land. You can download the data sets referenced below from [NYC Open Data](https://nycopendata.socrata.com/), or directly download a [zip file]({filename}/files/NYC_Schools.zip) with the relevant data.
+First, let's ingest the data and get the lay of the land. You can download the data sets referenced below from [NYC Open Data](https://nycopendata.socrata.com/), or directly download a [zip file]({static}files/NYC_Schools.zip) with the relevant data.
 
     :::python
     import pandas as pd

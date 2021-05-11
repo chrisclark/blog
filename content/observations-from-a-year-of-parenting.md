@@ -56,5 +56,5 @@ Last weekend: Dash is a little over a year old. It's Saturday evening, we're out
 
 Basically, just relax. People way less competent that you have raised perfectly reasonable, happy kids. Re-read observation #5 when you get nervous, look forward to awesomely fun times as per point #8, and for the love of god do #4. Good luck and I look forward to seeing our children play against each other in the NBA, but still be civil when mingling backstage before their respective TED talks.
 
-![first-screen]({filename}/images/dash-peeking.jpg)
+![first-screen]({static}/images/dash-peeking.jpg)
 *Fig 1. Chubby tiptoes.*

@@ -8,11 +8,11 @@ Set is a classic pattern-matching card game that's been around since the 1970s, 
 
 Here's how it works: using a special set of 81 cards, deal 12 at random, face up. Each card is has a unique combination of 4 attributes: Color, shape, fill, and number, each of which has three different possible values. So after dealing you get something like this:
 
-![dealing-set]({filename}/images/set.png)
+![dealing-set]({static}/images/set.png)
 
 Players shout "set!" when they identify a "valid set". A valid set consists of exactly three cards, for which each of the four attributes are either *all the same* or *all different*. So here's a valid set from the deal above:
 
-![dealing-set]({filename}/images/set.png)
+![dealing-set]({static}/images/set.png)
 
 You can see that, for each of the four attributes, all the cards either completely match or are completely different.
 

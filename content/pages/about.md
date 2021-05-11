@@ -29,7 +29,7 @@ should be popular, but no one has ever paid attention to it. Learn
 more on the [projects page](/pages/projects.html).
 
 Once upon a time I created Oberon Socks, a
-[men's dress sock]({filename}/images/oberon-socks.png) company, now
+[men's dress sock]({static}/images/oberon-socks.png) company, now
 defunct.
 
 You can reach me at chris@untrod.com.

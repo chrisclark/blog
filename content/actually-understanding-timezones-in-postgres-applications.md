@@ -27,7 +27,7 @@ If you make it all the way through, I promise you'll know enough to
 puzzle out any Postgres timezone question you may have - with the
 exception of my mystery question at the end, which is totally insane
 and inexplicable.
-    
+
 ## Easy Sample Data
 
 To start, let's make a test table. Easy.
@@ -112,7 +112,7 @@ no surprise, bad shit happens when you try to use it with timezones:
                timezone
     -------------------------------
      2016-08-12 17:22:31.949271+00
-    
+
     #=> select ts_naked AT TIME ZONE 'UTC' from test;
                timezone
     -------------------------------
@@ -139,7 +139,7 @@ midnight, do the TZ conversion, and return a datetime. Check it out:
       timezone
     ------------
      2015-06-30
-    
+
 I mean...come on.
 
 Ok, enough with things you *shouldn't* do, let's focus on the
@@ -150,8 +150,8 @@ interesting one. It behaves like you'd hope...for now.
               timezone
     ----------------------------
      2016-08-12 17:22:31.949271
-    
-    
+
+
     #=> select ts_tz AT TIME ZONE 'America/Los_Angeles' from test;
               timezone
     ----------------------------
@@ -177,7 +177,7 @@ timestamp, in the server time:
                  ts_tz
     -------------------------------
      2016-08-12 17:22:31.949271+00
-    
+
 But check this out!
 
     :::psql
@@ -186,7 +186,7 @@ But check this out!
                  ts_tz
     -------------------------------
      2016-08-12 10:22:31.949271-07
-     
+
 Whaaaaaa??! It turns out that *every Postgres session has its own time
 zone*. Whoa. The 'timezone' setting that we specified in the
 postgresql.conf file actually just provides a default timezone value
@@ -198,37 +198,37 @@ Django connects to Postgres, it
 and slaps the application time zone onto the psycopg2 connection so
 you get back timestamps in the same timezone you put them in (assuming
 you are inserting local times).
- 
+
 That's clever, but can lead to incredibly confusion if you are trying
 to compare results from the same database, but via 2 different
 connections, which are set to two different time zones. You can always
 check the current session TZ via ``SELECT
 current_setting('TIMEZONE');`` or ``show timezone;``.
- 
+
 Isn't this fun??
- 
+
 ## Offsettin' Stuff
- 
+
 For extra confusion, Postgres will happily let you do this:
- 
+
     :::psql
     #=> select ts_tz AT TIME ZONE 'PST' from test;
              timezone
     ----------------------------
      2016-08-12 09:22:31.949271
-     
+
 Which may not *look* confusing, but I promise it is because 'PST' is
 not actually a timezone! And I can prove it. Postgres keeps a list of
 all the timezones it knows in a view called ``pg_timezone_names``:
- 
+
     :::psql
     #=> select count(*) from pg_timezone_names;
     count
     -------
      1204
-  
+
 Holy smokes that's a lot of timezones! Over 1200 of these:
-  
+
     :::psql
     #=> select * from pg_timezone_names order by random() limit 10;
              name         | abbrev | utc_offset | is_dst
@@ -243,15 +243,15 @@ Holy smokes that's a lot of timezones! Over 1200 of these:
      posix/America/Adak   | HDT    | -09:00:00  | t
      America/Vancouver    | PDT    | -07:00:00  | t
      Asia/Hovd            | HOVST  | 08:00:00   | t
- 
+
  And not a PST among them:
- 
+
     :::psql
     #=> select * from pg_timezone_names where name='PST';
     name | abbrev | utc_offset | is_dst
     ------+--------+------------+--------
     (0 rows)
-    
+
 But it is this other thing, called an 'abbreviation':
 
     :::psql
@@ -262,7 +262,7 @@ But it is this other thing, called an 'abbreviation':
      posix/Pacific/Pitcairn | PST    | -08:00:00  | f
      posix/SystemV/PST8     | PST    | -08:00:00  | f
      SystemV/PST8           | PST    | -08:00:00  | f
-     
+
 So all of those time zones are the same, and can be abbreviated
 'PST'. Note that our friend America/Los_Angeles does not appear here
 because it takes daylight savings time into account, whereas PST does
@@ -297,7 +297,7 @@ That's pretty much it! To recap:
    on *datetime* fields, if at all.
 6. Be aware that offsets and time zones are not the same. Most of the
    time it doesn't matter, until it suddenly does.
-   
+
 If you want to know even more, I do actually recommend
 [section 8.5.3](https://www.postgresql.org/docs/9.1/static/datatype-datetime.html#DATATYPE-TIMEZONES)
 of the PostgreSQL documentation. As far as database server technical
@@ -325,13 +325,13 @@ lingering mystery. Check this out:
      posix/Pacific/Pitcairn | PST    | -08:00:00  | f
      posix/SystemV/PST8     | PST    | -08:00:00  | f
      SystemV/PST8           | PST    | -08:00:00  | f
-    
+
 Look at those two extra timezones! Look at their names and
 abbreviations! They are UTC-08 offsets, but *named* GMT+8?? GMT and
 UTC *are the same thing*! Google could literally not be more
 categorical about this fact:
 
-![google-says-so]({filename}/images/gmt_and_utc.png)
+![google-says-so]({static}/images/gmt_and_utc.png)
 
 But apparently Postgres thinks they are opposites. Or something. If
 anyone can explain this in the comments, I'd really appreciate

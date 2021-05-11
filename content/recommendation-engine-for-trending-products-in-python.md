@@ -122,7 +122,7 @@ on a particular day in the past 20 days. I use 'age' as -20 (20 days
 ago) to -1 (yesterday) so that, when visualizing the data, it reads
 left-to-right, past-to-present, intuitively.
 
-[Here's sample data]({filename}/files/sample-cart-add-data.csv) for
+[Here's sample data]({static}/files/sample-cart-add-data.csv) for
 100 random products from our database. I'm anonymized both the product
 IDs and the cart-adds in such a way that, when standardized, the
 results are completely real, but the individual data points don't
@@ -136,22 +136,22 @@ visualizations, is included and explained later.
 
 Here's the add-to-carts for product 542, from the sample dataset:
 
-![basic-trend]({filename}/images/trending/trend.png)
+![basic-trend]({static}/images/trending/trend.png)
 
 The first thing we'll do is add a low-pass filter (a smoothing
 function) so daily fluctuations are attentuated.
 
-![smoothed]({filename}/images/trending/smoothed.png)
+![smoothed]({static}/images/trending/smoothed.png)
 
 Then we'll standardize the Y-axis, so popular products are comparable
 with less popular products. Note the change in the Y-axis values.
 
-![standardized]({filename}/images/trending/standardized.png)
+![standardized]({static}/images/trending/standardized.png)
 
 Last, we'll calculate the slopes of each line segment of the smoothed
 trend.
 
-![slopes]({filename}/images/trending/slopes.png)
+![slopes]({static}/images/trending/slopes.png)
 
 Our algorithm will perform these steps (in memory, of course, not
 visually) for each product in the dataset and then simply return the
@@ -274,7 +274,7 @@ Really simple! To find the slope of the smoothed, standardized series
 at every point, just take a copy of the series, offset it by 1, and
 subtract. Visually, for some example data:
 
-![slopes]({filename}/images/trending/slope-calc.png)
+![slopes]({static}/images/trending/slope-calc.png)
 
 And in code:
 

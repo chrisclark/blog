@@ -40,7 +40,7 @@ long. By specifying a length of 12, our BitArray is padded with 3
 leading 0s, and we can convert cleanly into Hex and Octal.
 
 Show me the money!
-    
+
     :::python
     print "Int: %s, Binary: %s, Hex: %s, Oct: %s" %
         (twofiftysix.uint, twofiftysix.bin, twofiftysix.hex, twofiftysix.oct)
@@ -70,7 +70,7 @@ Results:
     1111010101011110010100010011
                         XOR'ed =
     1101111011111010110011101101
-    
+
     In hex:
     1101111011111010110011101101 = 'defaced'
 
@@ -80,7 +80,7 @@ just ABCDEF!  Another awesome fact for your cocktail party banter.
 ## File type detection
 
 Here's something a little more practical. Let's say we have
-[4 images]({filename}/files/mystery-images.zip), with no file
+[4 images]({static}files/mystery-images.zip), with no file
 extensions, called mystery1, mystery2, mystery3, and mystery4. Some
 quick Googling will tell us the leading bits of some common image
 types. We can load up the images, inspect the first bits, and figure
@@ -93,14 +93,14 @@ out the file type.
         'jpeg': 'ffd8ff',
         'png': "89504e470d0a1a0a"
     }
-    
+
     images = [
         'mystery1',
         'mystery2',
         'mystery3',
         'mystery4'
     ]
-    
+
     def detect(name, bits):
         for img_type, pattern in types.items():
             try:
@@ -110,7 +110,7 @@ out the file type.
             except:
                 continue
         print "Could not identify %s. First bits: %s" % (name, bits.hex[:4])
-    
+
     for i in images:
         with open(i, 'r') as f:
             img = Bits(f)
