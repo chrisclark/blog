@@ -3,6 +3,7 @@ Date: 2012-02-21 14:57
 Author: Chris Clark
 Slug: building-software-and-building-bridges
 Category: Engineering Management
+Status: Published
 
 We have a problem. People can't get from one area of town to a
 neighboring area because there is a river in between and no road. So

@@ -3,6 +3,7 @@ Date: 2016-06-30
 Author: Chris
 Slug: the-first-thing-i-tell-new-engineers
 Category: Engineering Management
+Status: Published
 
 The first thing I tell junior programmers is: **keep going**.
 

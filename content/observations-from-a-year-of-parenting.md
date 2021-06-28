@@ -5,6 +5,7 @@ Slug: observations-from-a-year-of-parenting
 Category: Everything Else
 Illustration: dash-and-chris-header.jpg
 Illustration_Size: cover
+Status: Published
 
 I have a 13-month-old son named Dashiell (pronounced Dash-uhl, and I'm sorry in advance to schoolage Dashiell, whose teachers will all say "Dah-sheel?" on his first day). He's awesome. I mean...I'm not super objective, but even so, he's definitely a good dude. We're going to keep him.
 

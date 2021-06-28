@@ -2,6 +2,7 @@ Title: DOET Shower
 Date: 2012-01-02 15:12
 Author: Chris Clark
 Slug: doet-shower
+Status: Published
 
 I stayed at a friend's apartment a few weeks ago. It is difficult to
 describe the decor, but if my grandmother and Master P were forced to

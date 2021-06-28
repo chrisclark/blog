@@ -5,7 +5,6 @@ Author: Chris
 Slug: a-dollars-worth-of-bi-for-ten-cents
 Category: Data Science
 
-
 How to get a mid-market data warehouse, for an entry-level price.
 
 You have a problem. You have data in 3 or 4 relational databases, but want join and report across all of them, in one place, in SQL. If you are a Fortune 1000 insurance company, I have good news; this problem has a very well-established solution: Pay Informatica $15 million to integrate everything into a badass data warehouse.

@@ -3,6 +3,7 @@ Date: 2016-11-20
 Author: Chris
 Slug: negotiate-and-buy-saas-software-part-1-picking-a-vendor
 Category: Engineering Management
+Status: Published
 
 Some days it seems like all I'm good for is buying other companies'
 software.

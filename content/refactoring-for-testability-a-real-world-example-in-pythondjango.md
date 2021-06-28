@@ -3,6 +3,7 @@ Date: 2014-04-21 22:25
 Author: Chris
 Slug: refactoring-for-testability-quick
 Category: code & tutorials
+Status: Published
 
 At [ePantry](https://www.epanty.com/), we strive to have enough automated
 test coverage that we can deploy with confidence, without being dogmatic
@@ -22,7 +23,7 @@ around automated testing took time. To the extent we've succeeded, we
 did it by brute force: we just wrote the damn tests. After a couple of
 months of this and one by one, we built up enough actually internalize
 two key lessons:
-  
+
 1.  It's actually *faster* to develop if you write the tests alongside
     your code. Clicking around in the browser reproducing bugs is slow
     and unreliable and not very fun.
@@ -72,7 +73,7 @@ but this is otherwise just as it appeared in the original commit.
                      .annotate(last_shipment_date=Max('pantry__shipments__arrival_date')) \
                         .filter(last_shipment_date__lt=search_date) \
                         .filter(card_on_file=True)
-    
+
         for customer in customers:
             cur_date = customer.last_shipment_arrival_date()
             while cur_date < search_date:
@@ -113,19 +114,19 @@ represent each of those three steps:
     def _shipments_until_date():
         return add_months(datetime.date.today(), \
                           settings.SHIPMENTS_UNTIL_AT_LEAST_MONTHS)
-    
+
     def _get_customers_without_enough_shipments(search_date):
         return Customer.objects \
             .annotate(last_shipment_date=Max('pantry__shipments__arrival_date')) \
             .filter(last_shipment_date__lt=search_date) \
             .filter(card_on_file=True)
-    
+
     def _create_until(customer, last_shipment_date, search_date):
         if last_shipment_date < search_date:
             _create_until(customer, \
                           customer.pantry.create_next_shipment().arrival_date, \
                           search_date)
-        
+
 Now what does our top-level function look like?
 
     :::python
@@ -156,42 +157,42 @@ mock objects.
     from pypantry.tasks import *
     from datetime import timedelta, datetime
     from utils.utils import add_months
-    
-    
+
+
     class TestShipmentGenTask(TestCase):
-    
+
         def setUp(self):
             self.p = PantryFactory()
             self.c = self.p.customer
             self.c.set_card_on_file('foo')
             self.c.save()
             self.s1 = ShipmentFactory(pantry=self.c.pantry)
-    
+
         def test_finds_customers(self):
             self.s1.arrival_date = _shipments_until_date() - timedelta(1)
             self.s1.save()
             res = _get_customers_without_enough_shipments(_shipments_until_date())
             self.assertEqual(len(res), 1)
-    
+
         def test_ignores_customers_with_enough_shipments(self):
             self.s1.arrival_date = _shipments_until_date()
             self.s1.save()
             res = _get_customers_without_enough_shipments(_shipments_until_date())
             self.assertEqual(len(res), 0)
-    
+
         def test_shipments_get_created(self):
             self.s1.arrival_date = datetime.strptime('15042014', "%d%m%Y").date()
             self.s1.save()
             _create_until(self.c, self.s1.arrival_date, add_months(self.s1.arrival_date, 12))
             # one extra because it goes one shipment "past" the target date
-            self.assertEqual(self.p.shipments.count(), 13) 
-    
+            self.assertEqual(self.p.shipments.count(), 13)
+
         def test_task(self):
             self.s1.arrival_date = _shipments_until_date() - timedelta(1)
             self.s1.save()
             create_shipments_async()
             self.assertEqual(self.p.shipments.count(), 2)
-    
+
 Ta-da! Of course there
 are plenty of other tests you could write, but just these four basic
 tests exercise the code reasonably well. And it would have been

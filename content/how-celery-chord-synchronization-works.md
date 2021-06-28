@@ -3,6 +3,7 @@ Date: 2015-03-26 10:20
 Authors: Chris
 Slug: how-celery-chord-synchronization-works
 Category: Code & Tutorials
+Status: Published
 
 Celery is a powerful tool for managing asynchronous tasks in
 Python. The basic model is synchronous Python code pushes a task
@@ -84,9 +85,9 @@ from the Celery source:
          .expire(jkey, 86400)                                        \
          .expire(tkey, 86400)                                        \
          .execute()
-    
+
          totaldiff = int(totaldiff or 0)
-    
+
          try:
              callback = maybe_signature(request.chord, app=app)
              total = callback['chord_size'] + totaldiff

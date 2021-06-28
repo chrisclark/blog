@@ -3,6 +3,7 @@ Date: 2013-01-17 16:30
 Author: Chris Clark
 Slug: entering-kaggle-competitions-with
 Category: Code & Tutorials
+Status: Published
 
 BigML had a [great series of
 posts](http://blog.bigml.com/2013/01/04/machine-learning-throwdown-the-reckoning/)
@@ -10,10 +11,10 @@ over the summer pitting some prediction-as-a-service products against
 each other. One of those was the [Google Predict
 API](https://developers.google.com/prediction/). I thought it might be
 fun to enter a Kaggle competition using the API and see how it did
-against some of the world's top data scientists.  
-  
-It turns out this was a terrible, terrible waste of time.  
-  
+against some of the world's top data scientists.
+
+It turns out this was a terrible, terrible waste of time.
+
 If you are expecting a rigorous analysis of the Google Predict API, this
 post will be a disappointment. In fact, I'll go so far as to ruin the
 surprise right now: on the Biological Response competition, the Predict
@@ -21,11 +22,11 @@ API turned in a 0.67245 on the private leaderboard, just edging out the
 optimized constant value benchmark (in a nutshell - it did badly). It
 fared a bit better on the Titanic competition, scoring a
 somewhat-reasonable 0.79426 (tied with 55 other users for 112th place as
-of this writing).  
-  
+of this writing).
+
 So instead of focusing on the actual performance of the algorithm, I
 will instead share some tips and tricks for using the Google Predict
-API:  
+API:
 
 ### Chris' Tips for Using the Google Predict API:
 

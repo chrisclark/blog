@@ -3,6 +3,7 @@ Date: 2012-11-01 19:55
 Author: Chris Clark
 Slug: extensible-single-line-fizzbuzz-in-tweet
 Category: Code & Tutorials
+Status: Published
 
 Yep, it's a
 [fizzbuzz](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html)

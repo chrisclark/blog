@@ -3,6 +3,7 @@ Date: 2012-03-09 19:49
 Author: Chris
 Slug: juggernaut-in-windows
 Category: Code & Tutorials
+Status: Published
 
 **Note**: This is an old post, and no longer relevant as Juggernaut is
 no longer a thing. Just use
@@ -41,7 +42,7 @@ complement. My development environment is Windows, so I needed to get
 Juggernaut running there. It wasn't terribly difficult but there were
 enough gotchas that I thought I'd share how it's done (and that it can
 be done).
-  
+
 This assumes you have [Python 2.7
 installed](http://www.python.org/download/releases/2.7.2/). I would not
 recommend deploying Juggernaut in production on Windows. Here we go:

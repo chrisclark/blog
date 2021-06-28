@@ -3,6 +3,7 @@ Date: 2016-08-12 12:09
 Author: Chris Clark
 Slug: actually-understanding-timezones-in-postgresql
 Category: Code & Tutorials
+Status: Published
 
 Timezones are the worst. We should all just live in UTC, reasonable
 sunset hours be damned. And learning about timezone implementation

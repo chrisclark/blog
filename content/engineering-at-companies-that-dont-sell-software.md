@@ -3,6 +3,7 @@ Date: 2016-06-29
 Author: Chris
 Slug: software-at-companies-that-dont-sell-software
 Category: Engineering Management
+Status: Published
 
 If you're a software professional, there are two types of
 companies you might work for; those whose products are fundamentally

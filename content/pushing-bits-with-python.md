@@ -3,6 +3,7 @@ Date: 2016-06-17
 Author: Chris
 Slug: pushing-bits-with-python
 Category: code & tutorials
+Status: Published
 
 When was the last time you needed to directly manipulate a bunch of
 binary data? Most engineers run

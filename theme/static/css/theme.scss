@@ -94,16 +94,9 @@ a, a:visited {
 }
 
 pre, code {
-    background: $subtle;
-    padding: 2rem;
     font-family: 'Source Code Pro', Consolas, monaco, monospace;
     border-radius: 0px;
-    color: $font-color;
     font-size: 0.8rem;
-}
-
-code {
-    padding: 3px 4px;
 }
 
 .linenos pre, .highlight pre {

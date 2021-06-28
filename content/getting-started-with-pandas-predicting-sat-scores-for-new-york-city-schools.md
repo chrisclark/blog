@@ -3,6 +3,7 @@ Date: 2013-01-23 01:20
 Author: Chris Clark
 Slug: getting-started-with-pandas-predicting
 Category: Code & Tutorials
+Status: Published
 
 ##An Introduction to Pandas<!-- PELICAN_BEGIN_SUMMARY -->
 

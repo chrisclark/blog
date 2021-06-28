@@ -3,6 +3,7 @@ Date: 2017-02-04
 Author: Chris Clark
 Slug: recommendation-engine-for-trending-products-in-python.md
 Category: Data Science
+Status: Published
 
 Our product recommendations were boring. I knew that because our
 customers told us. When surveyed, the #1 thing they wanted from us was

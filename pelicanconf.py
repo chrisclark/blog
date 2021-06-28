@@ -17,7 +17,11 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['pelican.plugins.webassets', 'summary']
 WEBASSET_DEBUG = True
 
-#DEFAULT_DATE_FORMAT = ('%x')
+DEFAULT_DATE_FORMAT = ('%x')
+
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

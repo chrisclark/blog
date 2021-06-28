@@ -3,6 +3,7 @@ Date: 2012-07-20 22:17
 Author: Chris Clark
 Slug: getting-started-with-python-for-data
 Category: Code & Tutorials
+Status: Published
 
 As the product manager at [Kaggle](http://www.kaggle.com/)
 I'm fortunate enough to hang around with some of the world's top machine
@@ -48,7 +49,7 @@ Here's what you'll learn:
 -   Use those libraries to create a benchmark model and submit it to
     a competition.
 -   Write your own evaluation function, and learn how to use
-    cross-validation to  
+    cross-validation to
    test out ideas on your own.
 
 Excited? I thought so!
@@ -63,7 +64,7 @@ order they appear here:
 
 -   [numpy](http://sourceforge.net/projects/numpy/files/) -
     (pronounced *num-pie*) Powerful numerical arrays. A foundational
-    package  
+    package
    for the two packages below.
 -   [scipy](http://sourceforge.net/projects/scipy/files/) - (*sigh-pie*)
     Scientific, mathematical, and engineering package
@@ -78,7 +79,7 @@ the installation for your operating system or, if you're running Linux,
 you can install from a package manager (pip). If you're on a Windows
 machine, it's easiest to install using the setup executables for scipy
 and scikit-learn rather than installing from a package manager.
-                                   
+
 I'd also highly recommend to setting up a decent Python development
 environment. You can certainly execute Python scripts from the command
 line, but it's a heck of a lot easier to use a proper environment with
@@ -118,22 +119,22 @@ Here's the code:
     :::python
     from sklearn.ensemble import RandomForestClassifier
     from numpy import genfromtxt, savetxt
-    
+
     def main():
         #create the training & test sets, skipping the header row with [1:]
-        dataset = genfromtxt(open('Data/train.csv','r'), delimiter=',', dtype='f8')[1:]    
+        dataset = genfromtxt(open('Data/train.csv','r'), delimiter=',', dtype='f8')[1:]
         target = [x[0] for x in dataset]
         train = [x[1:] for x in dataset]
         test = genfromtxt(open('Data/test.csv','r'), delimiter=',', dtype='f8')[1:]
-    
+
         #create and train the random forest
         #multi-core CPUs can use: rf = RandomForestClassifier(n_estimators=100, n_jobs=2)
         rf = RandomForestClassifier(n_estimators=100)
         rf.fit(train, target)
         predicted_probs = [x[1] for x in rf.predict_proba(test)]
-    
+
         savetxt('Data/submission.csv', predicted_probs, delimiter=',', fmt='%f')
-    
+
     if __name__=="__main__":
         main()
 
@@ -228,29 +229,29 @@ forest model against that withheld data.
     from sklearn import cross_validation
     import logloss
     import numpy as np
-    
+
     def main():
         #read in  data, parse into training and target sets
-        dataset = np.genfromtxt(open('Data/train.csv','r'), delimiter=',', dtype='f8')[1:]    
+        dataset = np.genfromtxt(open('Data/train.csv','r'), delimiter=',', dtype='f8')[1:]
         target = np.array([x[0] for x in dataset])
         train = np.array([x[1:] for x in dataset])
-    
+
         #In this case we'll use a random forest, but this could be any classifier
         cfr = RandomForestClassifier(n_estimators=100)
-    
+
         #Simple K-Fold cross validation. 5 folds.
         cv = cross_validation.KFold(len(train), k=5, indices=False)
-    
+
         #iterate through the training and test cross validation segments and
         #run the classifier on each one, aggregating the results into a list
         results = []
         for traincv, testcv in cv:
             probas = cfr.fit(train[traincv], target[traincv]).predict_proba(train[testcv])
             results.append( logloss.llfun(target[testcv], [x[1] for x in probas]) )
-    
+
         #print out the mean of the cross-validated results
         print "Results: " + str( np.array(results).mean() )
-    
+
     if __name__=="__main__":
         main()
 

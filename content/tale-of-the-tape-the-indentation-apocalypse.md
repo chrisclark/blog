@@ -3,6 +3,7 @@ Date: 2012-07-01 22:13
 Author: Chris Clark
 Slug: tale-of-tape-whitespace
 Category: Engineering Management
+Status: Published
 
 *BRUCE "Emacs" BUFFER:*: Now entering the Kill Ring in the blue
 trunks, with a reach of approximately three-quarters of an inch,

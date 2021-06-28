@@ -3,6 +3,7 @@ Date: 2016-11-19
 Author: Chris
 Slug: photography-journalism-remarks-darcy-padilla-danny-lyon-julian-cox
 Category: Everything Else
+Status: Published
 
 On November 17th, I chaired an event at the de Young Museum related to
 the opening of the exhibit

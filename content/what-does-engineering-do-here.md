@@ -2,6 +2,7 @@ Title: What does engineering do here?
 Date: 2016-09-12
 Author: Chris
 Slug: what-does-engineering-do-here
+Status: Draft
 Category: Engineering Management
 
 My company, [Grove Collaborative](https://www.grove.co), is an online
