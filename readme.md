@@ -20,12 +20,12 @@ has no line numbers.
 
 Set up a post like this:
 
-    Title: A Very Painful Bug
-    Date: 2012-04-01 18:24
-    Author: Chris Clark
-    Slug: a-very-painful-bug
-    Category: Engineering Management
-    Status: Draft <- remove to publish
+Title: A Very Painful Bug
+Date: 2012-04-01 18:24
+Author: Chris Clark
+Slug: a-very-painful-bug
+Category: Engineering Management
+Status: Draft <- remove to publish
 
 # To set up on another machine
 
