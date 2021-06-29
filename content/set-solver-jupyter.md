@@ -3,6 +3,7 @@ Date: 2021-06-28
 Author: Chris Clark
 Slug: set-solver-in-python
 Status: Published
+Category: Code & Tutorials
 
 [SET](https://www.playmonster.com/brands/set/) is a classic pattern-matching card game that's been around since the 1970s, but really took off in the 90s. It hits all the right marks for a great game casual game; easy to learn, works for any number of players, you can play for 5 minutes or for hours, little equipment required, and it's always competitive.
 
@@ -186,7 +187,7 @@ Game output:
     12 cards on the table. 0 cards in the deck. Set: True
     9 cards on the table. 0 cards in the deck. Set: True
 
-Up next, let's see how many times in an average game there are no sets in 12 cards, and 15 cards are required (Or 18! Or, in theory at least, 21!). We simulate 10,000 games and keep track of how many times there are different cards on the table (as well as how many cards are on the table
+Up next, let's see how many times in an average game there are no sets in 12 cards, and 15 cards are required (Or 18! Or, in theory at least, 21!). We simulate 10,000 games and keep track of how many times there are different cards on the table (as well as how many cards are on the table at the end game):
 
     :::python
     from collections import Counter
