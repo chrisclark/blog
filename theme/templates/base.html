@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
     <head>
     {% block head %}
@@ -12,7 +12,7 @@
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
         <!-- Stylesheets -->
-        {% assets filters="libsass", output="css/style.min.css", "css/main.scss" %}
+        {% assets filters="libsass", output="css/style.min.css", depends="css/*.scss", "css/main.scss" %}
           <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
         {% endassets %}
         <link rel="stylesheet" href="/theme/type/cmun-concrete.css">

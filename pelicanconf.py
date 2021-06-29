@@ -7,18 +7,14 @@ SITENAME = 'Chris Clark'
 SITEURL = ''
 
 PATH = 'content'
-#STATIC_PATHS = ['files','images']
 
 TIMEZONE = 'America/Los_Angeles'
 
-DEFAULT_LANG = 'en'
-
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['pelican.plugins.webassets', 'summary']
-WEBASSET_DEBUG = True
 
+DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = ('%x')
-
 DEFAULT_METADATA = {
     'status': 'draft',
 }
