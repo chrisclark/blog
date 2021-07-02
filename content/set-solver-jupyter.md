@@ -220,9 +220,9 @@ Let's see:
     Eighteens: 144 times in 139 games.
     Twenty Ones: 0 times in 0 games.
 
-It appears we'll get a "15" on the table at some point about 2/3rds of the time, and 18 cards only 1.4% of the time. It's also interesting to note that the vast, vast majority (97%!) end with either 6 or 9 cards on the table -- about evenly split between those outcomes. That's surprising - it's not intuitive to me that the final 12 cards would have about the same odds of containing a set as a final 9 cards. Said differently, given a final 12 cards, it's even odds that it contains exactly 1 set or exactly 2 sets. You'll also notice that "3" does not appear as endgame scenario. This makes sense - 78 of 81 cards in the deck have been made into a set, the last three cards must also be a set.
+It appears we'll get a "15" on the table at some point about 2/3rds of the time, and 18 cards only 1.4% of the time. It's also interesting that the vast majority (97%!) of games end with either 6 or 9 cards left on the table, and it's about evenly split between those two outcomes. This surprised me; it's not intuitive to me that the final 12 cards would have about the same odds of containing a set as a final 9 cards. Said differently, given a final 12 cards, it's even odds that it contains exactly 1 set or exactly 2 sets (non-intersecting). You'll also notice that "3" does not appear as endgame scenario. This makes sense - if 78 of 81 cards in the deck have been made into a set, the last three cards must also be a set.
 
-Lastly, I wondered how useful it would be to continue looking for a set after your opponent calls "Set", but before they have collected the cards from the 12 on the table. The code below explores that; it appears that if you can spot a set just after your opponent calls "set", there is a ~28% chance that your late-spotted set will still be there after your opponent has collected their three cards (at least, for the very first deal of the game).
+Lastly, I wondered how useful it would be to continue looking for a set after your opponent calls "Set", but before they have collected the cards from the 12 on the table. We generate 100,000 first draws, find all sets, pick one at random, remove it, and then check if another set exists in the remaining 9 cards.
 
     :::python
     deck = make_cards()
@@ -247,15 +247,19 @@ Lastly, I wondered how useful it would be to continue looking for a set after yo
                 sets_in_remainder.append(len(s))
 
 
-    print("Odds your set is still around after the first set is taken: {:.2%}".format(
+    print("Odds a set is still around after the first set is taken: {:.2%}".format(
         sum(sets_in_remainder) / sum(sets_in_first)
     ))
 
 And the result:
 
     :::text
-    Odds your set is still around after the first set is taken: 28.28%
+    Odds a set is still around after the first set is taken: 28.28%
 
-From here, it is trivial to explore how many sets are available at different stages of the game. For the lazy, it appears Peter Norvig has (of course!) [done that for us already](https://norvig.com/SET.html).
+It appears that if you can spot a set just after your opponent calls "set", there is a ~28% chance that your late-spotted set will still be there after your opponent has collected their three cards (at least, for the very first deal of the game).
+
+This is really interesting. The odds that two non-intersecting sets exist in the first twelve cards is about *half* the odds that two non-intersecting sets exist in the final 12 cards. That means that, not only should you continue looking for sets as your opponent is collecting cards and dealing new ones, but that that strategy becomes more powerful later in the game (presumably linearly, though I haven't verified).
+
+For more SET fun and other analyses, Peter Norvig has (of course!) [done that a great job](https://norvig.com/SET.html).
 
 This code was fun to write, and perhaps you can do some more exploration from here!

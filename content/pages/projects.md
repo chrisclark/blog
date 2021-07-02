@@ -1,4 +1,5 @@
 Title: Projects
+Status: Published
 
 <div class="projects">
 <div class="row">

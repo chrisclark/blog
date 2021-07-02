@@ -1,5 +1,6 @@
 Title: About
 Illustration: me.jpg
+Status: Published
 
 Hi there!
 
