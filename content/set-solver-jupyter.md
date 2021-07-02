@@ -31,6 +31,13 @@ The rules are very simple, but the fun comes from staring at the cards as they a
 
 To understand a little better what I was looking for (and to fiddle around with Python, which is always fun), I sought to determine how many sets are likely to be in the first 12 dealt cards. Here's the code to generate a deck of SET cards, and detect whether a set (or multiple sets) are present.
 
+<div class="callout">
+  <h3>> Run the code</h3>
+  <p>
+  You can <a href="https://colab.research.google.com/drive/1jTIiu-Ewagyi_KZgL7FXOCfsh-JqE0MH?usp=sharing">run and edit</a> all of the code in this blog post right from your browser.
+  </p>
+</div>
+
 
     :::python
     from itertools import combinations

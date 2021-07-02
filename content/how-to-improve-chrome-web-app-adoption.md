@@ -1,25 +1,22 @@
 Title: How to Improve Chrome Web App Adoption
 Date: 2012-01-03 17:51
-Author: Chris Clark()
+Author: Chris Clark
 Slug: how-to-improve-chrome-web-app-adoption
 Status: Published
 
 There was big news in the browser world this month, as Google's Chrome
-browser [eclipsed Firefox's market
+browser [eclipsed Firefox's market
 share](http://www.tomshardware.com/news/chrome-firefox-internet-explorer-browser,14147.html),
 making is the \#2 most popular browser in the world. Google's goals with
 regard to Chrome have always been clear. As Peter Kasting, a founding
-member of the Chrome team at Google, [puts it](https://plus.google.com/114128403856330399812/posts/9dKsD7Mi7JU):
+member of the Chrome team at Google, [puts it](https://plus.google.com/114128403856330399812/posts/9dKsD7Mi7JU):
 
 "The primary goal of Chrome is to make the web advance as much and as
 quickly as possible"
 
-And they've been doing that very effectively, as I've [blogged about
-before](http://blog.untrod.com/2011/07/google-chrome-product-strategy.html).
-
 While I don't doubt this as the primary motivation for building the
 browser, there are clearly some tangential opportunities that Google is
-exploring. For instance, [there is a fascination
+exploring. For instance, [there is a fascinating
 theory](http://ipullrank.com/googlebot-is-chrome/) that the Googlebot
 (the crawler responsible for maintaining Google's search index) is in
 fact running Chrome under the hood in order to index JavaScript and
@@ -35,7 +32,7 @@ users](http://www.chromeosapps.org/) (though it's unclear what counts as
 a user) and about 18,000 apps available.
 
 I have some theories about Google's strategic goals of the Chrome store
-(in all likelihood it's to support  [Chrome
+(in all likelihood it's to support [Chrome
 OS](http://en.wikipedia.org/wiki/Google_Chrome_OS), but it might not be.
 What else, say you? To drive Chrome adoption? To turn a profit by
 pushing Google Checkout? To simply "advance the web"?) but ultimately we
