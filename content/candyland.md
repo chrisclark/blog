@@ -6,20 +6,17 @@ Status: Published
 
 I play Candy Land occasionally with my two boys (the six year old gets
 it much more than the three year old). It has the strange property of
-involving both zero skill and also zero agency. There are absolutely
-no decisions for the player to make at any point; the entire outcome
-of the game is determined once the cards are shuffled.
+involving both zero skill and zero agency. There are absolutely no
+decisions for the player to make at any point; the outcome of the game
+is determined as soon as the cards are shuffled.
 
-This makes it a terrible game, but also a fun one to hack together in
-Python one afternoon and explore. Let's do it!
-
-Let's look at a bare-bones implementation of the game, with the
-specifics of the board (the "bridges" or shortcuts, special character
-cards, and "licorice" spaces) parameterized for easy fiddling later.
+This makes it reduce to a game that is about as fun as flipping a
+coin, but significantly more fun to hack together in Python one
+afternoon and explore. Let's do it!
 
 First up, some simple classes representing the board, a player, and a
-"move" object, which doesn't affect gameplay, but we'll have the game
-loop return after each turn so we can analyze the full game later.
+"move" object, which doesn't affect gameplay, but will keep track of
+each turn so we can analyze games later.
 
     :::python
     class Board(object):
@@ -48,9 +45,12 @@ loop return after each turn so we can analyze the full game later.
             self.card = card
             self.new_position = new_position
 
-With this, we can create a variety of different Candy Land
-boards. Here's a board with full fidelity to the original game (which
-you can see [here]({static}/images/candyland1.jpg)).
+Now we can create a variety of different Candy Land boards. Here's a
+board with full fidelity to the original game (which you can see
+[here]({static}/images/candyland1.jpg)). For the morbidly curious, I
+got the right indices for the licorice, specials, etc by laying out
+the board in a
+[spreadsheet]({static}/files/candyland/candy-land-board.csv).
 
     :::python
     COLORS = list('RPYBOG')
@@ -76,17 +76,14 @@ you can see [here]({static}/images/candyland1.jpg)).
 
     print([spc_fmt(i, s) for i, s in enumerate(board.spaces)])
 
-
-Output (with some formatting to signify licorice and shortcuts):
+Here's our board with some formatting to signify licorice and shortcuts:
 
     :::python
     ['R', 'P', 'Y', 'B', '^O^', 'G', 'R', 'P', 'Plumpy', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Mr. Mint', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', '^P^', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Jolly', 'O', 'G', 'R', 'P', '*Y*', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'Gramma Nut', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', '*B*', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Princess Lolly', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Queen Frostine', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', '*R*', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R']
 
-Good stuff. For the morbidly curious, I got the right indices for the
-licorice, specials, etc by laying out the board in a
-[spreadsheet]({static}/files/candyland/candy-land-board.csv).
+Good stuff.
 
-Ok, on to the game! For those of you who have _not_ played Candy Land
+Ok, onto the game! For those of you who have _not_ played Candy Land
 recently, you can read the official rules
 [here]({static}/files/candyland/cl_rules.pdf), but the most salient
 bits are:
@@ -174,14 +171,18 @@ With that in mind, here is the game code:
                 if m.new_position is None: break
             return moves
 
-Starting with "create_cards" we see the 66 cards of the deck get
-generated (given 'default' settings).
+With default settings, the 66 cards of the deck are created in the
+`create_cards` method.
 
-The core game logic is in generate_move, where the resulting new
-position of a player, given a card, is generated. The 'play' game loop
-simply takes turns until the win condition is met (which happens when
-the drawn card's position doesn't is not present in the remainder of
-the board - line 40).
+The core game logic is in `generate_move`: given a card and a player,
+we calculate the new position of the player. This is somewhat
+interesting and it's the algorithm that must be running inside my
+six-year-old's head, and the algorithm that my three-year-old can't
+quite get a handle on.
+
+The `play` game loop simply takes turns until the win condition is met
+(which happens when the drawn card's position doesn't is not present
+in the remainder of the board - see line 40).
 
 Now that we have our game objects, we can play (using the board we
 created previously):
@@ -191,7 +192,7 @@ created previously):
     g = Game(players, board)
     moves = g.play()
 
-We can print out the moves and see what happened. Weirdly, formatted
+We can print out the moves and see what happened. Weirdly, formating
 the move well was perhaps the hardest part of this entire exercise.
 
     :::python
