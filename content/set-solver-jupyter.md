@@ -27,9 +27,12 @@ You can see that, for each of the four attributes, all the cards either complete
 
 If you were to change any attribute on any of the cards in the set, you'd have some attribute for which 2 cards matched, and the third different, thus making it an invalid set. When someone finds a set, you remove it, and deal three new cards in their place. You go through the entire deck until there are <=12 cards left, with no more sets. Whoever claimed the most sets wins.
 
-The rules are very simple, but the fun comes from staring at the cards as they are dealt, frantically trying to find sets before you opponent. If my brain had a cooling fan, it would immeidately turn on as my cognitive load instantly maxes out.
+> ###This is a test
+> What **does** it do?
 
-To understand a little better what I was looking for (and to fiddle around with Python, which is always fun), I sought to determine how many sets are likely to be in the first 12 dealt cards. Here's the code to generate a deck of SET cards, and detect whether a set (or multiple sets) are present.
+The rules are very simple, but the fun comes from staring at the cards as they are dealt, frantically trying to find sets before you opponent. If my brain had a cooling fan, it would immediately turn on as my cognitive load instantly maxes out.
+
+To understand a little better what I was looking for (and to fiddle around with Python, which is always fun), I sought to determine how many sets are likely to be in the first 12 dealt cards. Here's the code to generate a deck of SET cards, and detect whether a set (or multiple sets) are present. There are a few "unnecessary" methods in the below because (spoilers!) we are going to simulate a *lot* of Set games later and this turned out to make quite a difference.
 
 <div class="callout">
   <h3>> Run the code</h3>
@@ -63,12 +66,14 @@ To understand a little better what I was looking for (and to fiddle around with 
         return [c for c in combinations(cards, 3) if _is_set(*c)]
 
     def find_set(cards):
+        # The same as above, but bails as soon as it finds a set. Again, performance thing.
         for c in combinations(cards, 3):
             if _is_set(*c):
                 return c
 
     def sets_exist(cards):
-        # 21+ cards guarantee a set, via https://mathscinet.ams.org/mathscinet-getitem?mr=2031694
+        # Perf optimization: 21+ cards guarantee a set
+        # via https://mathscinet.ams.org/mathscinet-getitem?mr=2031694
         return len(cards) > 20 or bool(find_set(cards))
 
     def test():
@@ -83,7 +88,7 @@ To understand a little better what I was looking for (and to fiddle around with 
 
     test()
 
-We can now empirally determine some facts about the game. I simulated one million 12-card deals (from a fresh deck each time) to see how many sets appear in the initial draw of a game.
+We can now empirically determine some facts about the game. I simulated one million 12-card deals (from a fresh deck each time) to see how many sets appear in the initial draw of a game.
 
     :::python
 

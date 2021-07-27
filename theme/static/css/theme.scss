@@ -62,8 +62,49 @@ dd {
     }
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: black;
+    width: 100%;
+}
+
+thead {
+    border-bottom: 1px solid black;
+    vertical-align: bottom;
+}
+
+tr, th, td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.25em 0.25em;
+    line-height: normal;
+    white-space: normal;
+    max-width: none;
+    border: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+    background: $body-bg;
+}
+
+tbody tr:hover {
+    background: rgba(66, 165, 245, 0.2);
+}
+
 th, td {
     padding: 2px;
+}
+
+.linenos th, td {
+    padding: 0;
 }
 
 a, a:visited {
@@ -99,10 +140,18 @@ pre, code {
     font-size: 0.8rem;
 }
 
-.linenos pre, .highlight pre {
+.highlight pre {
     border:none;
     margin: $leading 0;
     padding: $leading;
+    background: $code-bg;
+    color: $white;
+}
+
+.linenos pre {
+    border:none;
+    margin: $leading 0;
+    padding: $leading 0 $leading $leading;
     background: $code-bg;
     color: $white;
 }
