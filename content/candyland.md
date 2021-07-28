@@ -11,8 +11,8 @@ decisions for the player to make at any point; the outcome of the game
 is determined as soon as the cards are shuffled.
 
 This makes it reduce to a game that is about as fun as flipping a
-coin, but significantly more fun to hack together in Python one
-afternoon and explore. Let's do it!
+coin, but significantly _more_ fun to hack together in Python and
+explore!
 
 We'll do a rules refresher in a sec, but first, some simple classes
 representing the board, a player, and a "move" object, which doesn't
@@ -22,14 +22,15 @@ games later.
     :::python
     class Board(object):
 
-        def __init__(self, shortcuts, colors, specials, licorice):
+        def __init__(self, shortcuts, colors, specials, licorice, length):
             self.shortcuts = shortcuts
             self.colors = colors
             self.specials = list(specials.keys())
             self.licorice = licorice
-            self.spaces = (self.colors * 22)[:128]
+            self.spaces = (self.colors * ((length//len(colors))+1))
             for k, v in specials.items():
                 self.spaces.insert(v, k)
+            self.spaces = self.spaces[:length]
 
 
     class Player(object):
@@ -54,6 +55,7 @@ the board in a
 [spreadsheet]({static}/files/candyland/candy-land-board.csv).
 
     :::python
+    LENGTH = 134
     COLORS = list('RPYBOG')
     SPECIALS = {
         'Plumpy': 8,
@@ -66,13 +68,13 @@ the board in a
     LICORICE = [47,85,120]
     SHORTCUTS = {4:58, 33:46}
 
-    board = Board(SHORTCUTS, COLORS, SPECIALS, LICORICE)
+    board = Board(SHORTCUTS, COLORS, SPECIALS, LICORICE, LENGTH)
 
     def spc_fmt(i, s):
         if i in board.licorice:
-            return '*{}*'.format(s)
+            return 'Licorice: {}'.format(s)
         if i in board.shortcuts.keys():
-            return '^{}^'.format(s)
+            return 'Shortcut to {0}: {1}'.format(board.shortcuts[i], s)
         return s
 
     print([spc_fmt(i, s) for i, s in enumerate(board.spaces)])
@@ -80,7 +82,7 @@ the board in a
 Here's our board with some formatting to signify licorice and shortcuts:
 
     :::python
-    ['R', 'P', 'Y', 'B', '^O^', 'G', 'R', 'P', 'Plumpy', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Mr. Mint', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', '^P^', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Jolly', 'O', 'G', 'R', 'P', '*Y*', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'Gramma Nut', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', '*B*', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Princess Lolly', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Queen Frostine', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', '*R*', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P']
+    ['R', 'P', 'Y', 'B', 'Shortcut to 58: O', 'G', 'R', 'P', 'Plumpy', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Mr. Mint', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'Shortcut to 46: P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Jolly', 'O', 'G', 'R', 'P', 'Licorice: Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'Gramma Nut', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'Licorice: B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Princess Lolly', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Queen Frostine', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Licorice: R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P']
 
 Good stuff.
 
@@ -89,13 +91,14 @@ recently, you can read the official rules
 [here]({static}/files/candyland/cl_rules.pdf), but the most salient
 bits are:
 
-- Players draw a cards on each turn and do what the card says. There
-  is zero decision making on the part of the player.
-- In the original game (which are mirrored in the settings above),
+- Players take turns drawing cards and then...do what the card
+  says. Again...there is zero decision making on the part of the
+  player.
+- In the original game (which is mirrored in the settings above),
   there are 66 cards; 6 "special character" cards, and 60 color
   cards. There are six colors, with eight "single" and two "double"
-  cards in each color. The next block of code we'll look at will
-  generate the deck based on the board settings.
+  cards in each color. The game code (which we'll look at next)
+  generates the cards.
 - When a player draws a color card, move forward to the next color of
   that space. For double color cards, move to the next-next color of
   that space.
@@ -239,7 +242,7 @@ of the various board components:
     def play_games(config, num):
         return [Game(**config).play() for _ in range(num)]
 
-def analyze(name, results):
+    def analyze(name, results):
         from statistics import mean, median
         lengths = list(map(len, results))
         print("Turn stats for {0} '{1}' games:".format(len(lengths), name))
@@ -250,22 +253,23 @@ def analyze(name, results):
 
     PLAYERS = ['Chris']
     NUM_GAMES = 10000
+    LENGTH = 134
 
     STANDARD = {
         'players': PLAYERS,
-        'board': Board(SHORTCUTS, COLORS, SPECIALS, LICORICE)}
+        'board': Board(SHORTCUTS, COLORS, SPECIALS, LICORICE, LENGTH)}
 
     NO_LICORICE = {
         'players': PLAYERS,
-        'board': Board(SHORTCUTS, COLORS, SPECIALS, [])}
+        'board': Board(SHORTCUTS, COLORS, SPECIALS, [], LENGTH)}
 
     NO_SPECIALS = {
         'players': PLAYERS,
-        'board': Board(SHORTCUTS, COLORS, {}, LICORICE)}
+        'board': Board(SHORTCUTS, COLORS, {}, LICORICE, LENGTH)}
 
     NO_SHORTCUTS = {
         'players': PLAYERS,
-        'board': Board({}, COLORS, SPECIALS, LICORICE)}
+        'board': Board({}, COLORS, SPECIALS, LICORICE, LENGTH)}
 
     analyze('Standard', play_games(STANDARD, NUM_GAMES))
     analyze('No Licorice', play_games(NO_LICORICE, NUM_GAMES))
