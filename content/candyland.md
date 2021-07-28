@@ -14,9 +14,10 @@ This makes it reduce to a game that is about as fun as flipping a
 coin, but significantly more fun to hack together in Python one
 afternoon and explore. Let's do it!
 
-First up, some simple classes representing the board, a player, and a
-"move" object, which doesn't affect gameplay, but will keep track of
-each turn so we can analyze games later.
+We'll do a rules refresher in a sec, but first, some simple classes
+representing the board, a player, and a "move" object, which doesn't
+affect gameplay, but will keep track of each turn so we can analyze
+games later.
 
     :::python
     class Board(object):
@@ -26,7 +27,7 @@ each turn so we can analyze games later.
             self.colors = colors
             self.specials = list(specials.keys())
             self.licorice = licorice
-            self.spaces = (self.colors * 22)[:127]
+            self.spaces = (self.colors * 22)[:128]
             for k, v in specials.items():
                 self.spaces.insert(v, k)
 
@@ -79,7 +80,7 @@ the board in a
 Here's our board with some formatting to signify licorice and shortcuts:
 
     :::python
-    ['R', 'P', 'Y', 'B', '^O^', 'G', 'R', 'P', 'Plumpy', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Mr. Mint', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', '^P^', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Jolly', 'O', 'G', 'R', 'P', '*Y*', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'Gramma Nut', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', '*B*', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Princess Lolly', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Queen Frostine', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', '*R*', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R']
+    ['R', 'P', 'Y', 'B', '^O^', 'G', 'R', 'P', 'Plumpy', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Mr. Mint', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', '^P^', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'Jolly', 'O', 'G', 'R', 'P', '*Y*', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'Gramma Nut', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', '*B*', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'Princess Lolly', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Queen Frostine', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', '*R*', 'P', 'Y', 'B', 'O', 'G', 'R', 'P', 'Y', 'B', 'O', 'G', 'R', 'P']
 
 Good stuff.
 
@@ -228,7 +229,7 @@ Here's the output, eliding over a number of moves for brevity:
     On turn 49, Chris draws RR and moves to 89.
     On turn 50, Maggie draws R and moves to 127.
     On turn 51, Chris draws Y and moves to 91.
-    On turn 52, Maggie draws PP and WINS!
+    On turn 52, Maggie draws GG and WINS!
 
 Grr, I lost. Oh well - I'm sure there will be more games...in
 fact...we can build a harness to play _many_ games, and see the effect
@@ -238,7 +239,7 @@ of the various board components:
     def play_games(config, num):
         return [Game(**config).play() for _ in range(num)]
 
-    def analyze(name, results):
+def analyze(name, results):
         from statistics import mean, median
         lengths = list(map(len, results))
         print("Turn stats for {0} '{1}' games:".format(len(lengths), name))
@@ -276,24 +277,24 @@ analytical purposes (vs. HARD-CORE COMPETITIVE purposes). The results:
 
     :::text
     Turn stats for 10000 'Standard' games:
-    Mean:    37.8452
+    Mean:    38.6897
     Median:  33.0
-    Min/max: 5/209
+    Min/max: 4/242
 
     Turn stats for 10000 'No Licorice' games:
-    Mean:    33.8787
-    Median:  29.0
-    Min/max: 5/176
+    Mean:    34.5284
+    Median:  30.0
+    Min/max: 4/178
 
     Turn stats for 10000 'No Specials' games:
-    Mean:    27.4153
-    Median:  27.0
-    Min/max: 10/76
+    Mean:    27.6359
+    Median:  28.0
+    Min/max: 10/74
 
     Turn stats for 10000 'No Shortcuts' games:
-    Mean:    39.6979
+    Mean:    40.6276
     Median:  35.0
-    Min/max: 5/218
+    Min/max: 5/210
 
 You now know a deep secret of the universe: that the 'special' cards
 in Candy Land on average send players backwards more often than
@@ -301,11 +302,11 @@ forwards. My GOD! I always thought they were there to help! Doing some
 simple math, we determine:
 
     :::text
-    Impact of licorice: 3.97 turns
-    Impact of specials: 10.43 turns
-    Impact of shortcuts: -1.85 turns
+    Impact of licorice: 4.16 turns
+    Impact of specials: 11.05 turns
+    Impact of shortcuts: -1.94 turns
 
-Shortcuts reduce games by an average of 1.85 turns, while licorice and
+Shortcuts reduce games by an average of 1.9 turns, while licorice and
 specials add to the average lengths of games. Cool!
 
 I, for one, thoroughly enjoyed acquiring this utterly worthless
