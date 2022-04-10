@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
     <head>
     {% block head %}
@@ -118,7 +118,7 @@
             <div class="container footer-container ">
                 <div class="row">
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                        <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div>
+                        <!-- <div class="footer-title">{{ NEST_SITEMAP_COLUMN_TITLE }}</div> -->
                         <ul class="list-unstyled hug">
                             {% for title, link in NEST_SITEMAP_MENU %}
                             <li><a href="{{ SITEURL }}{{ link }}">{{ title }}</a></li>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
                         {% if SOCIAL %}
-                        <div class="footer-title">{{ NEST_SOCIAL_COLUMN_TITLE }}</div>
+                        <!-- ><div class="footer-title">{{ NEST_SOCIAL_COLUMN_TITLE }}</div> -->
                         <ul class="list-unstyled hug">
                             {% for name, link in SOCIAL %}
                             <li><a href="{{ link }}" target="_blank">{{name}}</a></li>
@@ -152,10 +152,10 @@
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <p class="pull-right text-right">
+                        <div class="pull-right text-right">
                             <small>{{ NEST_COPYRIGHT }}</small>
                             {% if NEST_FOOTER_HTML %}<small><em>{{ NEST_FOOTER_HTML }}</em></small>{% endif %}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -50,15 +50,13 @@ dd {
 @media (min-width: 768px) {
     .dl-horizontal dt {
         float: left;
-        width: 10rem;
         clear: left;
-        text-align: right;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
     .dl-horizontal dd {
-        margin-left: 12.5rem;
+        margin-left: 8rem;
     }
 }
 
@@ -121,7 +119,6 @@ a, a:visited {
         padding-right: 4px;
         min-width: 100px;
         text-align: center;
-        text-transform: uppercase;
         font-weight: 600;
         color:$white;
         text-decoration: none;
@@ -252,7 +249,6 @@ h6 {
     .header-nav{
         height: $leading * 4;
         line-height: $leading * 4;
-        text-transform: uppercase;
 
         .nav{
             a {

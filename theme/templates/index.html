@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ NEST_INDEX_HEAD_TITLE }} {% if articles_page.has_previous() %}- page {{ articles_page.number }} {% endif %}- {{ super() }}{% endblock title %}
 {% block description %}{{ SITENAME }}, {{ SITESUBTITLE }}{% endblock description %}
@@ -19,10 +19,10 @@
     <div class="archive-container">
       <div class="container content archive">
         <p>
-          Hi! I'm Chris, the CTO and co-founder
+          I'm Chris Clark, the CTO and co-founder
           of <a href="https://www.grove.co">Grove Collaborative.</a>
           Over the years I've written a number of articles
-          about <strong>software, technology, and teams</strong>.
+          about software, technology, and teams.
         </p>
         <h3>
           Posts{% if articles_page.has_previous() %}<small class="pull-right">page {{ articles_page.number }}</small>{% endif %}</a>

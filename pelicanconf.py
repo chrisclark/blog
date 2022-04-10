@@ -3,7 +3,7 @@
 from datetime import datetime
 
 AUTHOR = 'Chris Clark'
-SITENAME = 'Chris Clark'
+SITENAME = 'Untrod'
 SITEURL = ''
 
 PATH = 'content'
@@ -32,7 +32,7 @@ LINKS = ()
 # Social widget
 SOCIAL = (('Github', 'https://www.github.com/chrisclark'),
           ('LinkedIn', 'https://www.linkedin.com/in/chriswclark'),
-          ('Flickr', 'https://www.flickr.com/photos/chriscl/'),)
+          ('Twitter', 'https://www.twitter.com/cclark'))
 
 DEFAULT_PAGINATION = 15
 
@@ -65,7 +65,6 @@ NEST_SITEMAP_MENU = [('Categories','/categories.html'),
 NEST_SOCIAL_COLUMN_TITLE = 'Social'
 NEST_LINKS_COLUMN_TITLE = 'Links'
 NEST_COPYRIGHT = '&copy; untrod.com %s<br/>' % datetime.now().strftime('%Y')
-NEST_FOOTER_HTML = u'Built with<br><a href="http://getpelican.com">Pelican</a> & <a href="https://github.com/molivier/nest">Nest</a>'
 # archives.html
 NEST_ARCHIVES_HEAD_TITLE = 'Archives'
 NEST_ARCHIVES_HEAD_DESCRIPTION = 'Post Archives'
