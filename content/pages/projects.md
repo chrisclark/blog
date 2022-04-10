@@ -5,7 +5,7 @@ Status: Published
 <div class="row">
   <div class="col-sm-12">
     <a href="https://www.github.com/groveco/django-sql-explorer">
-      <img alt="SQL Explorer" src="//placehold.it/1440x480/1B325F/ffffff?text=SQL+Explorer">
+      <img alt="SQL Explorer" src="//via.placeholder.com/1440x480/1B325F/ffffff?text=SQL+Explorer">
     </a>
 <a class="github-button" href="https://github.com/groveco/django-sql-explorer" data-icon="octicon-star" data-style="mega" data-count-href="/groveco/django-sql-explorer/stargazers" data-count-api="/repos/groveco/django-sql-explorer#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star groveco/django-sql-explorer on GitHub">Star</a>
 <a class="github-button" href="https://github.com/groveco/django-sql-explorer/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/groveco/django-sql-explorer/network" data-count-api="/repos/groveco/django-sql-explorer#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork groveco/django-sql-explorer on GitHub">Fork</a>
@@ -22,7 +22,7 @@ Status: Published
 <div class="row">
   <div class="col-sm-12 col-md-6">
     <a href="https://github.com/groveco/django-sprinklers">
-      <img alt="Django Spinklers" class="pure-img" src="//placehold.it/1440x960/9CC4E4/ffffff?text=Sprinklers">
+      <img alt="Django Spinklers" class="pure-img" src="//via.placeholder.com/1440x960/9CC4E4/ffffff?text=Sprinklers">
     </a>
     <p>
     Django Sprinklers imposes structure on <a href="http://www.celeryproject.org/">Celery</a> jobs that perform
@@ -34,7 +34,7 @@ Status: Published
   </div>
   <div class="col-sm-12 col-md-6">
     <a href="https://github.com/groveco/django-segments">
-      <img alt="Django Segments" src="//placehold.it/1440x960/E9F2F9/1B325F?text=Segments">
+      <img alt="Django Segments" src="//via.placeholder.com/1440x960/E9F2F9/1B325F?text=Segments">
     </a>
     <p>
     Slice and dice your users into
@@ -48,7 +48,7 @@ Status: Published
 <div class="row">
   <div class="col-sm-12 col-md-6">
     <a href="https://github.com/chrisclark/clj-customerio">
-      <img alt="Customer.io CLI" src="//placehold.it/1440x960/F26C4F/ffffff?text=C.IO+CLI">
+      <img alt="Customer.io CLI" src="//via.placeholder.com/1440x960/F26C4F/ffffff?text=C.IO+CLI">
     </a>
     <p>
     A Clojure CLI application to bulk upsert records into <a href="http://www.customer.io">customer.io</a>.
@@ -56,7 +56,7 @@ Status: Published
   </div>
     <div class="col-sm-12 col-md-6">
     <a href="https://github.com/chrisclark/retentionizer">
-      <img alt="Retentionizer" src="//placehold.it/1440x960/3A89C9/ffffff?text=Retentionizer">
+      <img alt="Retentionizer" src="//via.placeholder.com/1440x960/3A89C9/ffffff?text=Retentionizer">
     </a>
     <p>
     In conjunction with <a href="http://www.davidchudzicki.com/">David Chudzicki</a>. Using the techniques in
