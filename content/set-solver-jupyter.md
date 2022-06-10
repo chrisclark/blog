@@ -27,9 +27,6 @@ You can see that, for each of the four attributes, all the cards either complete
 
 If you were to change any attribute on any of the cards in the set, you'd have some attribute for which 2 cards matched, and the third different, thus making it an invalid set. When someone finds a set, you remove it, and deal three new cards in their place. You go through the entire deck until there are <=12 cards left, with no more sets. Whoever claimed the most sets wins.
 
-> ###This is a test
-> What **does** it do?
-
 The rules are very simple, but the fun comes from staring at the cards as they are dealt, frantically trying to find sets before you opponent. If my brain had a cooling fan, it would immediately turn on as my cognitive load instantly maxes out.
 
 To understand a little better what I was looking for (and to fiddle around with Python, which is always fun), I sought to determine how many sets are likely to be in the first 12 dealt cards. Here's the code to generate a deck of SET cards, and detect whether a set (or multiple sets) are present. There are a few "unnecessary" methods in the below because (spoilers!) we are going to simulate a *lot* of Set games later and this turned out to make quite a difference.
