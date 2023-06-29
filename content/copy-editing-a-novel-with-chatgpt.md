@@ -4,15 +4,15 @@ Author: Chris Clark
 Slug: copy-editing-a-novel-with-chatgpt
 Status: Published
 
-My wife suddenly needed a final round of copy-editing on a manuscript she had written some time ago. There wasn't time to hire a professional, and even splitting it up, we couldn't get it done between the two of us fast enough.
+My wife, a writer, recently and unexpectedly needed a final round of copy-editing on a manuscript she had written some time ago. There wasn't time to hire a professional, and even splitting it up, we couldn't get it done between the two of us fast enough.
 
-But fear not, dear wife! Your husband knows Python and has an OpenAI API key! Thus, I asked ChatGPT to copy-edit the book.
+Luckily, I know Python and have an OpenAI API key! Thus, I asked ChatGPT to copy-edit the book. I believed this was in ChatGPT's wheelhouse for a few reasons:
 
-- Because we're copy editing, we don't need full context on any given chunk of text. Searching for plot holes or timeline inconsistencies, for instance, raises a number of context issues that we can just ignore here. Copy editing is about true errors.
-- ChatGPT has impeccable spelling and grammar. Therefore I assume it is good at catching errors in text.
-- It's easy to provide good examples. "Few shot" prompting tends to improve performance.
+1. Copy-editing is about true errors; spelling, grammar, etc. So "chunks" of text can be copy-edited separately. The entire novel doesn't need to be in the model's context window. Searching for plot holes or timeline inconsistencies in a novel-length text would be another matter entirely.
+2. ChatGPT has impeccable spelling and grammar. Therefore I assumed it would be good at catching errors in text.
+3. It's easy to provide good examples. "Few shot" prompting tends to improve performance.
 
-Below we'll look at the approach I took, and the results. I've included illustrative, but incomplete, code below. [Full code is available here](https://gist.github.com/chrisclark/612ab8fa9c4c6dd5a85c1529162e0efd). I used GPT4 as a coding assistant for much of this. And boy it's great. It's so nice to get working directory-traversal code (for instance) that does just what I need, without spending five minutes Googling and reading docs. GPT4-assisted Python scripting makes exercises like this much more enjoyable.
+Below we'll look at the approach I took, and the results. I've included illustrative, but incomplete, code. [Full code is available here](https://gist.github.com/chrisclark/612ab8fa9c4c6dd5a85c1529162e0efd). I used GPT4 as a coding assistant for much of this. And boy it's great. It's so nice to get working directory-traversal code (for instance) that does just what I need, without spending five minutes Googling and reading docs. GPT4-assisted Python scripting makes exercises like this much more enjoyable.
 
 To preview the conclusion: ChatGPT performed much less well than I thought, but still provided a usable copy editing pass. It is significantly better than nothing, but surprisingly noisy and erratic.
 
@@ -54,7 +54,7 @@ So...does it work? Not as well as I'd hoped. Perhaps 1/3 of the suggestions are 
 3. Total hallucinations. This text, for instance, simply doesn't appear in the corresponding chunk:
     - "highway ears as they passed" -> "highway ears as it passed"
 
-Trying to read through the copy edit suggestions was mentally exhausting. All of my energy went to trying to determine whether there was, in fact, a diff between the original text and the suggested correction. For instance, which of these are legitimate suggestions and which contain no signal?
+Trying to read through an output riddled with false-positives is mentally exhausting. Which of these are legitimate suggestions and which contain no signal?
 
 - "bulletproof glass partition. “You" -> "bulletproof glass partition, "You"
 - "Detective Moorehead, please,” Savvy" -> "Detective Moorehead, please," Savvy"
@@ -63,9 +63,9 @@ Trying to read through the copy edit suggestions was mentally exhausting. All of
 - "What is this in" -> "What is this in,"
 - "with Detective Moorehead,” she" -> "with Detective Moorehead," she"
 
-Yikes.
+It's like a vision test. Yikes.
 
-Eliminating the 'non-corrections' seemed valuable, and very doable. After some careful reading and categorization of the nature of the non-corrections, I wrote the following function to eliminate corrections where the left and right sides were identical, ignore some characters around that don't matter, and removed a certain type of writespace correction.
+After carefully reading chatGPT's output, I wrote a function to detect hallucinations (19 of them for those keeping score at home), non-corrections, and persnickety suggestions that simply involved swapping a backtick for an apostrophe (e.g. encoding nuances).
 
 ```py
 def is_real_correction(input_str):
@@ -73,41 +73,43 @@ def is_real_correction(input_str):
     right_side = input_str.split('->')[1].strip(' -"').replace('’', "'").replace('“', '"').replace('”', '"')
     if left_side.endswith('"') and not right_side.endswith('"'):
         left_side = left_side[:-1]
-    if left_side != right_side and 'remove extra space' not in right_side:
+    # full_novel_text check is for hallucinations
+    if left_side != right_side and 'remove extra space' and left_side in full_novel_text:
         return f'- {left_side} -> {right_side}'
 ```
 
 
 ## Final Result
 
-For a novel of about 90,000 words, GPT4 identified 1120 "issues", which the script above reduced to 830. This is a fairly 'manual' way of deleting bad corrections; it's possible running the corrections back through GPT4, with instructions to throw away bogus corrections could automate this process -- but I didn't have a chance to try it here and I'm not sure it's a notably better approach.
+For a novel of about 90,000 words, GPT4 identified 1120 "issues", which the script above reduced to 811. I suspect feeding the corrections back into ChatGPT with a prompt to identify only real corrections could have worked -- but good old-fashioned string manipulation with Python is also plenty good. I'm not yet reaching for ChatGPT to solve all of my problems, but perhaps I am a luddite.
 
 Of the remaining corrections, about 25% are truly legitimate corrections, 50% are somewhat random wording and stylistic changes, and the remaining 25% are legitimate grammar issues, but are contained within spoken dialogue or are otherwise used purposefully. If this were a copy-edit a magazine article, this last 25% would be useful, as the author would want the writing to confirm strictly to a standard (e.g. Chicago Manual of Style) -- but is of limited utility in the context of a novel.
 
-I also wrote a bit of code to identify hallucinations. Of the 1120 original issues, 19 were hallucinated.
+Here are some representative corrections.
 
-Below are some examples of the different types of corrections.
-
-25% Legitimate Copy Errors
+Legitimate Copy Errors
 
 - Felicia stiffened almost indecipherably. -> Felicia stiffened almost imperceptibly.
 - The is the family kitchen. -> This is the family kitchen.
 - "No, doesn’t mean that" -> "No, it doesn't mean that"
 
-50% Arbitrary Rephrasings
+Debatable Copy Corrections
+
+- "His laugh was contagious and his spirit big, I'm told.” -> "His laugh was contagious, and his spirit was big, I'm told.”
+- "Not exactly the apology Savvy was expecting" -> "Not exactly the apology Savvy expected"
+
+Arbitrary Rephrasings
 
 - "He stood on the opposite side" -> "He stood on the other side"
 - "He put his glass down" -> "He set his glass down"
 - "the overhead lights flashed" -> "the overhead lights flickered"
 - "The corners of his mouth" -> "The corners of his lips"
 
-25% Debatable Copy Corrections
-
-- "His laugh was contagious and his spirit big, I'm told.” -> "His laugh was contagious, and his spirit was big, I'm told.”
-- "Not exactly the apology Savvy was expecting" -> "Not exactly the apology Savvy expected"
 
 ## Conclusion
 
-Yeah - I mean - not bad? Kind of ok for $8? I can't help but feel a little disappointed, as this felt like a slam-dunk for ChatGPT. As the [old saying goes](https://cdixon.org/2009/08/20/machine-learning-is-really-good-at-partially-solving-just-about-any-problem), AI is great at solving 80% of any problem.
+Yeah - I mean - not bad? Kind of OK for $8? (Ignoring the ~2 hours of time it took me to wrangle the code)
 
-With that said, i do think ChatGPT (or even a much simpler model) could be turned into an excellent copywriter through fine tuning. Given some more time, I would have loved to try that approach (especially because training data is easy to generate for this use case). Perhaps in a future blog post...
+I can't help but feel a little disappointed, as this felt like a slam-dunk for ChatGPT. As the [old saying goes](https://cdixon.org/2009/08/20/machine-learning-is-really-good-at-partially-solving-just-about-any-problem), AI is great at solving 80% of any problem.
+
+With that said, I do think ChatGPT (or even a much simpler model) could be turned into an excellent copywriter through fine tuning. The tech is surely capable of doing much better. Given some more time, I would have loved to try that approach (especially because training data is easy to generate for this use case). Perhaps in a future blog post...
