@@ -9,7 +9,7 @@ I've recently been reminded of a few favorite short stories, and discovered some
 None of these are deep cuts; they are well known among sci-fi readers and short story lovers. But I thought I'd compile the ones I love nonetheless.
 
 ### Isaac Asimov (1956) - The Last Question (and Answer)
-The Last Question is Asmiov's best story, and everyone knows it (Asimov included). A later story, The Last Answer, is also excellent and related only indirectly, through an existential theme. It's worth noting that [Answer](https://www.roma1.infn.it/~anzel/answer.html) by Fredric Brown is likely an (uncited) inspiration (it was written a few years prior). Lastly, a Douglas Adams fan will surely recognize the famous Last Question parody from Hitchiker's Guide.
+The Last Question is Asmiov's best story, and everyone knows it (Asimov included). A later story, The Last Answer, is also excellent but related only indirectly, through an existential theme. It's worth noting that [Answer](https://www.roma1.infn.it/~anzel/answer.html) by Fredric Brown is likely an (uncited) inspiration (it was written a few years prior). Lastly, a Douglas Adams fan will surely recognize the famous Last Question parody from Hitchiker's Guide.
 
   - [The Last Question](https://www.physics.princeton.edu/ph115/LQ.pdf)
   - [The Last Answer](https://highexistence.com/the-last-answer-short-story/)
@@ -35,6 +35,6 @@ Confession: This is not actually one of my favorites. It's nominally as thought-
 - [The Egg](http://www.galactanet.com/oneoff/theegg_mod.html)
 
 ### Kurt Vonnegut (1961) - Harrison Bergeron
-Perhaps you've heard of the Handicapper General? It's hard to believe that this was written in 1961. In fact, it's a good reminder that we are prisoners of our own experience and societal issues that may seem novel are not new at all.
+Perhaps you've heard of the Handicapper General? It's hard to believe this was written in 1961. In fact, it's a good reminder that we are prisoners of our own experience and societal issues that may seem novel are not new at all.
 
 - [Harrison Bergeron](http://www.tnellen.com/cybereng/harrison.html)

@@ -29,11 +29,17 @@ Status: Draft <- remove to publish
 
 # To set up on another machine
 
-You'll need to configure s3_cmd, which is required for uploading to
-s3: `brew install s3cmd`
+Get the AWS access key and secret key:
+- From AWS -> Account -> Security Credentials
 
-Get the AWS access key and secret key, and then ``s3cmd --configure``
-(use `/usr/local/bin/gpg` when asked for path to gpg).
+Install AWS command line tools and run:
+
+aws configure --profile blog
+
+AWS Access Key ID [*******VU42]:
+AWS Secret Access Key [********pWBX]:
+Default region name [None]: us-east-1
+Default output format [None]:
 
 You will also need to `pip install requirements.txt` and `brew install
 sass/sass/sass`

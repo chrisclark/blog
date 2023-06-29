@@ -1,0 +1,113 @@
+Title: Copy Editing a Novel with ChatGPT
+Date: 2023-06-28
+Author: Chris Clark
+Slug: copy-editing-a-novel-with-chatgpt
+Status: Published
+
+My wife suddenly needed a final round of copy-editing on a manuscript she had written some time ago. There wasn't time to hire a professional, and even splitting it up, we couldn't get it done between the two of us fast enough.
+
+But fear not, dear wife! Your husband knows Python and has an OpenAI API key! Thus, I asked ChatGPT to copy-edit the book.
+
+- Because we're copy editing, we don't need full context on any given chunk of text. Searching for plot holes or timeline inconsistencies, for instance, raises a number of context issues that we can just ignore here. Copy editing is about true errors.
+- ChatGPT has impeccable spelling and grammar. Therefore I assume it is good at catching errors in text.
+- It's easy to provide good examples. "Few shot" prompting tends to improve performance.
+
+Below we'll look at the approach I took, and the results. I've included illustrative, but incomplete, code below. [Full code is available here](https://gist.github.com/chrisclark/612ab8fa9c4c6dd5a85c1529162e0efd). I used GPT4 as a coding assistant for much of this. And boy it's great. It's so nice to get working directory-traversal code (for instance) that does just what I need, without spending five minutes Googling and reading docs. GPT4-assisted Python scripting makes exercises like this much more enjoyable.
+
+To preview the conclusion: ChatGPT performed much less well than I thought, but still provided a usable copy editing pass. It is significantly better than nothing, but surprisingly noisy and erratic.
+
+## Chunking up the text
+
+Using some handy ChatGPT-provided code, I chunked the novel into separate text files of (in this case) at most 1000 words. This is well under the maximum GPT4 context size of 8000 tokens (1000 words is perhaps 1250 tokens), but I found that smaller chunks lead to more consistency in finding true errors.
+
+Separate files made downstream experimentation easier (I could delete all but a few chunks; I could write resume code when the openai API failed, etc). The chunking is deterministic and fast.
+
+## Copy Editing with ChatGPT
+
+Now we send the chunks to Openai and ChatGPT. The prompt below works...OK. I should have perhaps provided more rigorous few-shot examples. Nonetheless, I experimentally determined that the examples below did lend considerable consistency to the output. Without it, ChatGPT will come up with different ways of providing the feedback for each chunk, which makes the results hard for a human to process, and a machine to parse (more on that later). If I did this again, I'd spend another iteration or two on the prompt. I do believe there is quality juice to squeeze there.
+
+> You are a copy editor looking for issues in a novel before it is submitted to publishers. You are looking for obvious grammar and spelling issues and any information that is obviously incorrect. Do not make suggestions related to style, or edits for clarity. Just focus on copy errors.
+
+> Please format your responses as a series of bullet points. Start with a quote of a few words from the novel that you are copy-editing (so it's easy to find in the novel), then follow with your comments/corrections.
+
+> Here are some examples of good copy edits:
+
+> * "an two hundred year" -> "a two hundred year"
+> * "on to the veranda" -> "onto the veranda"
+> * "full memory of the night" -> "full memories of the night"
+> * "Her and Luis's dog" -> "Her and Luis' dog"
+> * "Felicia stiffened almost indecipherably." -> "Felicia stiffened almost imperceptibly."
+> * "The is the family kitchen." -> "This is the family kitchen."
+
+> Do not suggest substitutions of one type of punctuation mark for another. For example, do not suggest replacing ` with ', or “ with ".
+
+Looping through each of the 104 chunks with GPT4 took about 35 minutes and cost just over $8 in API fees. In retrospect, for this task, I suspect GPT3.5 could give equivalent results more quickly, at less cost.
+
+## Initial Result
+
+So...does it work? Not as well as I'd hoped. Perhaps 1/3 of the suggestions are legitimate suggestions/corrections. The others fall into one of three categories:
+
+1. Non-corrections. The original text and the new text are identical, or simply changed a quote or apostrophe type.
+    - "I didn’t tell the police." -> "I didn't tell the police."
+2. Oddly specific stylistic suggestions (in spite of the prompt asking to avoid these):
+    - "She yelped. Savvy tried to apologize" -> "She yelped, and Savvy tried to apologize"
+3. Total hallucinations. This text, for instance, simply doesn't appear in the corresponding chunk:
+    - "highway ears as they passed" -> "highway ears as it passed"
+
+Trying to read through the copy edit suggestions was mentally exhausting. All of my energy went to trying to determine whether there was, in fact, a diff between the original text and the suggested correction. For instance, which of these are legitimate suggestions and which contain no signal?
+
+- "bulletproof glass partition. “You" -> "bulletproof glass partition, "You"
+- "Detective Moorehead, please,” Savvy" -> "Detective Moorehead, please," Savvy"
+- "loudly banging each letter" -> "loudly, banging each letter"
+- "Finished. Straightened a stack" -> "Finished, straightened a stack"
+- "What is this in" -> "What is this in,"
+- "with Detective Moorehead,” she" -> "with Detective Moorehead," she"
+
+Yikes.
+
+Eliminating the 'non-corrections' seemed valuable, and very doable. After some careful reading and categorization of the nature of the non-corrections, I wrote the following function to eliminate corrections where the left and right sides were identical, ignore some characters around that don't matter, and removed a certain type of writespace correction.
+
+```py
+def is_real_correction(input_str):
+    left_side = input_str.split('->')[0].strip(' -"').replace('’', "'").replace('“', '"').replace('”', '"')
+    right_side = input_str.split('->')[1].strip(' -"').replace('’', "'").replace('“', '"').replace('”', '"')
+    if left_side.endswith('"') and not right_side.endswith('"'):
+        left_side = left_side[:-1]
+    if left_side != right_side and 'remove extra space' not in right_side:
+        return f'- {left_side} -> {right_side}'
+```
+
+
+## Final Result
+
+For a novel of about 90,000 words, GPT4 identified 1120 "issues", which the script above reduced to 830. This is a fairly 'manual' way of deleting bad corrections; it's possible running the corrections back through GPT4, with instructions to throw away bogus corrections could automate this process -- but I didn't have a chance to try it here and I'm not sure it's a notably better approach.
+
+Of the remaining corrections, about 25% are truly legitimate corrections, 50% are somewhat random wording and stylistic changes, and the remaining 25% are legitimate grammar issues, but are contained within spoken dialogue or are otherwise used purposefully. If this were a copy-edit a magazine article, this last 25% would be useful, as the author would want the writing to confirm strictly to a standard (e.g. Chicago Manual of Style) -- but is of limited utility in the context of a novel.
+
+I also wrote a bit of code to identify hallucinations. Of the 1120 original issues, 19 were hallucinated.
+
+Below are some examples of the different types of corrections.
+
+25% Legitimate Copy Errors
+
+- Felicia stiffened almost indecipherably. -> Felicia stiffened almost imperceptibly.
+- The is the family kitchen. -> This is the family kitchen.
+- "No, doesn’t mean that" -> "No, it doesn't mean that"
+
+50% Arbitrary Rephrasings
+
+- "He stood on the opposite side" -> "He stood on the other side"
+- "He put his glass down" -> "He set his glass down"
+- "the overhead lights flashed" -> "the overhead lights flickered"
+- "The corners of his mouth" -> "The corners of his lips"
+
+25% Debatable Copy Corrections
+
+- "His laugh was contagious and his spirit big, I'm told.” -> "His laugh was contagious, and his spirit was big, I'm told.”
+- "Not exactly the apology Savvy was expecting" -> "Not exactly the apology Savvy expected"
+
+## Conclusion
+
+Yeah - I mean - not bad? Kind of ok for $8? I can't help but feel a little disappointed, as this felt like a slam-dunk for ChatGPT. As the [old saying goes](https://cdixon.org/2009/08/20/machine-learning-is-really-good-at-partially-solving-just-about-any-problem), AI is great at solving 80% of any problem.
+
+With that said, i do think ChatGPT (or even a much simpler model) could be turned into an excellent copywriter through fine tuning. Given some more time, I would have loved to try that approach (especially because training data is easy to generate for this use case). Perhaps in a future blog post...

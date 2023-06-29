@@ -54,13 +54,13 @@ Err...
 
 Reading a bit further, we learn that:
 
-By default the synchronization step is implemented by having a
+> By default the synchronization step is implemented by having a
 recurring task poll the completion of the group every second, calling
 the signature when ready.
 
 That does sound a bit costly. But wait! There's more!
 
-This is used by all result backends except Redis and Memcached, which
+> This is used by all result backends except Redis and Memcached, which
 increment a counter after each task in the header, then applying the
 callback when the counter exceeds the number of tasks in the set.
 Ah-ha! The most common broker backends for Celery are Redis and
