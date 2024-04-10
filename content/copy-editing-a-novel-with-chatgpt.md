@@ -83,7 +83,7 @@ def is_real_correction(input_str):
 
 For a novel of about 90,000 words, GPT4 identified 1120 "issues", which the script above reduced to 811. I suspect feeding the corrections back into ChatGPT with a prompt to identify only real corrections could have worked -- but good old-fashioned string manipulation with Python is also plenty good. I'm not yet reaching for ChatGPT to solve all of my problems, but perhaps I am a luddite.
 
-Of the remaining corrections, about 25% are truly legitimate corrections, 50% are somewhat random wording and stylistic changes, and the remaining 25% are legitimate grammar issues, but are contained within spoken dialogue or are otherwise used purposefully. If this were a copy-edit a magazine article, this last 25% would be useful, as the author would want the writing to confirm strictly to a standard (e.g. Chicago Manual of Style) -- but is of limited utility in the context of a novel.
+Of the remaining corrections, about 25% are truly legitimate corrections, 50% are somewhat random wording and stylistic changes, and the remaining 25% are legitimate grammar issues, but are contained within spoken dialogue or are otherwise used purposefully. If this was a copy-edit for a magazine article, this last 25% would be useful, as the author would want the writing to conform strictly to a standard (e.g. Chicago Manual of Style) -- but is of limited utility in the context of a novel.
 
 Here are some representative corrections.
 
@@ -93,17 +93,17 @@ Legitimate Copy Errors
 - The is the family kitchen. -> This is the family kitchen.
 - "No, doesn’t mean that" -> "No, it doesn't mean that"
 
-Debatable Copy Corrections
-
-- "His laugh was contagious and his spirit big, I'm told.” -> "His laugh was contagious, and his spirit was big, I'm told.”
-- "Not exactly the apology Savvy was expecting" -> "Not exactly the apology Savvy expected"
-
-Arbitrary Rephrasings
+Random Rephrasings
 
 - "He stood on the opposite side" -> "He stood on the other side"
 - "He put his glass down" -> "He set his glass down"
 - "the overhead lights flashed" -> "the overhead lights flickered"
 - "The corners of his mouth" -> "The corners of his lips"
+
+Debatable Copy Corrections
+
+- "His laugh was contagious and his spirit big, I'm told.” -> "His laugh was contagious, and his spirit was big, I'm told.”
+- "Not exactly the apology Savvy was expecting" -> "Not exactly the apology Savvy expected"
 
 
 ## Conclusion

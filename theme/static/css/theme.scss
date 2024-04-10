@@ -310,6 +310,9 @@ h6 {
         margin-right: auto;
         margin-top: $leading;
         margin-bottom: $leading;
+        @media screen and (min-width: 768px) {
+            max-width: 80%; /* max-width for desktop */
+        }
     }
 }
 

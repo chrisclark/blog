@@ -13,8 +13,8 @@ If you think of tests as “homework”, or something to be added at the end, on
 
 It’s a very normal state of affairs that your change will have more test code than application code.
 
-As you move from unit tests to integration tests, you take off diagnostic utility for coverage; unit tests cover little, but when they fail, it’s immediately clear what went wrong. Integration tests can cover a huge variety of regressions, but when they fail it’s harder to understand why. You need to be using both.
+As you move from unit tests to integration tests, you trade off diagnostic utility for coverage; unit tests cover little, but when they fail, it’s immediately clear what went wrong. Integration tests can cover a huge variety of regressions, but when they fail it’s harder to understand why. Use both.
 
-The broadest tests of all are browser/device automation tests. They are there to ensure that nothing terrible is about to happen in production, not ensure correctness of your code.
+The broadest tests of all are browser/device automation tests. They are there to ensure that nothing terrible is about to happen in production -- not to ensure correctness of your code.
 
 We aren’t believers in test-driven-development; it’s a great way to never get anything done.
