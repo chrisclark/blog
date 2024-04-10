@@ -1,7 +1,7 @@
 Title: LLM-Powered Django Admin Fields
 Date: 2024-06-10
 Author: Chris Clark
-Slug: llm-chatgpt-powered-django-admin-fields
+Slug: expensive-cookies
 Status: Draft
 
 It seems to me that one of the basic questions facing AI models is how they will be distributed. In the sense of "how is wealth distributed" not "how is software distributed".

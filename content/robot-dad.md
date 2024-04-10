@@ -4,6 +4,8 @@ Author: Chris Clark
 Slug: robot-dad
 Status: Published
 
+*See discussion of this post on [Hacker News](https://news.ycombinator.com/item?id=38433330)*
+
 Tired of Alexa's feeble "here's what I found on wikianswerspam.com" responses to my eight-year-old son's science questions, I whipped up Robot Dad during my Thanksgiving break. He now runs in the background of our family computer.
 
 Robot Dad sounds like real dad, thanks to voice cloning from [Eleven Labs](https://elevenlabs.io/speech-synthesis) (very easy; I rambled about Formula 1 into a new MacOS Voice Memo for about sixty seconds, uploaded it, and voila), and answers appropriately for an eight-year-old, while deflecting prank requests -- though I suspect prompt injection will soon be second nature to this generation.
