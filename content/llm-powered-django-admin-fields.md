@@ -6,13 +6,13 @@ Status: Published
 
 *Note*: All relevant code can be found in the corresponding [Github repo](https://github.com/chrisclark/django-llm-fields).
 
-I work at Grove -- and ecommerce company that sells thousands of different products. We use Django and the Django admin as our product information system to manage, among other things, all of the copy on our Product Detail Pages (PDPs). In order to more efficiently and consistently write copy for different PDP sections, we integrated ChatGPT directly into the Django Admin.
+I work at [Grove Collaborative](https://www.grove.co) -- an ecommerce company that sells thousands of different products. We use Django and the Django admin as our product information system to manage, among other things, all of the copy on our Product Detail Pages (PDPs). In order to more efficiently and consistently write copy for different PDP sections, we integrated ChatGPT directly into the Django Admin.
 
-While not *quite* encapsulated enough to make it standalone Django plugin, the code is generic enough to quickly integrate ChatGPT with any Django text field, and provides a number of affordances to Django admin users to modify and test the underlying prompts.
+While not *quite* encapsulated enough to make it a standalone Django plugin, [the code](https://github.com/chrisclark/django-llm-fields) is generic enough to quickly integrate ChatGPT with any Django text field, and provides a number of affordances to Django admin users to modify and test the underlying prompts.
 
 ## What we did
 
-In short, we now have little buttons next to Django Admin text fields that will generate copy according to a specific prompt and data payload. For example, we have a section on our PDPs titled "Why we believe in this product". That's an attribute on the Product model called `why_we_believe`. In the Django Admin, when viewing a Product model, there is a button that our merchandising team can use to populate the field. The text is editable and reviewable; ChatGPT provides initial copy, but humans are still very much in the loop.
+In short, we now have little buttons next to Django Admin text fields that will generate copy according to a specific prompt and data payload. For example, we have a section on our PDPs titled "Why we believe in this product", backed by an attribute on the Product model called `why_we_believe`. In the Django Admin, when viewing a Product model, there is a button that our merchandising team can use to populate the field. The text is editable and reviewable; ChatGPT provides initial copy, but humans are still very much in the loop.
 
 ![llm-django-field]({static}/images/gpt-django-textarea.png)
 
@@ -63,7 +63,7 @@ After registering the model in the Django admin, the prompts are now editable.
 
 ![llm-django-prompt-admin]({static}/images/gpt-django-prompt-admin.png)
 
-There is a bit of magic to the "key" value, which maps to a hard-coded value on a class that knows to how to inject the proper contextual data for a given prompt. For example, the prompt in the screenshot above needs to know how to get `product_json`. So we write a little class that can provide that data (one class for each prompt):
+There is a bit of magic to the "key" value, which maps to a hard-coded value on a class that knows how to inject the proper contextual data for a given prompt. For example, the prompt in the screenshot above needs to know how to get `product_json`. So we write a little class that can provide that data (one class for each prompt):
 
 ```python
 
@@ -103,6 +103,7 @@ urlpatterns += [
 Note in the [repo](https://github.com/chrisclark/django-llm-fields), there are also URLs registered for the playground.
 
 To recap:
+
 1. A request comes in to e.g. `generate-believe-text/?model_id=123`
 2. The generic `llm_prompt_view` passes the model_id into the PromptData object specified in the URL endpoint (in this case `BelievePromptData`)
 3. `BelievePromptData` gets the relevant model and turns it into the JSON blob that we want to inject into our prompt. The key of the PromptData class maps to the correct GPTPrompt object.
@@ -111,7 +112,7 @@ To recap:
 This pattern makes it really easy to add more prompts; an admin user can create a new prompt (and test it out in the playground), and an engineer adds a corresponding PromptData class and new URL.
 
 
-## Hooking up the Django Admin UI
+## Hooking it up to the Django Admin UI
 
 Lastly, we have to add the actual button next to the relevant field. Torturing the Django admin is never particularly fun, so we created a widget you can stick next to arbitrary model text fields, and map to the different URLs, corresponding to the various PromptData classes. The Widget is simple:
 
@@ -147,4 +148,4 @@ class ProductForm(forms.ModelForm):
         }
 ```
 
-And voila! Our merchandisers can click the button to generate text and prepopulate the field. This fields remain a 'normal' text field; it's still overrideable by the admin user. Merchants often use the buttons to get started, and then tweak the copy from there.
+And voila! Our merchandisers can click the button to generate text and pre-populate the field. This fields remain a 'normal' text field; it's still overridable by the admin user. Merchants often use the buttons to get started, and then tweak the copy from there.
